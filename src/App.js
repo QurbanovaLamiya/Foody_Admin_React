@@ -1,11 +1,8 @@
+import { Fragment } from "react";
 import "./style/App.css";
 
 const App = () => {
-  return (
-    <>
-      <h1>Admin</h1>
-    </>
-  );
+  return <Fragment></Fragment>;
 };
 
 export default App;
