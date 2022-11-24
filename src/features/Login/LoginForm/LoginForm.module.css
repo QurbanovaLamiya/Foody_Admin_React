@@ -14,14 +14,22 @@
 
 .Input {
   background: #5a5b70;
+  color: #c7c7c7;
   border-radius: 4px;
   border: none;
-  color: #c7c7c7;
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   padding: 15px 40px;
+}
+.Input::placeholder {
+  color: #c7c7c7;
+}
+
+.Input:hover {
+  background: #5a5b70;
+  color: #c7c7c7;
 }
 
 .Button {
@@ -32,7 +40,17 @@
   background: #c035a2;
   border-radius: 4px;
   border: none;
-  margin-top: 36px ;
+  margin-top: 36px;
   margin-bottom: 55px;
   padding: 11px 0;
+}
+
+@media (max-width: 640px) and (min-width: 320px) {
+  .Form{
+    padding: 0 !important;
+  }
+  .formTitle {
+    font-size: 24px;
+    line-height: 29px;
+  }
 }

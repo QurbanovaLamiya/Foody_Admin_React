@@ -20,11 +20,11 @@ const LoginContainer = () => {
           <img src={FoodyIcon} alt="foodyIcon" className={LoginStyle.Logo} />
         </Col>
       </Row>
-      <Row className={`${LoginStyle.loginSection}  py-5`}>
-        <Col className={LoginStyle.Form}>
+      <Row className={LoginStyle.loginSection}>
+        <Col   className={LoginStyle.Form}>
           <LoginForm />
         </Col>
-        <Col className={`${LoginStyle.loginImageSection} bg-white`}>
+        <Col className={LoginStyle.loginImageSection}>
           <img src={flagIcon} alt="FlagIcon" className={LoginStyle.flagIcon} />
           <img
             src={AdminLoginImg}

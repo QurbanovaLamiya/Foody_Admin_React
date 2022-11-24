@@ -18,6 +18,7 @@
 }
 .loginImageSection {
   position: relative;
+  background-color: #fff;
 }
 .flagIcon {
   position: absolute;
@@ -25,5 +26,37 @@
   right: 11px;
 }
 .loginImg {
-  margin: 56px 29px 52px;
+  width: 346px;
+  height: 304px;
+  margin: 55px 20px 50px;
+}
+
+@media (max-width: 640px) and (min-width: 320px) {
+  .Logo {
+    width: 92px;
+    height: 34px;
+    margin: 11px 0 0 9px;
+  }
+  .loginSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .loginImageSection {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    margin: 75px auto 18px !important;
+  }
+  .loginImg {
+    margin: 0 auto;
+    width: 174px;
+    height: 153px;
+  }
+  .flagIcon {
+    display: none;
+  }
+  .Form{
+    background: transparent;
+  }
 }
