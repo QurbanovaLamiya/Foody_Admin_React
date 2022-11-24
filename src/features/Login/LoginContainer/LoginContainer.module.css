@@ -1,0 +1,29 @@
+.Logo {
+  width: 103px;
+  height: 22px;
+  margin: 57px 0 48px 32px;
+}
+.loginSection {
+  width: 60%;
+  margin: 48px auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Form {
+  background: #38394e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginImageSection {
+  position: relative;
+}
+.flagIcon {
+  position: absolute;
+  top: 9px;
+  right: 11px;
+}
+.loginImg {
+  margin: 56px 29px 52px;
+}

@@ -1,8 +1,6 @@
-import { Fragment } from "react";
-import "./style/App.css";
+import RootPage from "./pages";
+import "./style/App.css"
 
-const App = () => {
-  return <Fragment></Fragment>;
-};
+const App = () => <RootPage />;
 
 export default App;
