@@ -21,7 +21,7 @@ const LoginContainer = () => {
         </Col>
       </Row>
       <Row className={LoginStyle.loginSection}>
-        <Col   className={LoginStyle.Form}>
+        <Col className={LoginStyle.Form}>
           <LoginForm />
         </Col>
         <Col className={LoginStyle.loginImageSection}>
