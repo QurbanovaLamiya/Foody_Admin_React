@@ -1,8 +1,8 @@
 .Nav_List {
-  width: 19% !important;
+  /* width: 19% !important; */
+  width: 100%;
   background: #c74feb;
   border-radius: 14px;
-  margin: 18px !important;
   padding: 24px 16px 24px 24px !important;
 }
 

@@ -1,0 +1,20 @@
+.Content {
+  background: #27283c;
+  border-radius: 14px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #8e8e93;
+}
+
+.Content img {
+  margin: 20px 0 10px;
+}
+.Content p {
+  margin: 0 !important;
+}

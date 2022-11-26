@@ -8,14 +8,14 @@ import Category from "../../../pages/Category";
 import Orders from "../../../pages/Orders";
 import Offers from "../../../pages/Offers";
 import SidebarList from "./SidebarList";
+import SidebarFooter from "./SidebarFooter";
 
 // Style
-// import SidebarStyle from "./Sidebar.module.css"
-
+import SidebarStyle from "./Sidebar.module.css";
 
 const Sidebar = () => {
   return (
-    <div className="d-flex">
+    <div className={SidebarStyle.Sidebar_Section}>
       <SidebarList />
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
@@ -26,6 +26,7 @@ const Sidebar = () => {
         <Route path="/orders" element={<Orders />} />
         <Route path="/offer" element={<Offers />} />
       </Routes>
+      <SidebarFooter/>
     </div>
   );
 };
