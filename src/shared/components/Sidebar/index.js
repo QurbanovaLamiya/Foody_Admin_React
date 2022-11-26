@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Components
@@ -16,7 +15,7 @@ import SidebarList from "./SidebarList";
 
 const Sidebar = () => {
   return (
-    <Fragment>
+    <div className="d-flex">
       <SidebarList />
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
@@ -27,7 +26,7 @@ const Sidebar = () => {
         <Route path="/orders" element={<Orders />} />
         <Route path="/offer" element={<Offers />} />
       </Routes>
-    </Fragment>
+    </div>
   );
 };
 

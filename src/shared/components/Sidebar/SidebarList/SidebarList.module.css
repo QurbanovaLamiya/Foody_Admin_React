@@ -1,7 +1,40 @@
-.nav {
-  width: 256px;
-  height: 474px;
-  background-color: #c74feb;
+.Nav_List {
+  width: 19% !important;
+  background: #c74feb;
   border-radius: 14px;
-  margin: 16px;
+  margin: 18px !important;
+  padding: 24px 16px 24px 24px !important;
+}
+
+.List {
+  display: flex;
+  align-items: center;
+}
+
+.List:last-child {
+  margin-bottom: 30%;
+}
+
+.Nav_Link {
+  width: 100%;
+  padding: 11px;
+  text-decoration: none;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #fcddec;
+}
+
+.Nav_Link:hover {
+  cursor: pointer;
+  background: #cd61ed;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.Nav_Icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 27px;
 }

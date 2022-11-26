@@ -1,7 +1,7 @@
 const DashboardContainer = () => {
   return (
     <>
-      <h1 className="bg-warning w-25">DashboardContainer </h1>
+      <h1 className="bg-danger">DashboardContainer </h1>
     </>
   );
 };

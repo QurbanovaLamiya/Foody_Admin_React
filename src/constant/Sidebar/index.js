@@ -1,9 +1,9 @@
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import CategoryIcon from "@mui/icons-material/Category";
+import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import FilterFramesIcon from "@mui/icons-material/FilterFrames";
-import DiscountIcon from "@mui/icons-material/Discount";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 const SidebarData = [
@@ -24,7 +24,7 @@ const SidebarData = [
   },
   {
     title: "Category",
-    icon: <CategoryIcon />,
+    icon: <CategoryOutlinedIcon />,
     link: "/category",
   },
   {
@@ -34,7 +34,7 @@ const SidebarData = [
   },
   {
     title: "Offer",
-    icon: <DiscountIcon />,
+    icon: <LocalOfferIcon />,
     link: "/offer",
   },
   {
@@ -44,5 +44,4 @@ const SidebarData = [
   },
 ];
 
-
-export default SidebarData
+export default SidebarData;
