@@ -1,13 +1,13 @@
 // import Login from "./Login";
-import Dashboard from "./Dashboard"
 import Header  from "../shared/components/Header"
+import Sidebar from "../shared/components/Sidebar";
 
 const RootPage = () => {
   return (
     <>
       {/* <Login /> */}
       <Header/>
-      <Dashboard/>
+      <Sidebar/>
     </>
   );
 };
