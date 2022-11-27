@@ -1,0 +1,29 @@
+.Container {
+  width: 636px;
+  height: 472px;
+  background: #27283c;
+  border-radius: 14px;
+}
+
+.Title {
+  margin: 16px 33px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #c7c7c7;
+}
+.Content {
+  height: 80%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.Content p {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #8e8e93;
+}

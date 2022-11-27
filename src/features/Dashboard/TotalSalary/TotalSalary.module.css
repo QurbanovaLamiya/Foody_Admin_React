@@ -1,0 +1,16 @@
+.Container {
+  margin-bottom: 24px;
+  width: 634px;
+  height: 472px;
+  background: #27283c;
+  border-radius: 14px;
+}
+
+.Title {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #c7c7c7;
+  margin: 16px 48px;
+}

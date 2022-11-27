@@ -1,6 +1,6 @@
-.Container{
-    margin: 16px 16px 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: aqua;
+.Container {
+  margin: 16px 16px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
