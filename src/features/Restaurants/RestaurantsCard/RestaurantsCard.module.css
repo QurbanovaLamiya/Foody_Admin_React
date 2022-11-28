@@ -1,0 +1,47 @@
+.Card {
+  width: 247px;
+  height: 83px;
+  box-shadow: 0px 4px 4px rgba(57, 57, 57, 0.25);
+  border-radius: 5px;
+  margin-bottom: 37px;
+}
+
+.Content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.Image {
+  width: 65px;
+  height: 57px;
+}
+
+.Text {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px;
+}
+
+.Restaurant {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1e1e30;
+}
+
+.Product {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #828282;
+}
+
+.Delete {
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  color: #eb5757;
+}

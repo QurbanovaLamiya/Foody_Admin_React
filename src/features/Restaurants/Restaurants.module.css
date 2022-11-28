@@ -1,0 +1,100 @@
+.Container {
+  width: 100%;
+  margin: 16px 16px 0 0;
+}
+.Caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 73px;
+  background: #27283c;
+  border-radius: 14px;
+}
+
+.Caption h1 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #c7c7c7;
+  margin: 20px 33px;
+}
+
+.Button_Section {
+  display: flex;
+}
+
+.Select_Section {
+  position: relative;
+  margin-right: 27px;
+}
+
+.Select {
+  background: #5a5b70;
+  border-radius: 14px;
+  border: none;
+  width: 200px !important;
+  height: 35px !important;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #f2f2f2;
+  padding: 0 18px;
+  appearance: none;
+}
+
+.Icon {
+  position: absolute;
+  color: #c7c7c7;
+  right: 10px;
+  font-size: 35px;
+}
+
+.Add_Button {
+  width: 168px;
+  height: 35px;
+  background: #c035a2;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
+  border-radius: 14px;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color: #fff;
+  margin-right: 21px;
+  display: flex;
+  align-items: center;
+}
+
+.Content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 52px 0 78px;
+}
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.Pagination li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #ec5cf8;
+  color: #ec5cf8;
+  margin: 0 10px;
+}
+
+.Pagination li:hover {
+  background: #ec5cf8;
+  color: #fff;
+  cursor: pointer;
+}

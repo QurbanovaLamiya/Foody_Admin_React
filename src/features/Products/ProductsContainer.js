@@ -1,26 +1,30 @@
+// Material-UI
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
+// Components
 import ProductsCards from "./ProductsCards";
-import ProductsContainerStyle from "./ProductsContainer.module.css";
+
+// Style
+import ProductsStyle from "./Products.module.css";
 
 const ProductsContainer = () => {
   return (
-    <div className={ProductsContainerStyle.Container}>
-      <div className={ProductsContainerStyle.Caption}>
+    <div className={ProductsStyle.Container}>
+      <div className={ProductsStyle.Caption}>
         <h1>Products</h1>
-        <div className={ProductsContainerStyle.Select_Section}>
-          <select className={ProductsContainerStyle.Select}>
+        <div className={ProductsStyle.Select_Section}>
+          <select className={ProductsStyle.Select}>
             <option>Catagory type</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <KeyboardArrowDownIcon className={ProductsContainerStyle.Icon} />
+          <KeyboardArrowDownIcon className={ProductsStyle.Icon} />
         </div>
       </div>
-      <div className={ProductsContainerStyle.Content}>
+      <div className={ProductsStyle.Content}>
         <ProductsCards />
         <ProductsCards />
         <ProductsCards />
@@ -32,7 +36,7 @@ const ProductsContainer = () => {
         <ProductsCards />
         <ProductsCards />
       </div>
-      <ul className={ProductsContainerStyle.Pagination}>
+      <ul className={ProductsStyle.Pagination}>
         <li>
           <KeyboardArrowLeftIcon />
         </li>
