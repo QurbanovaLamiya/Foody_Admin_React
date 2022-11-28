@@ -52,3 +52,27 @@
   justify-content: space-between;
   margin: 52px 0 78px;
 }
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.Pagination li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #ec5cf8;
+  color: #ec5cf8;
+  margin: 0 10px;
+}
+
+.Pagination li:hover {
+  background: #ec5cf8;
+  color: #fff;
+  cursor: pointer;
+}

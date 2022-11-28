@@ -1,4 +1,7 @@
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+
 import ProductsCards from "./ProductsCards";
 import ProductsContainerStyle from "./ProductsContainer.module.css";
 
@@ -29,7 +32,17 @@ const ProductsContainer = () => {
         <ProductsCards />
         <ProductsCards />
       </div>
-      <div className={ProductsContainerStyle.Pagination}>Pagination</div>
+      <ul className={ProductsContainerStyle.Pagination}>
+        <li>
+          <KeyboardArrowLeftIcon />
+        </li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>
+          <KeyboardArrowRightIcon />
+        </li>
+      </ul>
     </div>
   );
 };
