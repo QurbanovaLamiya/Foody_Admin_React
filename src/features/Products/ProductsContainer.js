@@ -1,4 +1,5 @@
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ProductsCards from "./ProductsCards";
 import ProductsContainerStyle from "./ProductsContainer.module.css";
 
 const ProductsContainer = () => {
@@ -13,10 +14,21 @@ const ProductsContainer = () => {
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <KeyboardArrowDownIcon  className={ProductsContainerStyle.Icon}/>
+          <KeyboardArrowDownIcon className={ProductsContainerStyle.Icon} />
         </div>
       </div>
-      <div className={ProductsContainerStyle.Content}>Container</div>
+      <div className={ProductsContainerStyle.Content}>
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+        <ProductsCards />
+      </div>
       <div className={ProductsContainerStyle.Pagination}>Pagination</div>
     </div>
   );

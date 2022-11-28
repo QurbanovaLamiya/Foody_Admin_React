@@ -1,0 +1,43 @@
+.Card {
+  width: 196px;
+  margin-bottom: 26px;
+}
+
+.Image {
+  width: 160px;
+  height: 158px;
+  margin: 15px auto 0;
+}
+
+.Title {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1e1e30;
+}
+
+.Text {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #8e8e93;
+}
+
+.Price_Text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Price {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 24px;
+  color: #00b2a9;
+}
+
+.Delete {
+  color: #eb5757;
+}
