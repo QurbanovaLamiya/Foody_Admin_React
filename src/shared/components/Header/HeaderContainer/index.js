@@ -1,8 +1,7 @@
 // React-Bootstrap
-import { Nav } from "react-bootstrap";
+import { Nav, Button } from "react-bootstrap";
 
 // Material UI
-import { Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 // Images
@@ -15,13 +14,10 @@ import HeaderContainerStyle from "./HeaderContainer.module.css";
 const HeaderContainer = () => {
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      <Fab
-        variant="extended"
-        className={HeaderContainerStyle.Keeper_Add_Product}
-      >
+      <Button className={HeaderContainerStyle.Keeper_Add_Product}>
         <AddIcon sx={{ fontSize: 20 }} />
         ADD PRODUCT
-      </Fab>
+      </Button>
       <img
         src={flagIcon}
         alt="flagIcon"
