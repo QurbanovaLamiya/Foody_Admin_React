@@ -13,7 +13,7 @@ const OffersContainer = () => {
           ADD OFFER
         </button>
       </div>
-      <div>
+      <div className={OffersStyle.Table}>
         <OffersTable />
       </div>
     </div>
