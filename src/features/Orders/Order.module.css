@@ -1,0 +1,22 @@
+.Container {
+  width: 100%;
+  margin: 16px 32px 0 0;
+}
+
+.Caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #27283c;
+  border-radius: 14px;
+  height: 73px;
+}
+
+.Caption h1 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  color: #f2f2f2de;
+  margin: 20px 33px;
+}

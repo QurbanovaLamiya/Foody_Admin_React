@@ -1,7 +1,13 @@
-const OrdersContainer = () =>{
-    return(
-        <></>
-    )
-}
+import OrderStyle from "./Order.module.css"
 
-export default OrdersContainer
+const OrdersContainer = () => {
+  return (
+    <div className={OrderStyle.Container}>
+      <div className={OrderStyle.Caption}>
+        <h1>Orders</h1>
+      </div>
+    </div>
+  );
+};
+
+export default OrdersContainer;

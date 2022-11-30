@@ -1,7 +1,12 @@
+* {
+  font-family: "Roboto";
+  line-height: 21px;
+}
+
 .Container {
-  height: 70vh;
   width: 100%;
-  margin: 16px 16px 0 0;
+  height: 70vh;
+  margin: 16px 32px 0 0;
 }
 
 .Caption {
@@ -15,22 +20,18 @@
 }
 
 .Caption h1 {
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 20px;
-  line-height: 21px;
   color: #f2f2f2de;
-  margin-left: 33px;
+  margin: 8px 33px;
 }
 
 .Caption button {
-  font-family: "Roboto";
   font-weight: 700;
   font-size: 14px;
-  line-height: 21px;
   color: #fff;
   width: 170px;
-  height: 35px;
+  height: 36px;
   background: #c035a2;
   border: none;
   box-shadow: 0px 4px 4px #27ae6033;
@@ -38,4 +39,5 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-right: 21px;
 }
