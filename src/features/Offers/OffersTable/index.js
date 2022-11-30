@@ -9,7 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-import OffersTableStyle from "./OffersTable.module.css";
+// import OffersTableStyle from "./OffersTable.module.css";
 
 const OffersTable = () => {
   return (
