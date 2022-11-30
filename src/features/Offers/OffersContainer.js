@@ -1,6 +1,7 @@
 import AddIcon from "@mui/icons-material/Add";
 
 import OffersStyle from "./Offers.module.css";
+import OffersTable from "./OffersTable";
 
 const OffersContainer = () => {
   return (
@@ -11,6 +12,9 @@ const OffersContainer = () => {
           <AddIcon />
           ADD OFFER
         </button>
+      </div>
+      <div>
+        <OffersTable />
       </div>
     </div>
   );
