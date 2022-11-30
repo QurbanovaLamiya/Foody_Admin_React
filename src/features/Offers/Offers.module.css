@@ -1,0 +1,38 @@
+.Container {
+  width: 100%;
+  margin: 16px 32px 0 0;
+}
+
+.Caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #27283c;
+  border-radius: 14px;
+  height: 73px;
+}
+
+.Caption h1 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  color: #f2f2f2de;
+  margin: 20px 33px;
+}
+
+.Caption button {
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  width: 170px;
+  height: 36px;
+  background: #c035a2;
+  border: none;
+  box-shadow: 0px 4px 4px #27ae6033;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 21px;
+}
