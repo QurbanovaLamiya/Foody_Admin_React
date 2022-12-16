@@ -12,6 +12,7 @@
 }
 .Form {
   background: #38394e;
+  height: 411px;
   display: flex;
   justify-content: center;
 }

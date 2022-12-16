@@ -51,6 +51,9 @@ const LoginForm = () => {
           onChange={formik.handleChange}
           value={formik.values.user_name}
         />
+        {formik.errors.user_name && (
+          <span className={FormStyle.required}>Required</span>
+        )}
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
         <input
@@ -61,6 +64,9 @@ const LoginForm = () => {
           onChange={formik.handleChange}
           value={formik.values.password}
         />
+        {formik.errors.password && (
+          <span className={FormStyle.required}>Required</span>
+        )}
       </Form.Group>
       <Button type="submit" style={inlineStyle}>
         sign in
