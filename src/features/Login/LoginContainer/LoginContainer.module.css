@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: red;
 }
 .Form {
   background: #38394e;
@@ -17,17 +18,20 @@
   justify-content: center;
 }
 .loginImageSection {
-  position: relative;
   background-color: #fff;
 }
+.flagSection {
+  display: flex;
+  justify-content: flex-end;
+}
 .flagIcon {
-  position: absolute;
-  top: 9px;
-  right: 11px;
+  /* background-color: red; */
 }
 .loginImg {
   width: 345px;
-  margin: 55px 20px 50px;
+  height: 304px;
+  margin-left: 25px;
+  margin-bottom: 54px;
 }
 
 @media (max-width: 640px) and (min-width: 320px) {

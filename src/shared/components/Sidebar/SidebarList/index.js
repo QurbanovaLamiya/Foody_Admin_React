@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
-import Data from "../../../../constant/Sidebar";
+import Data from "../../../../util/Sidebar";
 
 // Style
 import SidebarListStyle from "./SidebarList.module.css";

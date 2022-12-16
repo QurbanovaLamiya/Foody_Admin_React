@@ -2,7 +2,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Components
-// import Login from "./Login";
+import Login from "./Login";
 import Header from "../shared/components/Header";
 import Sidebar from "../shared/components/Sidebar";
 import Dashboard from "../features/Dashboard/DashboardContainer";
@@ -15,8 +15,8 @@ import Offers from "../features/Offers/OffersContainer";
 const RootPage = () => {
   return (
     <>
-      {/* <Login /> */}
-      <Header />
+      <Login />
+      {/* <Header />
       <div className="d-flex">
         <Sidebar />
         <Routes>
@@ -28,7 +28,7 @@ const RootPage = () => {
           <Route path="/orders" element={<Orders />} />
           <Route path="/offer" element={<Offers />} />
         </Routes>
-      </div>
+      </div> */}
     </>
   );
 };
