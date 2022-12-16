@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import FormStyle from "./LoginForm.module.css";
+import { useFormik } from "formik";
 
 let inlineStyle = {
   width: "100%",
@@ -16,24 +17,54 @@ let inlineStyle = {
 };
 
 const LoginForm = () => {
+  const formik = useFormik({
+    initialValues: {
+      user_name: "",
+      password: "",
+    },
+    validate: (values) => {
+      const errors = {};
+
+      if (!values.user_name) {
+        errors.user_name = "Required";
+      }
+      if (!values.password) {
+        errors.password = "Required";
+      }
+      return errors;
+    },
+    onSubmit: (values, action) => {
+      console.log(values);
+      action.resetForm();
+    },
+  });
+
   return (
-    <Form className={FormStyle.Form}>
+    <Form className={FormStyle.Form} onSubmit={formik.handleSubmit}>
       <h1 className={FormStyle.formTitle}>Welcome Admin</h1>
       <Form.Group className="mb-4" controlId="formBasicUserName">
-        <Form.Control
+        <input
           type="text"
+          name="user_name"
           placeholder="Username"
           className={FormStyle.Input}
+          onChange={formik.handleChange}
+          value={formik.values.user_name}
         />
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
-        <Form.Control
+        <input
           type="password"
+          name="password"
           placeholder="Password"
           className={FormStyle.Input}
+          onChange={formik.handleChange}
+          value={formik.values.password}
         />
       </Form.Group>
-      <Button style={inlineStyle}>sign in</Button>
+      <Button type="submit" style={inlineStyle}>
+        sign in
+      </Button>
     </Form>
   );
 };
