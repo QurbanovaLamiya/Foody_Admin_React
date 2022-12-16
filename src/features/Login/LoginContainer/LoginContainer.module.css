@@ -9,12 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
 }
 .Form {
   background: #38394e;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 .loginImageSection {
@@ -23,9 +21,6 @@
 .flagSection {
   display: flex;
   justify-content: flex-end;
-}
-.flagIcon {
-  /* background-color: red; */
 }
 .loginImg {
   width: 345px;
