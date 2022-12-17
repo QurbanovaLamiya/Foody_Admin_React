@@ -21,7 +21,6 @@ let inlineStyle = {
 
 const LoginForm = () => {
   const state = useSelector((state) => state);
-  // console.log("state", state.login.user.user_name);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -47,8 +46,11 @@ const LoginForm = () => {
         dispatch(setLogin(true));
         localStorage.setItem("login", true);
         navigate("/dashboard");
+      } else {
+        alert("yalnisdir");
+        action.resetForm();
       }
-      return action.resetForm();
+      // return action.resetForm()
     },
   });
 
