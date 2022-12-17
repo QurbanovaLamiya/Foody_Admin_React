@@ -1,6 +1,9 @@
 import { Form, Button } from "react-bootstrap";
-import FormStyle from "./LoginForm.module.css";
 import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import { setLogin } from "../../../store/slices/loginSlice";
+import { useNavigate } from "react-router-dom";
+import FormStyle from "./LoginForm.module.css";
 
 let inlineStyle = {
   width: "100%",
@@ -17,6 +20,11 @@ let inlineStyle = {
 };
 
 const LoginForm = () => {
+  const state = useSelector((state) => state);
+  // console.log("state", state.login.user.user_name);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       user_name: "",
@@ -34,8 +42,13 @@ const LoginForm = () => {
       return errors;
     },
     onSubmit: (values, action) => {
-      console.log(values);
-      action.resetForm();
+      if (values.user_name === state.login.user.user_name) {
+        action.resetForm();
+        dispatch(setLogin(true));
+        localStorage.setItem("login", true);
+        navigate("/dashboard");
+      }
+      return action.resetForm();
     },
   });
 

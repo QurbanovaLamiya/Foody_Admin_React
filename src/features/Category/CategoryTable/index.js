@@ -47,7 +47,7 @@ const CategoryTable = () => {
     setPage(0);
   };
 
-  const deleteCategory = (id) => {};
+  // const deleteCategory = (id) => {};
 
   return (
     <>
