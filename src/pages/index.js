@@ -1,7 +1,8 @@
-// Components
 import { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
+
+// Components
 import Login from "./Login";
 import PageRoutes from "./PageRoutes";
 
@@ -19,8 +20,8 @@ const RootPage = () => {
         <PageRoutes />
       ) : (
         <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Navigate replace to="login" />} />
         </Routes>
       )}
     </Fragment>

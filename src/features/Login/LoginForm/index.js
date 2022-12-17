@@ -2,8 +2,11 @@ import { Form, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "../../../store/slices/loginSlice";
-import { useNavigate } from "react-router-dom";
 import FormStyle from "./LoginForm.module.css";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 let inlineStyle = {
   width: "100%",
@@ -22,7 +25,7 @@ let inlineStyle = {
 const LoginForm = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const formik = useFormik({
     initialValues: {
@@ -42,15 +45,22 @@ const LoginForm = () => {
     },
     onSubmit: (values, action) => {
       if (values.user_name === state.login.user.user_name) {
-        action.resetForm();
         dispatch(setLogin(true));
         localStorage.setItem("login", true);
-        navigate("/dashboard");
+        navigate("/dashboard")
       } else {
-        alert("yalnisdir");
+        toast.error("Incorrect username or password", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
         action.resetForm();
       }
-      // return action.resetForm()
     },
   });
 
@@ -67,7 +77,7 @@ const LoginForm = () => {
           value={formik.values.user_name}
         />
         {formik.errors.user_name && (
-          <span className={FormStyle.required}>Required</span>
+          <span className={FormStyle.required}>{formik.errors.user_name}</span>
         )}
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
@@ -80,12 +90,13 @@ const LoginForm = () => {
           value={formik.values.password}
         />
         {formik.errors.password && (
-          <span className={FormStyle.required}>Required</span>
+          <span className={FormStyle.required}>{formik.errors.password}</span>
         )}
       </Form.Group>
       <Button type="submit" style={inlineStyle}>
         sign in
       </Button>
+      <ToastContainer />
     </Form>
   );
 };

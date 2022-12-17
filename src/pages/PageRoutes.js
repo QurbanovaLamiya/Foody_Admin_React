@@ -10,6 +10,7 @@ import Restaurants from "../features/Restaurants/RestaurantsContainer";
 import Category from "../features/Category/CategoryContainer";
 import Orders from "../features/Orders/OrdersContainer";
 import Offers from "../features/Offers/OffersContainer";
+import Login from "../features/Login/LoginContainer";
 
 const PageRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const PageRoutes = () => {
           <Route path="/category" element={<Category />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/offer" element={<Offers />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
