@@ -4,7 +4,6 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import FilterFramesIcon from "@mui/icons-material/FilterFrames";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
-// import LogoutIcon from "@mui/icons-material/Logout";
 
 const SidebarData = [
   {
@@ -36,7 +35,7 @@ const SidebarData = [
     title: "Offer",
     icon: <LocalOfferIcon />,
     link: "/panel/offer",
-  }
+  },
 ];
 
 export default SidebarData;
