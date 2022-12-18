@@ -4,31 +4,29 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import Header from "../shared/components/Header";
 import Sidebar from "../shared/components/Sidebar";
-import Dashboard from "../features/Dashboard/DashboardContainer";
-import Products from "../features/Products/ProductsContainer";
-import Restaurants from "../features/Restaurants/RestaurantsContainer";
-import Category from "../features/Category/CategoryContainer";
-import Orders from "../features/Orders/OrdersContainer";
-import Offers from "../features/Offers/OffersContainer";
-import Login from "../features/Login/LoginContainer";
+import Dashboard from "./Dashboard";
+import Products from "./Products";
+import Restaurants from "./Restaurants";
+import Category from "./Category";
+import Orders from "./Orders";
+import Offers from "./Offers";
 
 const PageRoutes = () => {
   return (
-    <div>
+    <>
       <Header />
       <div className="d-flex">
         <Sidebar />
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/restaurants" element={<Restaurants />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/offer" element={<Offers />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/panel/dashboard" element={<Dashboard />} />
+          <Route path="/panel/products" element={<Products />} />
+          <Route path="/panel/restaurants" element={<Restaurants />} />
+          <Route path="/panel/category" element={<Category />} />
+          <Route path="/panel/orders" element={<Orders />} />
+          <Route path="/panel/offer" element={<Offers />} />
         </Routes>
       </div>
-    </div>
+    </>
   );
 };
 

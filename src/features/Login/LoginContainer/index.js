@@ -38,12 +38,10 @@ const LoginContainer = () => {
           <img src={FoodyIcon} alt="foodyIcon" className={LoginStyle.Logo} />
         </Col>
       </Row>
-
       <Row className={LoginStyle.loginSection}>
         <Col className={LoginStyle.Form}>
           <LoginForm />
         </Col>
-
         <Col className={LoginStyle.loginImageSection}>
           <div className={LoginStyle.flagSection}>
             <Button
@@ -91,7 +89,6 @@ const LoginContainer = () => {
               </MenuItem>
             </Menu>
           </div>
-
           <img
             src={AdminLoginImg}
             alt="loginImg"

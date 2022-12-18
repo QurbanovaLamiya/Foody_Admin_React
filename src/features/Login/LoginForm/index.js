@@ -1,12 +1,12 @@
 import { Form, Button } from "react-bootstrap";
-import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
 import { setLogin } from "../../../store/slices/loginSlice";
 import FormStyle from "./LoginForm.module.css";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 
 let inlineStyle = {
   width: "100%",
@@ -25,7 +25,7 @@ let inlineStyle = {
 const LoginForm = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -44,11 +44,10 @@ const LoginForm = () => {
       return errors;
     },
     onSubmit: (values, action) => {
-      if (values.user_name === state.login.user.user_name) {
-        dispatch(setLogin(true));
-        localStorage.setItem("login", true);
-        navigate("/dashboard")
-      } else {
+      if (
+        values.user_name !== state.loginSlice.user.user_name ||
+        values.password !== state.loginSlice.user.password
+      ) {
         toast.error("Incorrect username or password", {
           position: "top-right",
           autoClose: 5000,
@@ -60,6 +59,10 @@ const LoginForm = () => {
           theme: "colored",
         });
         action.resetForm();
+      } else {
+        localStorage.setItem("isLogin", true);
+        dispatch(setLogin(true));
+        navigate("/panel/dashboard");
       }
     },
   });

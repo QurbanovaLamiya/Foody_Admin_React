@@ -8,6 +8,7 @@ import PageRoutes from "./PageRoutes";
 
 const RootPage = () => {
   const [authenticated, setauthenticated] = useState([]);
+
   const state = useSelector((state) => state);
 
   useEffect(() => {
@@ -16,8 +17,10 @@ const RootPage = () => {
 
   return (
     <Fragment>
-      {state.login.isLogin || authenticated === true ? (
-        <PageRoutes />
+      {state.loginSlice.isLogin || authenticated === "true" ? (
+        <div>
+          <PageRoutes />
+        </div>
       ) : (
         <Routes>
           <Route path="/login" element={<Login />} />

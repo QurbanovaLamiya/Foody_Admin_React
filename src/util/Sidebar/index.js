@@ -10,32 +10,32 @@ const SidebarData = [
   {
     title: "Dashboard",
     icon: <DashboardIcon />,
-    link: "/dashboard",
+    link: "/panel/dashboard",
   },
   {
     title: "Products",
     icon: <StorefrontIcon />,
-    link: "/products",
+    link: "/panel/products",
   },
   {
     title: "Restaurants",
     icon: <AssignmentIcon />,
-    link: "/restaurants",
+    link: "/panel/restaurants",
   },
   {
     title: "Category",
     icon: <CategoryOutlinedIcon />,
-    link: "/category",
+    link: "/panel/category",
   },
   {
     title: "Orders",
     icon: <FilterFramesIcon />,
-    link: "/orders",
+    link: "/panel/orders",
   },
   {
     title: "Offer",
     icon: <LocalOfferIcon />,
-    link: "/offer",
+    link: "/panel/offer",
   }
 ];
 

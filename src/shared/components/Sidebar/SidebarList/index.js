@@ -4,11 +4,11 @@ import Data from "../../../../util/Sidebar";
 
 // Style
 import SidebarListStyle from "./SidebarList.module.css";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { setLogin } from "../../../../store/slices/loginSlice";
 
 const SidebarList = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onBack = () => {
@@ -26,7 +26,10 @@ const SidebarList = () => {
           </NavLink>
         </li>
       ))}
-      <button onClick={onBack}>Logout</button>
+
+      <button className={SidebarListStyle.Button} onClick={onBack}>
+        Logout
+      </button>
     </Nav>
   );
 };
