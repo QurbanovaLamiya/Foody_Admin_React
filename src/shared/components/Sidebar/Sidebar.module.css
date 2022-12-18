@@ -1,6 +1,7 @@
 .Sidebar_Section {
+  position: fixed;
   margin: 18px !important;
-  height: 90vh;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between !important;

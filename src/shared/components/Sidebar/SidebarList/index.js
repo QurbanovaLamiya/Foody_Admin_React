@@ -1,11 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Nav } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import Data from "../../../../util/Sidebar";
+import { setLogin } from "../../../../store/slices/loginSlice";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 // Style
 import SidebarListStyle from "./SidebarList.module.css";
-import { useDispatch } from "react-redux";
-import { setLogin } from "../../../../store/slices/loginSlice";
 
 const SidebarList = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,9 @@ const SidebarList = () => {
       ))}
 
       <button className={SidebarListStyle.Button} onClick={onBack}>
+        <span className={SidebarListStyle.Nav_Icon}>
+          <LogoutIcon />
+        </span>
         Logout
       </button>
     </Nav>
@@ -35,6 +39,3 @@ const SidebarList = () => {
 };
 
 export default SidebarList;
-
-// import LogoutIcon from "@mui/icons-material/Logout";
-
