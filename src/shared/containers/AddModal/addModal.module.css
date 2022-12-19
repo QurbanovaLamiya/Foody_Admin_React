@@ -17,3 +17,99 @@
 .Add_Product:hover {
   background: #9229a5;
 }
+
+.Box {
+  background: #38394e;
+  height: auto;
+  padding: 28px;
+}
+
+.Title {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.Title h4 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 24px;
+  color: #c7c7c7;
+  margin-left: 10px;
+}
+
+.X_button {
+  width: 27px;
+  height: 27px;
+  background: #c74feb;
+  border-radius: 50%;
+  border: none;
+  color: #f2f2f2;
+}
+
+.ImageSection {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 60px;
+}
+
+.Box p {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #c7c7c7;
+  margin-right: 90px;
+  width: 240px;
+}
+
+.ImageSection div {
+  width: 35vw;
+  height: 122px;
+  background: #43445a;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ImageSection span {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #c7c7c7;
+}
+
+.FormSection {
+  margin: 80px 0 10%;
+  display: flex;
+}
+
+.FormSection form {
+  width: 35vw;
+  height: 550px;
+  background: #43445a;
+  border-radius: 14px;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 60px 0 0;
+  border-top: 1px solid #43445a;
+}
+
+.Buttons button {
+  width: 400px;
+  height: 50px;
+  border: 2px solid #38394e;
+  box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
+  border-radius: 14px;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+}
