@@ -1,9 +1,6 @@
 // React-Bootstrap
 import { Nav } from "react-bootstrap";
 
-// Material UI
-import AddIcon from "@mui/icons-material/Add";
-
 // Images
 import en from "../../../../image/flagIcon/en.svg";
 import fr from "../../../../image/flagIcon/fr.svg";
@@ -14,9 +11,12 @@ import adminAvatar from "../../../../image/adminAvatar/adminAvatar.svg";
 import HeaderContainerStyle from "./HeaderContainer.module.css";
 
 import * as React from "react";
+
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+
+import AddModal from "../../../containers/AddModal";
 
 const HeaderContainer = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -29,11 +29,7 @@ const HeaderContainer = () => {
   };
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      <button className={HeaderContainerStyle.Keeper_Add_Product}>
-        <AddIcon sx={{ fontSize: 20}} style={{marginRight:"5px"}} />
-        ADD PRODUCT
-      </button>
-
+      <AddModal />
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
