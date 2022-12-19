@@ -1,5 +1,5 @@
 .Container {
-  width: 472px;
+  width: 42%;
   height: 472px;
   background: #27283c;
   border-radius: 14px;
@@ -13,17 +13,16 @@
   margin: 16px 36px;
 }
 .Content {
-    height: 80%;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  
-  .Content p {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    color: #8e8e93;
-  }
-  
+  height: 80%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.Content p {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #8e8e93;
+}
