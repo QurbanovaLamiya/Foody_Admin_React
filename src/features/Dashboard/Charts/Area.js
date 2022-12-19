@@ -70,6 +70,7 @@ const Area = () => {
   const options = {
     chart: {
       type: "area",
+      foreColor: "#c7c7c7",
     },
     dataLabels: {
       enabled: false,

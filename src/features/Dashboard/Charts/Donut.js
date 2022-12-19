@@ -9,27 +9,18 @@ const Donut = () => {
     legend: {
       position: "bottom",
     },
-    title: {
-      formatter: () => "title",
-      style: {
-        align: "center",
-        fontSize: "16px",
-        fontWeight: "bold",
-        fontFamily: "Roboto",
-        color: "#C7C7C7",
-      },
+    chart: {
+      foreColor: "#c7c7c7",
     },
   };
 
   return (
-    <div>
-      <Chart
-        style={{ cursor: "pointer" }}
-        type="donut"
-        series={series}
-        options={options}
-      />
-    </div>
+    <Chart
+      style={{ cursor: "pointer" }}
+      type="donut"
+      series={series}
+      options={options}
+    />
   );
 };
 

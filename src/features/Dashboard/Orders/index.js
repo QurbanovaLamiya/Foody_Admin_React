@@ -5,7 +5,10 @@ const Orders = () => {
   return (
     <div className={OrdersStyle.Container}>
       <h1 className={OrdersStyle.Title}>Orders</h1>
-      <Donut/>
+      <div className={OrdersStyle.Donut}>
+        <p className={OrdersStyle.DonutText}>Projects by account</p>
+        <Donut />
+      </div>
     </div>
   );
 };
