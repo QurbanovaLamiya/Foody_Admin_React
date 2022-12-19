@@ -30,7 +30,7 @@ const HeaderContainer = () => {
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
       <button className={HeaderContainerStyle.Keeper_Add_Product}>
-        <AddIcon sx={{ fontSize: 20 }} />
+        <AddIcon sx={{ fontSize: 20}} style={{marginRight:"5px"}} />
         ADD PRODUCT
       </button>
 

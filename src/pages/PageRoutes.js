@@ -10,7 +10,6 @@ import Restaurants from "./Restaurants";
 import Category from "./Category";
 import Orders from "./Orders";
 import Offers from "./Offers";
-import Login from "./Login"
 
 const PageRoutes = () => {
   return (
@@ -25,7 +24,6 @@ const PageRoutes = () => {
           <Route path="/panel/category" element={<Category />} />
           <Route path="/panel/orders" element={<Orders />} />
           <Route path="/panel/offer" element={<Offers />} />
-          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </>

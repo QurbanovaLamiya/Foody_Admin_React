@@ -15,7 +15,7 @@ const SidebarList = () => {
   const onBack = () => {
     localStorage.removeItem("isLogin");
     dispatch(setLogin(false));
-    navigate("/");
+    navigate("/login");
   };
   return (
     <Nav className={`${SidebarListStyle.Nav_List} flex-column`}>
