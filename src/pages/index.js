@@ -20,8 +20,8 @@ const RootPage = () => {
         <PageRoutes />
       ) : (
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Navigate replace to="login" />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Navigate replace to="login" />} />
         </Routes>
       )}
     </Fragment>
