@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 const Donut = () => {
-  const series = [25, 72, 98];
+  const series = [98, 60, 35];
   const options = {
     labels: ["KFC", "KLM", "American Express"],
     dataLabels: { enabled: true },
@@ -10,7 +10,7 @@ const Donut = () => {
       position: "bottom",
     },
     title: {
-      formatter:()=> "title",
+      formatter: () => "title",
       style: {
         align: "center",
         fontSize: "16px",

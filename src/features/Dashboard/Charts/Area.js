@@ -1,43 +1,101 @@
-import React from 'react'
+import React from "react";
 import Chart from "react-apexcharts";
 
-
 const Area = () => {
-    const series = [{
-        name: 'series1',
-        data: [31, 40, 28, 51, 42, 109, 100]
-      }, {
-        name: 'series2',
-        data: [11, 32, 45, 32, 34, 52, 41]
-      }]
-    const options = {
-        chart: {
-          height: 350,
-          type: 'area'
+  const series = [
+    {
+      name: "February",
+      data: [
+        {
+          x: 2019,
+          y: 70,
         },
-        dataLabels: {
-          enabled: false
+        {
+          x: 2020,
+          y: 90,
         },
-        stroke: {
-          curve: 'smooth'
+        {
+          x: 2021,
+          y: 60,
         },
-        xaxis: {
-          type: 'datetime',
-          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+        {
+          x: 2022,
+          y: 150,
         },
-        tooltip: {
-          x: {
-            format: 'dd/MM/yy HH:mm'
-          },
+      ],
+    },
+    {
+      name: "March",
+      data: [
+        {
+          x: 2019,
+          y: 50,
         },
-      }
-    
+        {
+          x: 2020,
+          y: 80,
+        },
+        {
+          x: 2021,
+          y: 60,
+        },
+        {
+          x: 2022,
+          y: 100,
+        },
+      ],
+    },
+    {
+      name: "April",
+      data: [
+        {
+          x: 2019,
+          y: 20,
+        },
+        {
+          x: 2020,
+          y: 45,
+        },
+        {
+          x: 2021,
+          y: 65,
+        },
+        {
+          x: 2022,
+          y: 80,
+        },
+      ],
+    },
+  ];
+  const options = {
+    chart: {
+      type: "area",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    tooltip: {
+      x: {
+        format: "02/06/2022 19:30",
+      },
+    },
+    title: {
+      text: "Year",
+      style: {
+        color: "#8E8E93",
+        fontSize: "16px",
+      },
+    },
+  };
 
   return (
     <div>
-      <Chart series={series} options={options}  type="area"/>
+      <Chart series={series} options={options} type="area" />
     </div>
-  )
-}
+  );
+};
 
-export default Area
+export default Area;
