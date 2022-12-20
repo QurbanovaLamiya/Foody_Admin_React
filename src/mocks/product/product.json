@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 2,
+      "product_name": "Pizza",
+      "product_price": "$19",
+      "restaurant_name": "KFC",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 3,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 4,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 5,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 6,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 7,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 8,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 9,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    },
+    {
+      "id": 10,
+      "product_name": "Marqarita",
+      "product_price": "$16",
+      "restaurant_name": "Papa John’s",
+      "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
+    }
+  ]
+}

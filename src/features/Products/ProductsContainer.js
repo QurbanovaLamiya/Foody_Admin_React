@@ -8,8 +8,28 @@ import ProductsCards from "./ProductsCards";
 
 // Style
 import ProductsStyle from "./Products.module.css";
+import { productApi } from "../../api/product";
+import { useEffect, useState } from "react";
 
 const ProductsContainer = () => {
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = () => {
+    productApi
+      .then((res) => {
+        setProduct(res.data.products.products);
+      })
+      .catch((err) => {
+        // console.log("err", err);
+      });
+  };
+
+  // console.log("products",product);
+
   return (
     <div className={ProductsStyle.Container}>
       <div className={ProductsStyle.Caption}>
@@ -25,16 +45,9 @@ const ProductsContainer = () => {
         </div>
       </div>
       <div className={ProductsStyle.Content}>
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
-        <ProductsCards />
+        {product?.map((product) => (
+          <ProductsCards key={`products-id-${product.id}`} {...product} />
+        ))}
       </div>
       <ul className={ProductsStyle.Pagination}>
         <li>
