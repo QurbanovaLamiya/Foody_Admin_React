@@ -7,7 +7,6 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import TablePagination from "@mui/material/TablePagination";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 const columns = [
@@ -38,14 +37,14 @@ const CategoryTable = () => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  const handleChangePage = (newPage) => {
-    setPage(newPage);
-  };
+  // const handleChangePage = (newPage) => {
+  //   setPage(newPage);
+  // };
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
+  // const handleChangeRowsPerPage = (event) => {
+  //   setRowsPerPage(+event.target.value);
+  //   setPage(0);
+  // };
 
   // const deleteCategory = (id) => {};
 
@@ -114,16 +113,6 @@ const CategoryTable = () => {
           </Table>
         </TableContainer>
       </Paper>
-      <TablePagination
-        style={{width:"100%", marginTop: "38px",background:"red"}}
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={rows.length}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        rowsPerPage={rowsPerPage}
-      />
     </>
   );
 };

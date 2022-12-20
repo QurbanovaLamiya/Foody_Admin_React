@@ -1,7 +1,7 @@
 .Container {
   width: 100%;
   height: 90vh;
-  margin: 16px 32px 0 0;
+  margin: 16px 32px 0 20%;
 }
 .Caption {
   display: flex;
