@@ -8,8 +8,15 @@ import ProductsCards from "./ProductsCards";
 
 // Style
 import ProductsStyle from "./Products.module.css";
+
+//Api
 import { productApi } from "../../api/product";
+
+// React
 import { useEffect, useState } from "react";
+
+// Image
+import Loading from "../../image/loading/loading.gif";
 
 const ProductsContainer = () => {
   const [product, setProduct] = useState(null);
@@ -28,7 +35,11 @@ const ProductsContainer = () => {
       });
   };
 
-  // console.log("products",product);
+  if (!product) {
+    return (
+      <img src={Loading} className={ProductsStyle.Loading} alt="loading...." />
+    );
+  }
 
   return (
     <div className={ProductsStyle.Container}>

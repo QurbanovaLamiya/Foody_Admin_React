@@ -1,5 +1,6 @@
 .Container {
   margin: 16px 16px 20px 20%;
+  position: relative;
 }
 .Caption {
   display: flex;
@@ -74,4 +75,12 @@
   background: #ec5cf8;
   color: #fff;
   cursor: pointer;
+}
+
+.Loading {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 50px;
+  height: 50px;
 }
