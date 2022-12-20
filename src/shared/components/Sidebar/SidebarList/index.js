@@ -28,7 +28,7 @@ const SidebarList = () => {
         </li>
       ))}
 
-      <button className={SidebarListStyle.Button} onClick={onBack}>
+      <button className={SidebarListStyle.Button} onClick={()=>onBack()}>
         <span className={SidebarListStyle.Nav_Icon}>
           <LogoutIcon />
         </span>
