@@ -1,11 +1,11 @@
 .Card {
-  width: 196px;
+  width: 200px;
   margin-bottom: 26px;
 }
 
 .Image {
-  width: 160px;
-  height: 158px;
+  width: 150px !important;
+  height: 130px;
   margin: 15px auto 0;
 }
 
