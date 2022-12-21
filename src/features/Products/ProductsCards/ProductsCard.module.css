@@ -5,9 +5,9 @@
 
 .Image {
   width: 150px !important;
-  height: 130px;
+  height: 140px;
   margin: 15px auto 0;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .Title {
