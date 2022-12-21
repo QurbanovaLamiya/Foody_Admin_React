@@ -41,4 +41,9 @@
 .Delete {
   color: #eb5757;
   cursor: pointer;
+  transition: 0.2s all;
+}
+
+.Delete:active {
+  transform: scale(0.65);
 }

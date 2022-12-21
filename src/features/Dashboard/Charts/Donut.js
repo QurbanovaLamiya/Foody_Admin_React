@@ -16,10 +16,17 @@ const Donut = () => {
 
   return (
     <Chart
-      style={{ cursor: "pointer" }}
+      style={{
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
       type="donut"
       series={series}
       options={options}
+      width="100%"
+      height={420}
     />
   );
 };

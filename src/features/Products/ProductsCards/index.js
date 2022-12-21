@@ -3,11 +3,14 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ProductsCardsStyle from "./ProductsCard.module.css";
 
 const ProductsCards = ({
+  deleteProduct,
+  // id,
   product_name,
   restaurant_name,
   product_price,
   image_url,
 }) => {
+
   return (
     <Card className={ProductsCardsStyle.Card}>
       <Card.Img

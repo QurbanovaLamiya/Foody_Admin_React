@@ -5,7 +5,7 @@ AxiosMockCreate.onGet("/products").reply((config) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve([200, { products: productData }]);
-    }, 5000);
+    }, 1000);
   });
 });
 
@@ -13,4 +13,13 @@ AxiosMockCreate.onGet("/products").reply((config) => {
 //   products: productData,
 // });
 
+AxiosMockCreate.onDelete(/\/products\/\d+/).reply((config) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([200, { message: "Success" }]);
+    }, 2000);
+  });
+});
+
 export const productApi = Axios.get("/products");
+export const productDeleteAPI = (id) => Axios.delete(`/products/${id}`);

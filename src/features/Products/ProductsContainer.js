@@ -10,7 +10,7 @@ import ProductsCards from "./ProductsCards";
 import ProductsStyle from "./Products.module.css";
 
 //Api
-import { productApi } from "../../api/product";
+import { productApi, productDeleteAPI } from "../../api/product";
 
 // React
 import { useEffect, useState } from "react";
@@ -35,6 +35,20 @@ const ProductsContainer = () => {
       });
   };
 
+  const deleteProducts = () => {
+    productDeleteAPI()
+    .then((res) => {
+      console.log("res", res);
+      
+
+      // let newArray = [...products].filter((actor) => actor.id !== id);
+
+      // setActors(newArray);
+    })
+    .catch(() => {});
+  };
+
+
   if (!product) {
     return (
       <img src={Loading} className={ProductsStyle.Loading} alt="loading...." />
@@ -45,6 +59,7 @@ const ProductsContainer = () => {
     <div className={ProductsStyle.Container}>
       <div className={ProductsStyle.Caption}>
         <h1>Products</h1>
+        <button onClick={()=>deleteProducts()}>delete</button>
         <div className={ProductsStyle.Select_Section}>
           <select className={ProductsStyle.Select}>
             <option>Catagory type</option>
@@ -57,7 +72,7 @@ const ProductsContainer = () => {
       </div>
       <div className={ProductsStyle.Content}>
         {product?.map((product) => (
-          <ProductsCards key={`products-id-${product.id}`} {...product} />
+          <ProductsCards key={`products-id-${product.id}`} {...product}/>
         ))}
       </div>
       <ul className={ProductsStyle.Pagination}>
