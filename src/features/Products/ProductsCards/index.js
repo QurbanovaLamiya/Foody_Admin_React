@@ -16,6 +16,7 @@ const ProductsCards = ({
         className={ProductsCardsStyle.Image}
         variant="top"
         src={image_url}
+        alt={product_name}
       />
       <Card.Body>
         <Card.Title className={ProductsCardsStyle.Title}>

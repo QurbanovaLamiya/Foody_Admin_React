@@ -17,7 +17,7 @@ AxiosMockCreate.onDelete(/\/products\/\d+/).reply((config) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve([200, { message: "Success" }]);
-    }, 2000);
+    }, 2500);
   });
 });
 

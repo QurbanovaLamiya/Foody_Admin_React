@@ -18,6 +18,10 @@ import { useEffect, useState } from "react";
 // Image
 import Loading from "../../image/loading/loading.gif";
 
+// Sweet Alert
+import { ToastContainer, toast } from "react-toastify";
+import Swal from "sweetalert2";
+
 const ProductsContainer = () => {
   const [product, setProduct] = useState(null);
 
@@ -36,12 +40,35 @@ const ProductsContainer = () => {
   };
 
   const deleteProducts = (id) => {
-    productDeleteAPI(id)
-      .then((res) => {
-        let newArray = [...product].filter((product) => product.id !== id);
-        setProduct(newArray);
-      })
-      .catch(() => {});
+    Swal.fire({
+      title: "Are you sure it’s deleted ?",
+      text: "Attention! If you delete this product, it will not come back...",
+      showCancelButton: true,
+      cancelButtonColor: "",
+      cancelButtonText: "cancel",
+      confirmButtonColor: "#D63626",
+      confirmButtonText: "delete",
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        productDeleteAPI(id)
+          .then((res) => {
+            let newArray = [...product].filter((product) => product.id !== id);
+            setProduct(newArray);
+          })
+          .catch(() => {});
+        toast.success("Product deleted successfully!", {
+          position: "top-right",
+          autoClose: 1200,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    });
   };
 
   if (!product) {
@@ -84,6 +111,7 @@ const ProductsContainer = () => {
           <KeyboardArrowRightIcon />
         </li>
       </ul>
+      <ToastContainer />
     </div>
   );
 };
