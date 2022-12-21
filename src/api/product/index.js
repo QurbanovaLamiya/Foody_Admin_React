@@ -5,7 +5,7 @@ AxiosMockCreate.onGet("/products").reply((config) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve([200, { products: productData }]);
-    }, 1000);
+    }, 1500);
   });
 });
 

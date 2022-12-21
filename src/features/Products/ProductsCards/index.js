@@ -3,14 +3,13 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ProductsCardsStyle from "./ProductsCard.module.css";
 
 const ProductsCards = ({
-  deleteProduct,
-  // id,
+  deleteProducts,
+  id,
   product_name,
   restaurant_name,
   product_price,
   image_url,
 }) => {
-
   return (
     <Card className={ProductsCardsStyle.Card}>
       <Card.Img
@@ -27,7 +26,10 @@ const ProductsCards = ({
         </Card.Text>
         <Card.Text className={ProductsCardsStyle.Price_Text}>
           <span className={ProductsCardsStyle.Price}>{product_price}</span>
-          <span className={ProductsCardsStyle.Delete}>
+          <span
+            className={ProductsCardsStyle.Delete}
+            onClick={() => deleteProducts(id)}
+          >
             <DeleteForeverIcon />
           </span>
         </Card.Text>

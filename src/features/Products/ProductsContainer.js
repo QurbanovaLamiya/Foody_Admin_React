@@ -35,19 +35,14 @@ const ProductsContainer = () => {
       });
   };
 
-  const deleteProducts = () => {
-    productDeleteAPI()
-    .then((res) => {
-      console.log("res", res);
-      
-
-      // let newArray = [...products].filter((actor) => actor.id !== id);
-
-      // setActors(newArray);
-    })
-    .catch(() => {});
+  const deleteProducts = (id) => {
+    productDeleteAPI(id)
+      .then((res) => {
+        let newArray = [...product].filter((product) => product.id !== id);
+        setProduct(newArray);
+      })
+      .catch(() => {});
   };
-
 
   if (!product) {
     return (
@@ -59,7 +54,6 @@ const ProductsContainer = () => {
     <div className={ProductsStyle.Container}>
       <div className={ProductsStyle.Caption}>
         <h1>Products</h1>
-        <button onClick={()=>deleteProducts()}>delete</button>
         <div className={ProductsStyle.Select_Section}>
           <select className={ProductsStyle.Select}>
             <option>Catagory type</option>
@@ -72,7 +66,11 @@ const ProductsContainer = () => {
       </div>
       <div className={ProductsStyle.Content}>
         {product?.map((product) => (
-          <ProductsCards key={`products-id-${product.id}`} {...product}/>
+          <ProductsCards
+            key={`products-id-${product.id}`}
+            {...product}
+            deleteProducts={deleteProducts}
+          />
         ))}
       </div>
       <ul className={ProductsStyle.Pagination}>
@@ -80,8 +78,8 @@ const ProductsContainer = () => {
           <KeyboardArrowLeftIcon />
         </li>
         <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {/* <li>2</li> */}
+        {/* <li>3</li> */}
         <li>
           <KeyboardArrowRightIcon />
         </li>
