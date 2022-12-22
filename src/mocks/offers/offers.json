@@ -1,0 +1,22 @@
+{
+  "Offers": [
+    {
+      "id": "6223",
+      "image_url": "",
+      "title": "Menu That Always Make You Fall...",
+      "desc": "Lorem ipsum is placeholder text..."
+    },
+    {
+      "id": "5246",
+      "image_url": "",
+      "title": "Yummy Always Papa John’s Pizza...",
+      "desc": "Lorem ipsum is placeholder text..."
+    },
+    {
+      "id": "8754",
+      "image_url": "",
+      "title": "Do You Like French Fries? Mmm...",
+      "desc": "Lorem ipsum is placeholder text..."
+    }
+  ]
+}
