@@ -10,7 +10,26 @@ import RestaurantsCard from "./RestaurantsCard";
 // Style
 import RestaurantsStyle from "./Restaurants.module.css";
 
+import { restaurantsApi } from "../../api/restaurant";
+import { useEffect, useState } from "react";
+
 const RestaurantsContainer = () => {
+  const [restaurant, setRestaurant] = useState(null);
+
+  useEffect(() => {
+    getRestaurant();
+  }, []);
+
+  const getRestaurant = () => {
+    restaurantsApi
+      .then((res) => {
+        setRestaurant(res.data.restaurant.restaurants);
+      })
+      .catch((err) => {
+        // console.log("err", err);
+      });
+  };
+
   return (
     <div className={RestaurantsStyle.Container}>
       <div className={RestaurantsStyle.Caption}>
@@ -27,27 +46,14 @@ const RestaurantsContainer = () => {
           </div>
           <button className={RestaurantsStyle.Add_Button}>
             <AddIcon />
-            ADD RESTAURANTS{" "}
+            ADD RESTAURANTS
           </button>
         </div>
       </div>
       <div className={RestaurantsStyle.Content}>
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
-        <RestaurantsCard />
+        {restaurant?.map((restaurant) => (
+          <RestaurantsCard key={restaurant.id} {...restaurant} />
+        ))}
       </div>
       <ul className={RestaurantsStyle.Pagination}>
         <li>

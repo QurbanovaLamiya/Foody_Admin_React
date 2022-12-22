@@ -1,0 +1,52 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "restaurant_name": "Papa John’s",
+      "category_name": "Pizza",
+      "image_url": "https://i.pinimg.com/564x/b5/6e/65/b56e65677963acd98c2de31d1c0e70f4.jpg"
+    },
+    {
+      "id": 2,
+      "restaurant_name": "McDonald’s",
+      "category_name": "",
+      "image_url": "https://i.pinimg.com/236x/dd/12/17/dd1217afdd4c674f75aa384bda4057f7.jpg"
+    },
+    {
+      "id": 3,
+      "restaurant_name": "Pizza Hut",
+      "category_name": "",
+      "image_url": "https://i.pinimg.com/564x/28/d5/23/28d5235efe7816441207e305faca672b.jpg"
+    },
+    {
+      "id": 4,
+      "restaurant_name": "KFC",
+      "category_name": "",
+      "image_url": "https://i.pinimg.com/564x/83/fc/15/83fc154710e414a4658aea081dbd7bcc.jpg"
+    },
+    {
+      "id": 5,
+      "restaurant_name": "Starbucks",
+      "category_name": "",
+      "image_url": "https://i.pinimg.com/564x/6f/e3/ae/6fe3aef340fa6b8aa8c43ef4a3cda7b4.jpg"
+    },
+    {
+      "id": 6,
+      "restaurant_name": "Burger King",
+      "category_name": "",
+      "image_url": "https://i.pinimg.com/236x/b0/7d/ef/b07deff21b412c92bd3f24966b5a95b9.jpg"
+    },
+    {
+      "id": 7,
+      "restaurant_name": "Domino’s",
+      "category_name": "Pizza",
+      "image_url": "https://i.pinimg.com/564x/25/8e/45/258e45abf4e399371a7b44723a6c3a0c.jpg"
+    },
+    {
+      "id": 8,
+      "restaurant_name": "Dunkin Donuts",
+      "category_name": "",
+      "image_url": "https://i.pinimg.com/236x/fc/39/fc/fc39fcad149b7149317c4ae616673eda.jpg"
+    }
+  ]
+}
