@@ -9,4 +9,13 @@ AxiosMockCreate.onGet("/restaurants").reply((config) => {
   });
 });
 
+AxiosMockCreate.onDelete(/\/restaurants\/\d+/).reply((config) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([200, { message: "Success" }]);
+    }, 2500);
+  });
+});
+
 export const restaurantsApi = Axios.get("/restaurants");
+export const restaurantDeleteAPI = (id) => Axios.delete(`/restaurants/${id}`);

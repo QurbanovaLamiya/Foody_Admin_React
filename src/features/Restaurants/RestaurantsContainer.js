@@ -4,13 +4,20 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import AddIcon from "@mui/icons-material/Add";
 
+// Image
+import Loading from "../../image/loading/loading.gif";
+
 // Components
 import RestaurantsCard from "./RestaurantsCard";
 
 // Style
 import RestaurantsStyle from "./Restaurants.module.css";
 
-import { restaurantsApi } from "../../api/restaurant";
+// Sweet Alert
+import { ToastContainer, toast } from "react-toastify";
+import Swal from "sweetalert2";
+
+import { restaurantDeleteAPI, restaurantsApi } from "../../api/restaurant";
 import { useEffect, useState } from "react";
 
 const RestaurantsContainer = () => {
@@ -29,6 +36,50 @@ const RestaurantsContainer = () => {
         // console.log("err", err);
       });
   };
+
+  const deleteRestaurant = (id) => {
+    Swal.fire({
+      title: "Are you sure it’s deleted ?",
+      text: "Attention! If you delete this product, it will not come back...",
+      showCancelButton: true,
+      cancelButtonColor: "",
+      cancelButtonText: "cancel",
+      confirmButtonColor: "#D63626",
+      confirmButtonText: "delete",
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        restaurantDeleteAPI(id)
+          .then((res) => {
+            let newArray = [...restaurant].filter(
+              (restaurant) => restaurant.id !== id
+            );
+            setRestaurant(newArray);
+          })
+          .catch(() => {});
+        toast.success("Restaurant deleted successfully!", {
+          position: "top-right",
+          autoClose: 1200,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    });
+  };
+
+  if (!restaurant) {
+    return (
+      <img
+        src={Loading}
+        className={RestaurantsStyle.Loading}
+        alt="loading...."
+      />
+    );
+  }
 
   return (
     <div className={RestaurantsStyle.Container}>
@@ -52,7 +103,11 @@ const RestaurantsContainer = () => {
       </div>
       <div className={RestaurantsStyle.Content}>
         {restaurant?.map((restaurant) => (
-          <RestaurantsCard key={restaurant.id} {...restaurant} />
+          <RestaurantsCard
+            key={restaurant.id}
+            {...restaurant}
+            deleteRestaurant={deleteRestaurant}
+          />
         ))}
       </div>
       <ul className={RestaurantsStyle.Pagination}>
@@ -66,6 +121,7 @@ const RestaurantsContainer = () => {
           <KeyboardArrowRightIcon />
         </li>
       </ul>
+      <ToastContainer />
     </div>
   );
 };

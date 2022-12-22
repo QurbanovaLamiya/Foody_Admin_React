@@ -27,12 +27,10 @@ const ProductsCards = ({
         </Card.Text>
         <Card.Text className={ProductsCardsStyle.Price_Text}>
           <span className={ProductsCardsStyle.Price}>{product_price}</span>
-          <span
+          <DeleteForeverIcon
             className={ProductsCardsStyle.Delete}
             onClick={() => deleteProducts(id)}
-          >
-            <DeleteForeverIcon />
-          </span>
+          />
         </Card.Text>
       </Card.Body>
     </Card>

@@ -2,7 +2,13 @@ import { Card } from "react-bootstrap";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import RestaurantCardStyle from "./RestaurantsCard.module.css";
 
-const RestaurantsCard = ({ id, restaurant_name, category_name, image_url }) => {
+const RestaurantsCard = ({
+  id,
+  restaurant_name,
+  category_name,
+  image_url,
+  deleteRestaurant,
+}) => {
   return (
     <Card className={RestaurantCardStyle.Card}>
       <Card.Body className={RestaurantCardStyle.Content}>
@@ -17,7 +23,10 @@ const RestaurantsCard = ({ id, restaurant_name, category_name, image_url }) => {
           </span>
           <span className={RestaurantCardStyle.Product}>{category_name}</span>
         </Card.Text>
-        <DeleteForeverIcon className={RestaurantCardStyle.Delete} />
+        <DeleteForeverIcon
+          className={RestaurantCardStyle.Delete}
+          onClick={() => deleteRestaurant(id)}
+        />
       </Card.Body>
     </Card>
   );
