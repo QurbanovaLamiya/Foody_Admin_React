@@ -2,63 +2,63 @@
   "categories": [
     {
       "id": "9171",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/236x/75/81/62/758162f783fc84021547f8b9377bd95a.jpg",
+      "category_name": "Ice-Cream",
+      "category_slug": "ice-cream"
     },
     {
       "id": "9172",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/236x/52/14/81/521481ac34b8df2d73e16a496fb542da.jpg",
+      "category_name": "Sandwich",
+      "category_slug": "fast food"
     },
     {
       "id": "9173",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/236x/32/07/66/32076664aca03b56a25b64c29b360698.jpg",
+      "category_name": "Burger",
+      "category_slug": "fast food"
     },
     {
       "id": "9174",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/236x/0e/53/1b/0e531b8da1676679b9afede96537fa4f.jpg",
+      "category_name": "Pizza",
+      "category_slug": "pizza"
     },
     {
       "id": "9175",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/564x/5c/5c/29/5c5c29c31c3f82cbc2054cf473c04a72.jpg",
+      "category_name": "Coffee",
+      "category_slug": "coffee"
     },
     {
       "id": "9176",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/564x/b3/3e/4e/b33e4e388c61cbc637b33b8dd02e4f0e.jpg",
+      "category_name": "Caprese Salad",
+      "category_slug": "salad"
     },
     {
       "id": "9177",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/564x/69/eb/a6/69eba6f518eb3f5a49b8c6b46d8b04bf.jpg",
+      "category_name": "French Fries",
+      "category_slug": "fast food"
     },
     {
       "id": "9178",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/236x/f1/ab/c7/f1abc7d6ed0f0c03e9fca1eb1c85af1f.jpg",
+      "category_name": "Chicken",
+      "category_slug": "fast food"
     },
     {
       "id": "9179",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/236x/c6/5c/2f/c65c2f3767085dcde6851b923d8baa18.jpg",
+      "category_name": "Fruit Juices",
+      "category_slug": "drinks"
     },
     {
       "id": "9180",
-      "image_url": "",
-      "category_name": "",
-      "category_slug": ""
+      "image_url": "https://i.pinimg.com/564x/ee/74/cf/ee74cfa56c60bc7f5c095b0dfdf74f63.jpg",
+      "category_name": "Salmon",
+      "category_slug": "Sea Food"
     }
   ]
 }

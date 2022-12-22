@@ -30,7 +30,7 @@ const CategoryTable = () => {
 
   return (
     <Paper sx={{ overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: 600 }}>
+      <TableContainer sx={{ maxHeight: 500 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -45,7 +45,15 @@ const CategoryTable = () => {
             {category?.map((category) => (
               <TableRow key={category.id}>
                 <TableCell align="center">{category.id}</TableCell>
-                <TableCell align="center">{category.image_url}</TableCell>
+                <TableCell align="center">
+                  <img
+                    src={category.image_url}
+                    alt={category.category_name}
+                    width={60}
+                    height={50}
+                    style={{objectFit:"cover"}}
+                  />
+                </TableCell>
                 <TableCell align="center">{category.category_name}</TableCell>
                 <TableCell align="center">{category.category_slug}</TableCell>
                 <TableCell align="center">
