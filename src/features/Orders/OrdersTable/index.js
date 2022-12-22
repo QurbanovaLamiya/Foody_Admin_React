@@ -9,9 +9,77 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-// import OrdersTableStyle from "./OrdersTable.module.css";
+// Sweet Alert
+import { ToastContainer, toast } from "react-toastify";
+import Swal from "sweetalert2";
+
+// Image
+import Loading from "../../../image/loading/loading.gif";
+
+import { useState, useEffect } from "react";
+import { ordersAPI, ordersDeleteAPI } from "../../../api/orders";
+
+import OrdersTableStyle from "./OrdersTable.module.css";
 
 const OrdersTable = () => {
+  const [orders, setOrders] = useState(null);
+
+  useEffect(() => {
+    getOrders();
+  }, []);
+
+  const getOrders = () => {
+    ordersAPI
+      .then((res) => {
+        setOrders(res.data.orders.orders);
+      })
+      .catch((err) => {
+        // console.log("err", err);
+      });
+  };
+
+  const deleteOrders = (id) => {
+    Swal.fire({
+      title: "Are you sure it’s deleted ?",
+      text: "Attention! If you delete this product, it will not come back...",
+      showCancelButton: true,
+      cancelButtonColor: "",
+      cancelButtonText: "cancel",
+      confirmButtonColor: "#D63626",
+      confirmButtonText: "delete",
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        ordersDeleteAPI(id)
+          .then((res) => {
+            let newArray = [...orders].filter((order) => order.id !== id);
+            setOrders(newArray);
+          })
+          .catch(() => {});
+        toast.success("Product deleted successfully!", {
+          position: "top-right",
+          autoClose: 1200,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    });
+  };
+
+  if (!orders) {
+    return (
+      <img
+        src={Loading}
+        className={OrdersTableStyle.Loading}
+        alt="loading...."
+      />
+    );
+  }
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
@@ -28,128 +96,30 @@ const OrdersTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="center">9177</TableCell>
-            <TableCell align="center">022401</TableCell>
-            <TableCell align="center">25 Dec 2021</TableCell>
-            <TableCell align="center">
-              29 Eve Street, 543 Evenue
-              <br /> Road, Ny 87876{" "}
-            </TableCell>
-            <TableCell align="center">$249.7 </TableCell>
-            <TableCell align="center">Cash On Delivery </TableCell>
-            <TableCell align="center">994-51-410-3130 </TableCell>
-            <TableCell align="center">
-              <DeleteOutlineIcon />
-            </TableCell>
-          </TableRow>
+          {orders?.map((order) => (
+            <TableRow key={order.id}>
+              <TableCell align="center">{order.id}</TableCell>
+              <TableCell align="center">{order.customer_id}</TableCell>
+              <TableCell align="center">{order.time}</TableCell>
+              <TableCell align="center">{order.delivery_address}</TableCell>
+              <TableCell align="center">{order.amount}</TableCell>
+              <TableCell align="center">{order.payment}</TableCell>
+              <TableCell align="center">{order.contact}</TableCell>
+              <TableCell align="center">
+                <DeleteOutlineIcon
+                  style={{
+                    color: " rgba(235, 87, 87, 0.61)",
+                    fontSize: "30px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => deleteOrders(order.id)}
+                />
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
+      <ToastContainer />
     </TableContainer>
   );
 };
