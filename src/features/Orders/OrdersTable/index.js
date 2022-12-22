@@ -81,7 +81,7 @@ const OrdersTable = () => {
   }
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ maxHeight: 500 }}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
