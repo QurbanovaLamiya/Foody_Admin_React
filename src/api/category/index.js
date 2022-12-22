@@ -9,13 +9,13 @@ AxiosMockCreate.onGet("/category").reply((config) => {
   });
 });
 
-// AxiosMockCreate.onDelete(/\/restaurants\/\d+/).reply((config) => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve([200, { message: "Success" }]);
-//     }, 2500);
-//   });
-// });
+AxiosMockCreate.onDelete(/\/category\/\d+/).reply((config) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([200, { message: "Success" }]);
+    }, 2500);
+  });
+});
 
 export const categoryAPI = Axios.get("/category");
-// export const restaurantDeleteAPI = (id) => Axios.delete(`/restaurants/${id}`);
+export const categoryDeleteAPI = (id) => Axios.delete(`/category/${id}`);
