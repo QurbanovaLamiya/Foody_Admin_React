@@ -21,5 +21,5 @@ AxiosMockCreate.onDelete(/\/products\/\d+/).reply((config) => {
   });
 });
 
-export const productApi = Axios.get("/products");
+export const productAPI = Axios.get("/products");
 export const productDeleteAPI = (id) => Axios.delete(`/products/${id}`);

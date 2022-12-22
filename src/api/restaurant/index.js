@@ -17,5 +17,5 @@ AxiosMockCreate.onDelete(/\/restaurants\/\d+/).reply((config) => {
   });
 });
 
-export const restaurantsApi = Axios.get("/restaurants");
+export const restaurantsAPI = Axios.get("/restaurants");
 export const restaurantDeleteAPI = (id) => Axios.delete(`/restaurants/${id}`);

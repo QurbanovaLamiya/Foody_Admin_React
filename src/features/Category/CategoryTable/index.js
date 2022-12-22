@@ -1,5 +1,4 @@
 // Material UI
-import * as React from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -9,111 +8,61 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-const columns = [
-  { id: "ID", label: "ID", minWidth: 100, align: "left" },
-  { id: "Image", label: "Image", minWidth: 100, align: "left" },
-  { id: "Name", label: "Name", minWidth: 100, align: "left" },
-  { id: "Slug", label: "Slug", minWidth: 100, align: "left" },
-];
-
-function createData(ID, Image, Name, Slug) {
-  return { ID, Image, Name, Slug };
-}
-
-const rows = [
-  createData("9177", "Image", "Pizza", "yummy-pizza"),
-  createData("9187", "Image", "Pizza", "yummy-pizza"),
-  createData("9777", "Image", "Pizza", "yummy-pizza"),
-  createData("9171", "Image", "Pizza", "yummy-pizza"),
-  createData("9176", "Image", "Pizza", "yummy-pizza"),
-  createData("9173", "Image", "Pizza", "yummy-pizza"),
-  createData("9157", "Image", "Pizza", "yummy-pizza"),
-  createData("9117", "Image", "Pizza", "yummy-pizza"),
-  createData("8177", "Image", "Pizza", "yummy-pizza"),
-  createData("2177", "Image", "Pizza", "yummy-pizza"),
-];
+import { useState, useEffect } from "react";
+import { categoryAPI } from "../../../api/category";
 
 const CategoryTable = () => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [category, setCategory] = useState(null);
 
-  // const handleChangePage = (newPage) => {
-  //   setPage(newPage);
-  // };
+  useEffect(() => {
+    getCategory();
+  }, []);
 
-  // const handleChangeRowsPerPage = (event) => {
-  //   setRowsPerPage(+event.target.value);
-  //   setPage(0);
-  // };
-
-  // const deleteCategory = (id) => {};
+  const getCategory = () => {
+    categoryAPI
+      .then((res) => {
+        setCategory(res.data.category.categories);
+      })
+      .catch((err) => {
+        // console.log("err", err);
+      });
+  };
 
   return (
-    <>
-      <Paper sx={{ overflow: "hidden" }}>
-        <TableContainer sx={{ maxHeight: 600 }}>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead>
-              <TableRow>
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.id}
-                    align={column.align}
-                    style={{ minWidth: column.minWidth, height: 65 }}
-                  >
-                    {column.label}
-                  </TableCell>
-                ))}
+    <Paper sx={{ overflow: "hidden" }}>
+      <TableContainer sx={{ maxHeight: 600 }}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">ID</TableCell>
+              <TableCell align="center">Image</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Slug</TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {category?.map((category) => (
+              <TableRow key={category.id}>
+                <TableCell align="center">{category.id}</TableCell>
+                <TableCell align="center">{category.image_url}</TableCell>
+                <TableCell align="center">{category.category_name}</TableCell>
+                <TableCell align="center">{category.category_slug}</TableCell>
+                <TableCell align="center">
+                  <DeleteOutlineIcon
+                    style={{
+                      color: " rgba(235, 87, 87, 0.61)",
+                      fontSize: "30px",
+                      cursor: "pointer",
+                    }}
+                  />
+                </TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row) => {
-                  return (
-                    <TableRow
-                      hover
-                      role="checkbox"
-                      tabIndex={-1}
-                      key={row.ID}
-                      style={{
-                        position: "relative",
-                      }}
-                    >
-                      {columns.map((column) => {
-                        const value = row[column.id];
-                        return (
-                          <TableCell key={column.id} align={column.align}>
-                            {column.format && typeof value === "number"
-                              ? column.format(value)
-                              : value}
-                          </TableCell>
-                        );
-                      })}
-                      <TableCell
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          bottom: 0,
-                          right: "30px",
-                        }}
-                      >
-                        <DeleteOutlineIcon
-                          style={{
-                            color: " rgba(235, 87, 87, 0.61)",
-                            fontSize: "30px",
-                            cursor: "pointer",
-                          }}
-                        />
-                      </TableCell>
-                    </TableRow>
-                  );
-                })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Paper>
-    </>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Paper>
   );
 };
 

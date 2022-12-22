@@ -10,7 +10,7 @@ import ProductsCards from "./ProductsCards";
 import ProductsStyle from "./Products.module.css";
 
 //Api
-import { productApi, productDeleteAPI } from "../../api/product";
+import { productAPI, productDeleteAPI } from "../../api/product";
 
 // React
 import { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ const ProductsContainer = () => {
   }, []);
 
   const getProducts = () => {
-    productApi
+    productAPI
       .then((res) => {
         setProduct(res.data.products.products);
       })

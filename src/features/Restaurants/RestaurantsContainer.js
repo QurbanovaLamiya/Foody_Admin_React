@@ -17,7 +17,7 @@ import RestaurantsStyle from "./Restaurants.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-import { restaurantDeleteAPI, restaurantsApi } from "../../api/restaurant";
+import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 import { useEffect, useState } from "react";
 
 const RestaurantsContainer = () => {
@@ -28,7 +28,7 @@ const RestaurantsContainer = () => {
   }, []);
 
   const getRestaurant = () => {
-    restaurantsApi
+    restaurantsAPI
       .then((res) => {
         setRestaurant(res.data.restaurant.restaurants);
       })
