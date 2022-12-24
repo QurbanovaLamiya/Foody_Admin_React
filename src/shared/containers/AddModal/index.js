@@ -16,7 +16,7 @@ const AddModal = () => {
 
   const formik = useFormik({
     initialValues: {
-      // image: "",
+      image: "",
       name: "",
       description: "",
       price: "",
@@ -25,9 +25,9 @@ const AddModal = () => {
     validate: (values) => {
       const errors = {};
 
-      // if (!values.image) {
-      //   errors.image = "Required";
-      // }
+      if (!values.image) {
+        errors.image = "Required";
+      }
       if (!values.name) {
         errors.name = "Required";
       }
@@ -81,12 +81,18 @@ const AddModal = () => {
           >
             <div className={AddProduct.ImageSection}>
               <p>Upload your product image</p>
-              <div>
+              <label htmlFor="image">
                 <CloudUploadIcon
                   style={{ color: "#EC5CF8", width: "60px", height: "40px" }}
                 />
-                <span>upload</span>
-              </div>
+                upload
+                <input
+                  id="image"
+                  name="image"
+                  type="file"
+                  style={{ display: "none" }}
+                />
+              </label>
             </div>
             <div className={AddProduct.DataInfoSection}>
               <p>Add your Product description and necessary information</p>
