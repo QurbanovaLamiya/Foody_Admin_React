@@ -13,6 +13,7 @@ import { useFormik } from "formik";
 
 const AddModal = () => {
   const [isDrawer, setIsDrawer] = useState(false);
+  // const [selectedImage, setSelectedImage] = useState([]);
 
   const formik = useFormik({
     initialValues: {
@@ -80,8 +81,18 @@ const AddModal = () => {
             className={AddProduct.FormSection}
           >
             <div className={AddProduct.ImageSection}>
-              <p>Upload your product image</p>
-              <label htmlFor="image">
+              <div>
+                <p>Upload your product image</p>
+                {formik.values.image && (
+                  <img
+                    src={formik.values.image}
+                    alt={formik.values.name}
+                    width={70}
+                    height={70}
+                  />
+                )}
+              </div>
+              <label htmlFor="image" style={{ position: "relative" }}>
                 <CloudUploadIcon
                   style={{ color: "#EC5CF8", width: "60px", height: "40px" }}
                 />
@@ -91,7 +102,20 @@ const AddModal = () => {
                   name="image"
                   type="file"
                   style={{ display: "none" }}
+                  onChange={(e) =>
+                    formik.setFieldValue(
+                      "image",
+                      URL.createObjectURL(e.target.files[0])
+                    )
+                  }
                 />
+                {formik.errors.image && (
+                  <span
+                    style={{ position: "absolute", left: "3%", top: "10px" }}
+                  >
+                    {formik.errors.image}
+                  </span>
+                )}
               </label>
             </div>
             <div className={AddProduct.DataInfoSection}>
