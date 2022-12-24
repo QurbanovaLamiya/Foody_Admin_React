@@ -103,6 +103,12 @@
   padding: 22px 29px 36px 23px;
 }
 
+.FormGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26px;
+}
+
 .DataFormSection label {
   margin-bottom: 10px;
   font-family: "Roboto";
@@ -134,7 +140,7 @@ select {
 .Buttons {
   display: flex;
   justify-content: space-between;
-  padding: 22px 60px 0 0;
+  padding-top: 22px;
   border-top: 1px solid #43445a;
 }
 

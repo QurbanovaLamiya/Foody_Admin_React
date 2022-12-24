@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import AddIcon from "@mui/icons-material/Add";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
+import { Form, Button } from "react-bootstrap";
+
 import AddProduct from "./addModal.module.css";
 
 import { useState } from "react";
@@ -14,18 +16,18 @@ const AddModal = () => {
 
   const formik = useFormik({
     initialValues: {
-      image: "",
+      // image: "",
       name: "",
       description: "",
       price: "",
-      restaurants: "",
+      // restaurants: "",
     },
     validate: (values) => {
       const errors = {};
 
-      if (!values.image) {
-        errors.image = "Required";
-      }
+      // if (!values.image) {
+      //   errors.image = "Required";
+      // }
       if (!values.name) {
         errors.name = "Required";
       }
@@ -35,14 +37,16 @@ const AddModal = () => {
       if (!values.price) {
         errors.price = "Required";
       }
-      if (!values.restaurants) {
-        errors.restaurants = "Required";
-      }
+      // if (!values.restaurants) {
+      //   errors.restaurants = "Required";
+      // }
 
       return errors;
     },
     onSubmit: (values, action) => {
       console.log("values", values);
+      console.log("action", action);
+      action.resetForm();
     },
   });
 
@@ -71,7 +75,7 @@ const AddModal = () => {
             </button>
             <h4>Add product</h4>
           </div>
-          <form
+          <Form
             onSubmit={formik.handleSubmit}
             className={AddProduct.FormSection}
           >
@@ -86,63 +90,76 @@ const AddModal = () => {
             </div>
             <div className={AddProduct.DataInfoSection}>
               <p>Add your Product description and necessary information</p>
-
               <div className={AddProduct.DataFormSection}>
-                <label htmlFor="name">Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  onChange={formik.handleChange}
-                  value={formik.values.name}
-                  style={{marginBottom:"26px"}}
-                />
-                {formik.errors.name && <span>{formik.errors.name}</span>}
-                <label htmlFor="description">Description</label>
-                <input
-                  id="description"
-                  name="description"
-                  type="text"
-                  onChange={formik.handleChange}
-                  value={formik.values.description}
-                  style={{marginBottom:"9px",height:"133px"}}
-                />
-                {formik.errors.description && (
-                  <span>{formik.errors.description}</span>
-                )}
-
-                <label htmlFor="price">Price</label>
-                <input
-                  id="price"
-                  name="price"
-                  type="number"
-                  onChange={formik.handleChange}
-                  value={formik.values.price}
-                  style={{marginBottom:"28px"}}
-                />
-                {formik.errors.price && <span>{formik.errors.price}</span>}
-
-                <label htmlFor="restaurants">Restaurants</label>
-                <select name="restaurants" id="restaurants">
-                  <option value="Papa Jhon’s">Papa Jhon’s</option>
-                  <option value="Pizza Hut">Pizza Hut</option>
-                  <option value="Burger King">Burger King</option>
-                  <option value="McDonald’s">McDonald’s</option>
-                  <option value="KFC">KFC</option>
-                </select>
-                {formik.errors.restaurants && (
-                  <span>{formik.errors.restaurants}</span>
-                )}
+                <Form.Group
+                  controlId="formBasicName"
+                  className={AddProduct.FormGroup}
+                >
+                  <label htmlFor="name">Name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    onChange={formik.handleChange}
+                    value={formik.values.name}
+                  />
+                  {formik.errors.name && <span>{formik.errors.name}</span>}
+                </Form.Group>
+                <Form.Group
+                  controlId="formBasicDescription"
+                  className={AddProduct.FormGroup}
+                >
+                  <label htmlFor="description">Description</label>
+                  <input
+                    id="description"
+                    name="description"
+                    type="text"
+                    onChange={formik.handleChange}
+                    value={formik.values.description}
+                  />
+                  {formik.errors.description && (
+                    <span>{formik.errors.description}</span>
+                  )}
+                </Form.Group>
+                <Form.Group
+                  controlId="formBasicPrice"
+                  className={AddProduct.FormGroup}
+                >
+                  <label htmlFor="price">Price</label>
+                  <input
+                    id="price"
+                    name="price"
+                    type="number"
+                    onChange={formik.handleChange}
+                    value={formik.values.price}
+                  />
+                  {formik.errors.price && <span>{formik.errors.price}</span>}
+                </Form.Group>
+                <Form.Group
+                  controlId="formBasicRestaurant"
+                  className={AddProduct.FormGroup}
+                >
+                  <label htmlFor="restaurants">Restaurants</label>
+                  <select name="restaurants" id="restaurants">
+                    <option value="Papa Jhon’s">Papa Jhon’s</option>
+                    <option value="Pizza Hut">Pizza Hut</option>
+                    <option value="Burger King">Burger King</option>
+                    <option value="McDonald’s">McDonald’s</option>
+                    <option value="KFC">KFC</option>
+                  </select>
+                  {formik.errors.restaurants && (
+                    <span>{formik.errors.restaurants}</span>
+                  )}
+                </Form.Group>
               </div>
             </div>
-
             <div className={AddProduct.Buttons}>
-              <button style={{ background: "#43445A" }}>Cancel</button>
-              <button type="submit" style={{ background: "#C035A2" }}>
+              <Button style={{ background: "#43445A" }}>Cancel</Button>
+              <Button type="submit" style={{ background: "#C035A2" }}>
                 Create Product
-              </button>
+              </Button>
             </div>
-          </form>
+          </Form>
         </Box>
       </Drawer>
     </>
