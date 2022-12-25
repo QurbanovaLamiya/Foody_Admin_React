@@ -45,9 +45,9 @@ const RestaurantsContainer = () => {
       text: t("alert restaurant subTitle"),
       showCancelButton: true,
       cancelButtonColor: "",
-      cancelButtonText: "cancel",
+      cancelButtonText: t("cancel"),
       confirmButtonColor: "#D63626",
-      confirmButtonText: "delete",
+      confirmButtonText: t("delete"),
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {

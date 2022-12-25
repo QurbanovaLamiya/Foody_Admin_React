@@ -19,8 +19,10 @@ import Loading from "../../../image/loading/loading.gif";
 
 import { useState, useEffect } from "react";
 import { categoryAPI, categoryDeleteAPI } from "../../../api/category";
+import { useTranslation } from "react-i18next";
 
 const CategoryTable = () => {
+  const { t } = useTranslation();
   const [category, setCategory] = useState(null);
 
   useEffect(() => {
@@ -39,13 +41,13 @@ const CategoryTable = () => {
 
   const deleteCategory = (id) => {
     Swal.fire({
-      title: "Are you sure it’s deleted ?",
-      text: "Attention! If you delete this product, it will not come back...",
+      title: t("alert title"),
+      text: t("alert category subTitle"),
       showCancelButton: true,
       cancelButtonColor: "",
-      cancelButtonText: "cancel",
+      cancelButtonText: t("cancel"),
       confirmButtonColor: "#D63626",
-      confirmButtonText: "delete",
+      confirmButtonText: t("delete"),
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
@@ -57,7 +59,7 @@ const CategoryTable = () => {
             setCategory(newArray);
           })
           .catch(() => {});
-        toast.success("Product deleted successfully!", {
+        toast.success(t("success category"), {
           position: "top-right",
           autoClose: 1200,
           hideProgressBar: false,
@@ -88,9 +90,9 @@ const CategoryTable = () => {
           <TableHead>
             <TableRow>
               <TableCell align="center">ID</TableCell>
-              <TableCell align="center">Image</TableCell>
-              <TableCell align="center">Name</TableCell>
-              <TableCell align="center">Slug</TableCell>
+              <TableCell align="center">{t("image")}</TableCell>
+              <TableCell align="center">{t("name")}</TableCell>
+              <TableCell align="center">{t("slug")}</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>

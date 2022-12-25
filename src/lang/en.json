@@ -33,11 +33,16 @@
     "alert title": "Are you sure it’s deleted ?",
     "alert product subTitle": "Attention! If you delete this product, it will not come back...",
     "alert restaurant subTitle": "Attention! If you delete this restaurant, it will not come back...",
+    "alert category subTitle": "Attention! If you delete this category, it will not come back...",
     "cancel": "cencel",
     "delete": "delete",
     "success product": "Product deleted successfully!",
     "success restaurant": "Restaurant deleted successfully!",
-    "add restaurant": "ADD RESTAURANTS"
-
+    "success category": "Category deleted successfully!",
+    "add restaurant": "ADD RESTAURANTS",
+    "add category": "ADD CATEGORY",
+    "image": "Image",
+    "name": "Name",
+    "slug": "Slug"
   }
 }
