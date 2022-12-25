@@ -31,9 +31,12 @@
       "no-items": "Aucun élément d'action n'est attribué."
     },
     "alert title": "Es-tu sûr qu'il est supprimé ?",
-    "alert subTitle": "Attention! Si vous supprimez ce produit, il ne reviendra pas...",
+    "alert product subTitle": "Attention! Si vous supprimez ce produit, il ne reviendra pas...",
+    "alert restaurant subTitle": "Attention! Si vous supprimez ce restaurant, il ne reviendra pas...",
     "cancel": "annuler",
     "delete": "effacer",
-    "success product": "Produit supprimé avec succès !"
+    "success product": "Produit supprimé avec succès !",
+    "success restaurant": "Restaurant supprimé avec succès !",
+    "add restaurant": "AJOUTER RESTAURANT"
   }
 }

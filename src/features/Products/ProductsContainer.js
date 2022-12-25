@@ -45,7 +45,7 @@ const ProductsContainer = () => {
   const deleteProducts = (id) => {
     Swal.fire({
       title: t("alert title"),
-      text: t("alert subTitle"),
+      text: t("alert product subTitle"),
       showCancelButton: true,
       cancelButtonColor: "",
       cancelButtonText: t("cancel"),

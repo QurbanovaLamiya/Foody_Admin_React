@@ -31,9 +31,13 @@
       "no-items": "There are no action items assigned"
     },
     "alert title": "Are you sure it’s deleted ?",
-    "alert subTitle": "Attention! If you delete this product, it will not come back...",
+    "alert product subTitle": "Attention! If you delete this product, it will not come back...",
+    "alert restaurant subTitle": "Attention! If you delete this restaurant, it will not come back...",
     "cancel": "cencel",
     "delete": "delete",
-    "success product": "Product deleted successfully!"
+    "success product": "Product deleted successfully!",
+    "success restaurant": "Restaurant deleted successfully!",
+    "add restaurant": "ADD RESTAURANTS"
+
   }
 }

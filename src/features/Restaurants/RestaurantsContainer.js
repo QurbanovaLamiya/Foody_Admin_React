@@ -19,9 +19,10 @@ import Swal from "sweetalert2";
 
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const RestaurantsContainer = () => {
-
+  const { t } = useTranslation();
   const [restaurant, setRestaurant] = useState(null);
 
   useEffect(() => {
@@ -40,8 +41,8 @@ const RestaurantsContainer = () => {
 
   const deleteRestaurant = (id) => {
     Swal.fire({
-      title: "Are you sure it’s deleted ?",
-      text: "Attention! If you delete this product, it will not come back...",
+      title: t("alert title"),
+      text: t("alert restaurant subTitle"),
       showCancelButton: true,
       cancelButtonColor: "",
       cancelButtonText: "cancel",
@@ -58,7 +59,7 @@ const RestaurantsContainer = () => {
             setRestaurant(newArray);
           })
           .catch(() => {});
-        toast.success("Restaurant deleted successfully!", {
+        toast.success(t("success restaurant"), {
           position: "top-right",
           autoClose: 1200,
           hideProgressBar: false,
@@ -85,7 +86,7 @@ const RestaurantsContainer = () => {
   return (
     <div className={RestaurantsStyle.Container}>
       <div className={RestaurantsStyle.Caption}>
-        <h1>Restaurants</h1>
+        <h1>{t("menu.Restaurants")}</h1>
         <div className={RestaurantsStyle.Button_Section}>
           <div className={RestaurantsStyle.Select_Section}>
             <select className={RestaurantsStyle.Select}>
@@ -98,7 +99,7 @@ const RestaurantsContainer = () => {
           </div>
           <button className={RestaurantsStyle.Add_Button}>
             <AddIcon />
-            ADD RESTAURANTS
+            {t("add restaurant")}
           </button>
         </div>
       </div>

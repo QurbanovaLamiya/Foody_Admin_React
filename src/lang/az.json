@@ -31,10 +31,13 @@
       "no-items": "Heç bir fəaliyyət təyin olunmamışdır"
     },
     "alert title": "Silmək istədiyinizə əminsinizmi ?",
-    "alert subTitle": "Diqqət! Bu məhsulu silsəniz, geri qayıtmayacaq...",
+    "alert product subTitle": "Diqqət! Bu məhsulu silsəniz, geri qayıtmayacaq...",
+    "alert restaurant subTitle": "Diqqət! Bu restoranı silsəniz, geri qayıtmayacaq...",
     "cancel": "ləğv et",
     "delete": "sil",
-    "success product": "Məhsul uğurla silindi!"
+    "success product": "Məhsul uğurla silindi!",
+    "success restaurant": "Restoran uğurla silindi!",
+    "add restaurant": "RESTORAN ƏLAVƏ ET"
 
   }
 }
