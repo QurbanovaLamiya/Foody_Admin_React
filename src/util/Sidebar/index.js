@@ -32,7 +32,7 @@ const SidebarData = [
     link: "/panel/orders",
   },
   {
-    title: "Offer",
+    title: "Offers",
     icon: <LocalOfferIcon />,
     link: "/panel/offer",
   },

@@ -1,5 +1,6 @@
 .Sidebar_Section {
   position: fixed;
+  width: 18%;
   margin: 18px !important;
   height: 88vh;
   display: flex;

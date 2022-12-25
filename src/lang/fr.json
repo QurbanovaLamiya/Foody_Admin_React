@@ -5,6 +5,15 @@
     "Password": "Le mot de passe",
     "sign in": "s'identifier",
     "required": "obligatoire",
-    "incorrect message": "İdentifiant ou mot de passe incorrect"
+    "incorrect message": "İdentifiant ou mot de passe incorrect",
+    "menu": {
+      "Dashboard": "Tableau de bord",
+      "Products": "Des produits",
+      "Restaurants": "Restaurants",
+      "Category": "Catégorie",
+      "Orders": "Ordres",
+      "Offers": "Des offres",
+      "logout": "Se déconnecter"
+    }
   }
 }

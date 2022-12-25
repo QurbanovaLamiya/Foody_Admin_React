@@ -5,6 +5,15 @@
     "Password": "Şifrə",
     "sign in": "daxil olun",
     "required": "Tələb olunur",
-    "incorrect message": "Istifadəçi adı və ya şifrə yalnışdır"
+    "incorrect message": "Istifadəçi adı və ya şifrə yalnışdır",
+    "menu": {
+      "Dashboard": "İdarə paneli",
+      "Products": "Məhsullar",
+      "Restaurants": "Restoranlar",
+      "Category": "Kateqoriya",
+      "Orders": "Sifarişlər",
+      "Offers": "Təkliflər",
+      "logout": "Çıxış"
+    }
   }
 }

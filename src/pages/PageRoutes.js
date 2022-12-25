@@ -26,7 +26,7 @@ const PageRoutes = () => {
           <Route path="/panel/orders" element={<Orders />} />
           <Route path="/panel/offer" element={<Offers />} />
           {/* <Route path="/login" element={<Login />} /> */}
-          <Route path="/" element={<Navigate replace to="login" />} />
+          {/* <Route path="/" element={<Navigate replace to="login" />} /> */}
 
         </Routes>
       </div>

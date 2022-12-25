@@ -1,3 +1,5 @@
+import * as React from "react";
+
 // React-Bootstrap
 import { Nav } from "react-bootstrap";
 
@@ -10,15 +12,29 @@ import adminAvatar from "../../../../image/adminAvatar/adminAvatar.svg";
 // Styles
 import HeaderContainerStyle from "./HeaderContainer.module.css";
 
-import * as React from "react";
-
+// Material-UI
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 import AddModal from "../../../containers/AddModal";
 
+import { useTranslation } from "react-i18next";
+
+const lngs = {
+  en: { nativeName: "En" },
+  fr: { nativeName: "Fr" },
+  az: { nativeName: "Az" },
+};
+
+const flags = {
+  en,
+  fr,
+  az,
+};
+
 const HeaderContainer = () => {
+  const { i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -27,6 +43,7 @@ const HeaderContainer = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
       <AddModal />
@@ -37,7 +54,10 @@ const HeaderContainer = () => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <img src={en} alt="en" />
+        <img
+          src={flags[i18n.resolvedLanguage]}
+          alt={flags[i18n.resolvedLanguage]}
+        />
       </Button>
       <Menu
         id="basic-menu"
@@ -48,17 +68,16 @@ const HeaderContainer = () => {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <img src={en} alt="en" />
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <img src={fr} alt="fr" />
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <img src={az} alt="az" />
-        </MenuItem>
+        {Object.keys(lngs).map((lng) => (
+          <MenuItem
+            key={lng}
+            type="submit"
+            onClick={() => i18n.changeLanguage(lng)}
+          >
+            <img src={flags[lng]} alt="FlagIcon" />
+          </MenuItem>
+        ))}
       </Menu>
-
       <div className={HeaderContainerStyle.Keeper_Avatar}>
         <img src={adminAvatar} alt="adminAvatar" />
         <span>Admin</span>

@@ -7,7 +7,7 @@ import HeaderStyle from "./Header.module.css";
 // Images
 import FoodyIcon from "../../../image/logo/foodyIcon.svg";
 
-//Component
+// Component
 import HeaderContainer from "./HeaderContainer";
 
 const Header = () => {

@@ -7,8 +7,10 @@ import LogoutIcon from "@mui/icons-material/Logout";
 
 // Style
 import SidebarListStyle from "./SidebarList.module.css";
+import { useTranslation } from "react-i18next";
 
 const SidebarList = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,16 +25,15 @@ const SidebarList = () => {
         <li key={`menu-list-${item.title}`} className={SidebarListStyle.List}>
           <NavLink to={item.link} className={SidebarListStyle.Nav_Link}>
             <span className={SidebarListStyle.Nav_Icon}>{item.icon}</span>
-            {item.title}
+            {t(`menu.${item.title}`)}
           </NavLink>
         </li>
       ))}
-
-      <button className={SidebarListStyle.Button} onClick={()=>onBack()}>
+      <button className={SidebarListStyle.Button} onClick={() => onBack()}>
         <span className={SidebarListStyle.Nav_Icon}>
           <LogoutIcon />
         </span>
-        Logout
+        {t("menu.logout")}
       </button>
     </Nav>
   );

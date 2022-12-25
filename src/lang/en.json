@@ -5,6 +5,15 @@
     "Password": "Password",
     "sign in": "sign in",
     "required": "Required",
-    "incorrect message": "Incorrect username or password"
+    "incorrect message": "Incorrect username or password",
+    "menu": {
+      "Dashboard": "Dashboard",
+      "Products": "Products",
+      "Restaurants": "Restaurants",
+      "Category": "Category",
+      "Orders": "Orders",
+      "Offers": "Offers",
+      "logout": "Logout"
+    }
   }
 }
