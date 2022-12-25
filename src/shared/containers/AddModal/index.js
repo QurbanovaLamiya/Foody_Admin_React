@@ -8,12 +8,27 @@ import { Form, Button } from "react-bootstrap";
 
 import AddProduct from "./addModal.module.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from "formik";
+import { restaurantsAPI } from "../../../api/restaurant";
 
 const AddModal = () => {
   const [isDrawer, setIsDrawer] = useState(false);
-  // const [selectedImage, setSelectedImage] = useState([]);
+  const [restaurant, setRestaurant] = useState(null);
+
+  useEffect(() => {
+    getRestaurant();
+  }, []);
+
+  const getRestaurant = () => {
+    restaurantsAPI
+      .then((res) => {
+        setRestaurant(res.data.restaurant.restaurants);
+      })
+      .catch((err) => {
+        // console.log("err", err);
+      });
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -21,7 +36,7 @@ const AddModal = () => {
       name: "",
       description: "",
       price: "",
-      // restaurants: "",
+      restaurant: "",
     },
     validate: (values) => {
       const errors = {};
@@ -38,8 +53,8 @@ const AddModal = () => {
       if (!values.price) {
         errors.price = "Required";
       }
-      // if (!values.restaurants) {
-      //   errors.restaurants = "Required";
+      // if (!values.restaurant) {
+      //   errors.restaurant = "Required";
       // }
 
       return errors;
@@ -169,16 +184,19 @@ const AddModal = () => {
                   controlId="formBasicRestaurant"
                   className={AddProduct.FormGroup}
                 >
-                  <label htmlFor="restaurants">Restaurants</label>
-                  <select name="restaurants" id="restaurants">
-                    <option value="Papa Jhon’s">Papa Jhon’s</option>
-                    <option value="Pizza Hut">Pizza Hut</option>
-                    <option value="Burger King">Burger King</option>
-                    <option value="McDonald’s">McDonald’s</option>
-                    <option value="KFC">KFC</option>
+                  <label htmlFor="restaurant">Restaurants</label>
+                  <select name="restaurant" id="restaurant">
+                    {restaurant?.map((restaurant) => (
+                      <option
+                        key={restaurant.id}
+                        value={restaurant.restaurant_name}
+                      >
+                        {restaurant.restaurant_name}
+                      </option>
+                    ))}
                   </select>
-                  {formik.errors.restaurants && (
-                    <span>{formik.errors.restaurants}</span>
+                  {formik.errors.restaurant && (
+                    <span>{formik.errors.restaurant}</span>
                   )}
                 </Form.Group>
               </div>

@@ -9,9 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 // Images
 import FoodyIcon from "../../../image/logo/foodyIcon.svg";
 import AdminLoginImg from "../../../image/adminLogin/adminLoginImg.svg";
-import flagEn from "../../../image/flagIcon/en.svg";
-import flagFr from "../../../image/flagIcon/fr.svg";
-import flagAz from "../../../image/flagIcon/az.svg";
+import en from "../../../image/flagIcon/en.svg";
+import fr from "../../../image/flagIcon/fr.svg";
+import az from "../../../image/flagIcon/az.svg";
 
 // Components
 import LoginForm from "../LoginForm";
@@ -20,10 +20,26 @@ import LoginForm from "../LoginForm";
 import LoginStyle from "./LoginContainer.module.css";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
+const lngs = {
+  en: { nativeName: "En" },
+  fr: { nativeName: "Fr" },
+  az: { nativeName: "Az" },
+};
+
+const flags = {
+  en,
+  fr,
+  az,
+};
 
 const LoginContainer = () => {
+  const { i18n } = useTranslation();
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -52,8 +68,8 @@ const LoginContainer = () => {
               onClick={handleClick}
             >
               <img
-                src={flagEn}
-                alt="FlagIcon"
+                src={flags[i18n.resolvedLanguage]}
+                alt=""
                 className={LoginStyle.flagIcon}
               />
             </Button>
@@ -66,12 +82,21 @@ const LoginContainer = () => {
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem onClick={handleClose}>
-                <img
-                  src={flagEn}
-                  alt="FlagIcon"
-                  className={LoginStyle.flagIcon}
-                />
+              {Object.keys(lngs).map((lng) => (
+                <MenuItem
+                  key={lng}
+                  type="submit"
+                  onClick={() => i18n.changeLanguage(lng)}
+                >
+                  <img
+                    src={flags[lng]}
+                    alt="FlagIcon"
+                    className={LoginStyle.flagIcon}
+                  />
+                </MenuItem>
+              ))}
+              {/* <MenuItem onClick={handleClose}>
+                
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <img
@@ -86,7 +111,7 @@ const LoginContainer = () => {
                   alt="FlagIcon"
                   className={LoginStyle.flagIcon}
                 />
-              </MenuItem>
+              </MenuItem> */}
             </Menu>
           </div>
           <img

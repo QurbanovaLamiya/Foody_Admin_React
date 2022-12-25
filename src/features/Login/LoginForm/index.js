@@ -7,6 +7,7 @@ import FormStyle from "./LoginForm.module.css";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 let inlineStyle = {
   width: "100%",
@@ -23,6 +24,7 @@ let inlineStyle = {
 };
 
 const LoginForm = () => {
+  const {t}= useTranslation()
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -69,7 +71,7 @@ const LoginForm = () => {
 
   return (
     <Form className={FormStyle.Form} onSubmit={formik.handleSubmit}>
-      <h1 className={FormStyle.formTitle}>Welcome Admin</h1>
+      <h1 className={FormStyle.formTitle}>{t("welcome")}</h1>
       <Form.Group className="mb-4" controlId="formBasicUserName">
         <input
           type="text"
