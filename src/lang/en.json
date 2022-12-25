@@ -29,6 +29,11 @@
       "no-risks": "There are no risks assigned",
       "assigned-action-items": "Assigned action items",
       "no-items": "There are no action items assigned"
-    }
+    },
+    "alert title": "Are you sure it’s deleted ?",
+    "alert subTitle": "Attention! If you delete this product, it will not come back...",
+    "cancel": "cencel",
+    "delete": "delete",
+    "success product": "Product deleted successfully!"
   }
 }

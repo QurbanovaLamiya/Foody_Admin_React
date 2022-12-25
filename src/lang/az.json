@@ -29,6 +29,12 @@
       "no-risks": "Heç bir risk müəyyən olunmamışdır",
       "assigned-action-items": "Təyin edilmiş fəaliyyətlər",
       "no-items": "Heç bir fəaliyyət təyin olunmamışdır"
-    }
+    },
+    "alert title": "Silmək istədiyinizə əminsinizmi ?",
+    "alert subTitle": "Diqqət! Bu məhsulu silsəniz, geri qayıtmayacaq...",
+    "cancel": "ləğv et",
+    "delete": "sil",
+    "success product": "Məhsul uğurla silindi!"
+
   }
 }

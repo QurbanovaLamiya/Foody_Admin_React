@@ -22,7 +22,10 @@ import Loading from "../../image/loading/loading.gif";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
+import { useTranslation } from "react-i18next";
+
 const ProductsContainer = () => {
+  const { t } = useTranslation();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -41,13 +44,13 @@ const ProductsContainer = () => {
 
   const deleteProducts = (id) => {
     Swal.fire({
-      title: "Are you sure it’s deleted ?",
-      text: "Attention! If you delete this product, it will not come back...",
+      title: t("alert title"),
+      text: t("alert subTitle"),
       showCancelButton: true,
       cancelButtonColor: "",
-      cancelButtonText: "cancel",
+      cancelButtonText: t("cancel"),
       confirmButtonColor: "#D63626",
-      confirmButtonText: "delete",
+      confirmButtonText: t("delete"),
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
@@ -57,7 +60,7 @@ const ProductsContainer = () => {
             setProduct(newArray);
           })
           .catch(() => {});
-        toast.success("Product deleted successfully!", {
+        toast.success(t("success product"), {
           position: "top-right",
           autoClose: 1200,
           hideProgressBar: false,
@@ -80,7 +83,7 @@ const ProductsContainer = () => {
   return (
     <div className={ProductsStyle.Container}>
       <div className={ProductsStyle.Caption}>
-        <h1>Products</h1>
+        <h1>{t("menu.Products")}</h1>
         <div className={ProductsStyle.Select_Section}>
           <select className={ProductsStyle.Select}>
             <option>Catagory type</option>

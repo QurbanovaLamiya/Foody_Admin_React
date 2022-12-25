@@ -29,6 +29,11 @@
       "no-risks": "Aucun risque n'est attribué.",
       "assigned-action-items": "Eléments d'action affectés",
       "no-items": "Aucun élément d'action n'est attribué."
-    }
+    },
+    "alert title": "Es-tu sûr qu'il est supprimé ?",
+    "alert subTitle": "Attention! Si vous supprimez ce produit, il ne reviendra pas...",
+    "cancel": "annuler",
+    "delete": "effacer",
+    "success product": "Produit supprimé avec succès !"
   }
 }

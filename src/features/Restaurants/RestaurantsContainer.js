@@ -21,6 +21,7 @@ import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 import { useEffect, useState } from "react";
 
 const RestaurantsContainer = () => {
+
   const [restaurant, setRestaurant] = useState(null);
 
   useEffect(() => {
