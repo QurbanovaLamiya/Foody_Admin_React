@@ -14,6 +14,21 @@
       "Orders": "Sifarişlər",
       "Offers": "Təkliflər",
       "logout": "Çıxış"
+    },
+    "dashboard": {
+      "donut-title": "Sifarişlər",
+      "donut-description": "Hesabla layihələr",
+      "area-title": "Ümumi əmək haqqı",
+      "area-subtitle": "İllər",
+      "month": {
+        "February": "Fevral",
+        "March": "Mart",
+        "April": "Aprel"
+      },
+      "assigned-risks": "Təyin edilmiş risklər",
+      "no-risks": "Heç bir risk müəyyən olunmamışdır",
+      "assigned-action-items": "Təyin edilmiş fəaliyyətlər",
+      "no-items": "Heç bir fəaliyyət təyin olunmamışdır"
     }
   }
 }

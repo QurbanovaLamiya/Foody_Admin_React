@@ -14,6 +14,21 @@
       "Orders": "Ordres",
       "Offers": "Des offres",
       "logout": "Se déconnecter"
+    },
+    "dashboard": {
+      "donut-title": "Ordres",
+      "donut-description": "Projets par compte",
+      "area-title": "Salaire total",
+      "area-subtitle": "Années",
+      "month": {
+        "February": "Février",
+        "March": "Mars",
+        "April": "Avril"
+      },
+      "assigned-risks": "Risques assignés",
+      "no-risks": "Aucun risque n'est attribué.",
+      "assigned-action-items": "Eléments d'action affectés",
+      "no-items": "Aucun élément d'action n'est attribué."
     }
   }
 }

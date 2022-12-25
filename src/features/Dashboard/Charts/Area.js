@@ -1,10 +1,12 @@
 import React from "react";
 import Chart from "react-apexcharts";
+import { useTranslation } from "react-i18next";
 
 const Area = () => {
+  const { t } = useTranslation();
   const series = [
     {
-      name: "February",
+      name: t("dashboard.month.February"),
       data: [
         {
           x: 2019,
@@ -25,7 +27,7 @@ const Area = () => {
       ],
     },
     {
-      name: "March",
+      name: t("dashboard.month.March"),
       data: [
         {
           x: 2019,
@@ -46,7 +48,7 @@ const Area = () => {
       ],
     },
     {
-      name: "April",
+      name: t("dashboard.month.April"),
       data: [
         {
           x: 2019,
@@ -84,7 +86,7 @@ const Area = () => {
       },
     },
     title: {
-      text: "Year",
+      text: t("dashboard.area-subtitle"),
       style: {
         color: "#8E8E93",
         fontSize: "16px",
