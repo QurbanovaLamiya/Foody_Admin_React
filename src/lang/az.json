@@ -1,5 +1,10 @@
 {
-    "translation":{
-        "welcome":"Xos geldiniz"
-    }
+  "translation": {
+    "welcome": "Xoş gəlmisiniz",
+    "Username": "İstifadəçi adı",
+    "Password": "Şifrə",
+    "sign in": "daxil olun",
+    "required": "Tələb olunur",
+    "incorrect message": "Istifadəçi adı və ya şifrə yalnışdır"
+  }
 }

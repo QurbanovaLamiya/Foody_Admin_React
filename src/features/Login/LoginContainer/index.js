@@ -69,7 +69,7 @@ const LoginContainer = () => {
             >
               <img
                 src={flags[i18n.resolvedLanguage]}
-                alt=""
+                alt={flags[i18n.resolvedLanguage]}
                 className={LoginStyle.flagIcon}
               />
             </Button>
@@ -95,23 +95,6 @@ const LoginContainer = () => {
                   />
                 </MenuItem>
               ))}
-              {/* <MenuItem onClick={handleClose}>
-                
-              </MenuItem>
-              <MenuItem onClick={handleClose}>
-                <img
-                  src={flagFr}
-                  alt="FlagIcon"
-                  className={LoginStyle.flagIcon}
-                />
-              </MenuItem>
-              <MenuItem onClick={handleClose}>
-                <img
-                  src={flagAz}
-                  alt="FlagIcon"
-                  className={LoginStyle.flagIcon}
-                />
-              </MenuItem> */}
             </Menu>
           </div>
           <img

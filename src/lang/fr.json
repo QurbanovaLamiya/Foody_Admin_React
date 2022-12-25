@@ -1,6 +1,10 @@
-
 {
-    "translation":{
-        "welcome":"Bienvenu"
-    }
+  "translation": {
+    "welcome": "Bienvenue Admin",
+    "Username": "Nom d'utilisateur",
+    "Password": "Le mot de passe",
+    "sign in": "s'identifier",
+    "required": "obligatoire",
+    "incorrect message": "İdentifiant ou mot de passe incorrect"
+  }
 }

@@ -1,5 +1,10 @@
 {
-    "translation":{
-        "welcome":"Welcome"
-    }
+  "translation": {
+    "welcome": "Welcome Admin",
+    "Username": "Username",
+    "Password": "Password",
+    "sign in": "sign in",
+    "required": "Required",
+    "incorrect message": "Incorrect username or password"
+  }
 }

@@ -5,8 +5,8 @@ import { useFormik } from "formik";
 import { setLogin } from "../../../store/slices/loginSlice";
 import FormStyle from "./LoginForm.module.css";
 
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 
 let inlineStyle = {
@@ -24,7 +24,7 @@ let inlineStyle = {
 };
 
 const LoginForm = () => {
-  const {t}= useTranslation()
+  const { t } = useTranslation();
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -38,10 +38,10 @@ const LoginForm = () => {
       const errors = {};
 
       if (!values.user_name) {
-        errors.user_name = "Required";
+        errors.user_name = t("required");
       }
       if (!values.password) {
-        errors.password = "Required";
+        errors.password = t("required");
       }
       return errors;
     },
@@ -50,7 +50,7 @@ const LoginForm = () => {
         values.user_name !== state.loginSlice.user.user_name ||
         values.password !== state.loginSlice.user.password
       ) {
-        toast.error("Incorrect username or password", {
+        toast.error(t("incorrect message"), {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -76,7 +76,7 @@ const LoginForm = () => {
         <input
           type="text"
           name="user_name"
-          placeholder="Username"
+          placeholder={t("Username")}
           className={FormStyle.Input}
           onChange={formik.handleChange}
           value={formik.values.user_name}
@@ -89,7 +89,7 @@ const LoginForm = () => {
         <input
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder={t("Password")}
           className={FormStyle.Input}
           onChange={formik.handleChange}
           value={formik.values.password}
@@ -99,7 +99,7 @@ const LoginForm = () => {
         )}
       </Form.Group>
       <Button type="submit" style={inlineStyle}>
-        sign in
+        {t("sign in")}
       </Button>
       <ToastContainer />
     </Form>
