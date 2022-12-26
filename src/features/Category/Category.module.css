@@ -28,14 +28,17 @@
   font-weight: 700;
   font-size: 14px;
   color: #fff;
-  width: 170px;
+  padding: 0 20px;
   height: 36px;
   background: #c035a2;
   border: none;
   box-shadow: 0px 4px 4px #27ae6033;
   border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   margin-right: 21px;
+  transition: all 0.2s ease-out;
+}
+
+.Caption button:hover {
+  background: #9229a5;
+  transform: scale(0.98);
 }

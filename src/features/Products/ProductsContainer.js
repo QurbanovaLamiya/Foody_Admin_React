@@ -1,7 +1,7 @@
 // Material-UI
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+// import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+// import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 // Components
 import ProductsCards from "./ProductsCards";
@@ -99,17 +99,17 @@ const ProductsContainer = () => {
           />
         ))}
       </div>
-      <ul className={ProductsStyle.Pagination}>
+      {/* <ul className={ProductsStyle.Pagination}>
         <li>
           <KeyboardArrowLeftIcon />
         </li>
         <li>1</li>
-        {/* <li>2</li> */}
-        {/* <li>3</li> */}
+        <li>2</li>
+        <li>3</li>
         <li>
           <KeyboardArrowRightIcon />
         </li>
-      </ul>
+      </ul> */}
       <ToastContainer />
     </div>
   );

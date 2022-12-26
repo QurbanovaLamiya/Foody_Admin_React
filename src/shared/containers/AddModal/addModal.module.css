@@ -4,7 +4,6 @@
   height: 35px;
   background: #c035a2;
   color: #fff;
-  font-family: "Roboto";
   font-weight: 700;
   font-size: 10px;
   line-height: 21px;
@@ -20,7 +19,6 @@
 
 .Box {
   background: #38394e;
-  /* height: 100vh; */
   height: auto;
   padding: 28px;
 }

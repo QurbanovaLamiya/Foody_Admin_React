@@ -1,6 +1,11 @@
 .Card {
   width: 200px;
   margin-bottom: 26px;
+  transition: all 0.2s ease-out;
+}
+
+.Card:hover {
+  transform: scale(0.95);
 }
 
 .Image {

@@ -25,7 +25,7 @@
 }
 
 .Select_Section {
-  position: relative;
+  position: relative !important;
   margin-right: 27px;
 }
 
@@ -33,7 +33,7 @@
   background: #5a5b70;
   border-radius: 14px;
   border: none;
-  width: 200px !important;
+  width: 199px !important;
   height: 35px !important;
   font-weight: 500;
   font-size: 14px;
@@ -46,12 +46,13 @@
 .Icon {
   position: absolute;
   color: #c7c7c7;
+  top: 5px;
   right: 10px;
   font-size: 35px;
 }
 
 .Add_Button {
-  width: 168px;
+  padding: 0 20px;
   height: 35px;
   background: #c035a2;
   border: none;
@@ -62,8 +63,12 @@
   line-height: 21px;
   color: #fff;
   margin-right: 21px;
-  display: flex;
-  align-items: center;
+  transition: all 0.2s ease-out;
+}
+
+.Add_Button:hover {
+  background: #9229a5;
+  transform: scale(0.98);
 }
 
 .Content {
