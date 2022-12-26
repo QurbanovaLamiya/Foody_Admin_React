@@ -34,15 +34,27 @@
     "alert product subTitle": "Attention! If you delete this product, it will not come back...",
     "alert restaurant subTitle": "Attention! If you delete this restaurant, it will not come back...",
     "alert category subTitle": "Attention! If you delete this category, it will not come back...",
-    "cancel": "cencel",
+    "alert orders subTitle": "Attention! If you delete this order, it will not come back...",
+    "alert offers subTitle": "Attention! If you delete this offer, it will not come back...",
+    "cancel": "cancel",
     "delete": "delete",
     "success product": "Product deleted successfully!",
     "success restaurant": "Restaurant deleted successfully!",
     "success category": "Category deleted successfully!",
+    "success order": "Order deleted successfully!",
+    "success offer": "Offer deleted successfully!",
     "add restaurant": "ADD RESTAURANTS",
     "add category": "ADD CATEGORY",
-    "image": "Image",
-    "name": "Name",
-    "slug": "Slug"
+    "table": {
+      "image": "Image",
+      "name": "Name",
+      "slug": "Slug",
+      "customer_id": "Customer ID",
+      "time": "Time",
+      "delivery_address": "Delivery Address",
+      "amount": "Amount",
+      "payment": "Payment Method",
+      "contact": "Contact"
+    }
   }
 }

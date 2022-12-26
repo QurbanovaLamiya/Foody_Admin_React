@@ -34,15 +34,26 @@
     "alert product subTitle": "Attention! Si vous supprimez ce produit, il ne reviendra pas...",
     "alert restaurant subTitle": "Attention! Si vous supprimez ce restaurant, il ne reviendra pas...",
     "alert category subTitle": "Attention! Si vous supprimez cette catégorie, elle ne reviendra pas...",
+    "alert orders subTitle": "Attention! Si vous supprimez cette commande, elle ne reviendra pas...",
+    "alert offers subTitle": "Attention! Si vous supprimez cette offre, elle ne reviendra pas...",
     "cancel": "annuler",
     "delete": "effacer",
     "success product": "Produit supprimé avec succès !",
     "success restaurant": "Restaurant supprimé avec succès !",
     "success category": "Catégorie supprimée avec succès !",
+    "success order": "Commande supprimée avec succès !",
     "add restaurant": "AJOUTER RESTAURANT",
     "add category": "AJOUTER CATÉGORIE",
-    "image": "Image",
-    "name": "Nom",
-    "slug": "Limace"
+    "table": {
+      "image": "Image",
+      "name": "Nom",
+      "slug": "Limace",
+      "customer_id": "Client ID",
+      "time": "Temps",
+      "delivery_address": "Adresse de livraison",
+      "amount": "Montant",
+      "payment": "Mode de paiement",
+      "contact": "Contacter"
+    }
   }
 }

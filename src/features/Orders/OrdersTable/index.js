@@ -20,8 +20,10 @@ import { useState, useEffect } from "react";
 import { ordersAPI, ordersDeleteAPI } from "../../../api/orders";
 
 import OrdersTableStyle from "./OrdersTable.module.css";
+import { useTranslation } from "react-i18next";
 
 const OrdersTable = () => {
+  const { t } = useTranslation();
   const [orders, setOrders] = useState(null);
 
   useEffect(() => {
@@ -40,13 +42,13 @@ const OrdersTable = () => {
 
   const deleteOrders = (id) => {
     Swal.fire({
-      title: "Are you sure it’s deleted ?",
-      text: "Attention! If you delete this product, it will not come back...",
+      title: t("alert title"),
+      text: t("alert orders subTitle"),
       showCancelButton: true,
       cancelButtonColor: "",
-      cancelButtonText: "cancel",
+      cancelButtonText: t("cancel"),
       confirmButtonColor: "#D63626",
-      confirmButtonText: "delete",
+      confirmButtonText: t("delete"),
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
@@ -56,7 +58,7 @@ const OrdersTable = () => {
             setOrders(newArray);
           })
           .catch(() => {});
-        toast.success("Product deleted successfully!", {
+        toast.success(t("success order"), {
           position: "top-right",
           autoClose: 1200,
           hideProgressBar: false,
@@ -86,12 +88,12 @@ const OrdersTable = () => {
         <TableHead>
           <TableRow>
             <TableCell align="center">ID</TableCell>
-            <TableCell align="center">Customer ID</TableCell>
-            <TableCell align="center">Time</TableCell>
-            <TableCell align="center">Delivery Address</TableCell>
-            <TableCell align="center">Amount</TableCell>
-            <TableCell align="center">Payment Method</TableCell>
-            <TableCell align="center">Contact</TableCell>
+            <TableCell align="center">{t("table.customer_id")}</TableCell>
+            <TableCell align="center">{t("table.time")}</TableCell>
+            <TableCell align="center">{t("table.delivery_address")}</TableCell>
+            <TableCell align="center">{t("table.amount")}</TableCell>
+            <TableCell align="center">{t("table.payment")}</TableCell>
+            <TableCell align="center">{t("table.contact")}</TableCell>
             <TableCell></TableCell>
           </TableRow>
         </TableHead>

@@ -90,9 +90,9 @@ const CategoryTable = () => {
           <TableHead>
             <TableRow>
               <TableCell align="center">ID</TableCell>
-              <TableCell align="center">{t("image")}</TableCell>
-              <TableCell align="center">{t("name")}</TableCell>
-              <TableCell align="center">{t("slug")}</TableCell>
+              <TableCell align="center">{t("table.image")}</TableCell>
+              <TableCell align="center">{t("table.name")}</TableCell>
+              <TableCell align="center">{t("table.slug")}</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>

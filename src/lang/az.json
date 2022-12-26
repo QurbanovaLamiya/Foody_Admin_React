@@ -34,15 +34,26 @@
     "alert product subTitle": "Diqqət! Bu məhsulu silsəniz, geri qayıtmayacaq...",
     "alert restaurant subTitle": "Diqqət! Bu restoranı silsəniz, geri qayıtmayacaq...",
     "alert category subTitle": "Diqqət! Bu kateqoriyanı silsəniz, geri qayıtmayacaq...",
+    "alert orders subTitle": "Diqqət! Bu sifarişi silsəniz, geri qayıtmayacaq!",
+    "alert offers subTitle": "Diqqət! Bu təklifi silsəniz, geri qayıtmayacaq!",
     "cancel": "ləğv et",
     "delete": "sil",
     "success product": "Məhsul uğurla silindi!",
     "success restaurant": "Restoran uğurla silindi!",
     "success category": "Kateqoriya uğurla silindi!",
+    "success order": "Sifariş uğurla silindi!",
     "add restaurant": "RESTORAN ƏLAVƏ ET",
     "add category": "KATEQORİYA ƏLAVƏ ET",
-    "image": "Şəkil",
-    "name": "Ad",
-    "slug": "Link başlığı"
+    "table": {
+      "image": "Şəkil",
+      "name": "Ad",
+      "slug": "Link başlığı",
+      "customer_id": "Müştəri ID",
+      "time": "Tarix",
+      "delivery_address": "Çatdırılma ünvanı",
+      "amount": "Məbləğ",
+      "payment": "Ödəniş",
+      "contact": "Əlaqə"
+    }
   }
 }
