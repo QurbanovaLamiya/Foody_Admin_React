@@ -42,8 +42,10 @@
     "success restaurant": "Restoran uğurla silindi!",
     "success category": "Kateqoriya uğurla silindi!",
     "success order": "Sifariş uğurla silindi!",
+    "success offer": "Təklif uğurla silindi!",
     "add restaurant": "RESTORAN ƏLAVƏ ET",
     "add category": "KATEQORİYA ƏLAVƏ ET",
+    "add offer": "TƏKLİF ƏLAVƏ ET",
     "table": {
       "image": "Şəkil",
       "name": "Ad",
@@ -53,7 +55,9 @@
       "delivery_address": "Çatdırılma ünvanı",
       "amount": "Məbləğ",
       "payment": "Ödəniş",
-      "contact": "Əlaqə"
+      "contact": "Əlaqə",
+      "title": "Başlıq",
+      "description": "Təsvir"
     }
   }
 }

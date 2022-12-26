@@ -42,8 +42,10 @@
     "success restaurant": "Restaurant supprimé avec succès !",
     "success category": "Catégorie supprimée avec succès !",
     "success order": "Commande supprimée avec succès !",
+    "success offer": "Offre supprimée avec succès !",
     "add restaurant": "AJOUTER RESTAURANT",
     "add category": "AJOUTER CATÉGORIE",
+    "add offer": "AJOUTER OFFRE",
     "table": {
       "image": "Image",
       "name": "Nom",
@@ -53,7 +55,9 @@
       "delivery_address": "Adresse de livraison",
       "amount": "Montant",
       "payment": "Mode de paiement",
-      "contact": "Contacter"
+      "contact": "Contacter",
+      "title": "Titre",
+      "description": "La description"
     }
   }
 }

@@ -19,9 +19,13 @@ import Swal from "sweetalert2";
 import Loading from "../../../image/loading/loading.gif";
 
 import { useState, useEffect } from "react";
+
 import { offersAPI, offersDeleteAPI } from "../../../api/offers";
 
+import { useTranslation } from "react-i18next";
+
 const OffersTable = () => {
+  const { t } = useTranslation();
   const [offers, setOffers] = useState(null);
 
   useEffect(() => {
@@ -40,13 +44,13 @@ const OffersTable = () => {
 
   const deleteOffers = (id) => {
     Swal.fire({
-      title: "Are you sure it’s deleted ?",
-      text: "Attention! If you delete this product, it will not come back...",
+      title: t("alert title"),
+      text: t("alert offers subTitle"),
       showCancelButton: true,
       cancelButtonColor: "",
-      cancelButtonText: "cancel",
+      cancelButtonText: t("cancel"),
       confirmButtonColor: "#D63626",
-      confirmButtonText: "delete",
+      confirmButtonText: t("delete"),
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
@@ -56,7 +60,7 @@ const OffersTable = () => {
             setOffers(newArray);
           })
           .catch(() => {});
-        toast.success("The operation is successfully!", {
+        toast.success(t("success offer"), {
           position: "top-right",
           autoClose: 1200,
           hideProgressBar: false,
@@ -86,9 +90,9 @@ const OffersTable = () => {
         <TableHead>
           <TableRow>
             <TableCell align="center">ID</TableCell>
-            <TableCell align="center">Image</TableCell>
-            <TableCell align="center">Title</TableCell>
-            <TableCell align="center">Descriptions</TableCell>
+            <TableCell align="center">{t("table.image")}</TableCell>
+            <TableCell align="center">{t("table.title")}</TableCell>
+            <TableCell align="center">{t("table.description")}</TableCell>
             <TableCell></TableCell>
           </TableRow>
         </TableHead>

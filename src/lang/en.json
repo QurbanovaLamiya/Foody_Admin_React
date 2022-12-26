@@ -45,6 +45,7 @@
     "success offer": "Offer deleted successfully!",
     "add restaurant": "ADD RESTAURANTS",
     "add category": "ADD CATEGORY",
+    "add offer": "ADD OFFER",
     "table": {
       "image": "Image",
       "name": "Name",
@@ -54,7 +55,9 @@
       "delivery_address": "Delivery Address",
       "amount": "Amount",
       "payment": "Payment Method",
-      "contact": "Contact"
+      "contact": "Contact",
+      "title": "Title",
+      "description": "Descriptions"
     }
   }
 }
