@@ -5,7 +5,6 @@
   border-radius: 14px;
 }
 .Title {
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -20,7 +19,6 @@
 }
 
 .Content p {
-  font-family: "Roboto";
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;

@@ -13,7 +13,6 @@
 }
 
 .Caption h1 {
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -36,7 +35,6 @@
   border: none;
   width: 200px !important;
   height: 35px !important;
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -59,7 +57,6 @@
   border: none;
   box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
   border-radius: 14px;
-  font-family: "Roboto";
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
