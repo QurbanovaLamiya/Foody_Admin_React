@@ -27,7 +27,6 @@ const PageRoutes = () => {
           <Route path="/panel/offer" element={<Offers />} />
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/" element={<Navigate replace to="login" />} /> */}
-
         </Routes>
       </div>
     </>
