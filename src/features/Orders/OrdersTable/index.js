@@ -13,13 +13,11 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-// Image
-import Loading from "../../../image/loading/loading.gif";
-
 import { useState, useEffect } from "react";
-import { ordersAPI, ordersDeleteAPI } from "../../../api/orders";
 
-import OrdersTableStyle from "./OrdersTable.module.css";
+import { ordersAPI, ordersDeleteAPI } from "../../../api/orders";
+import Loading from "../../../shared/components/Loading";
+
 import { useTranslation } from "react-i18next";
 
 const OrdersTable = () => {
@@ -73,13 +71,7 @@ const OrdersTable = () => {
   };
 
   if (!orders) {
-    return (
-      <img
-        src={Loading}
-        className={OrdersTableStyle.Loading}
-        alt="loading...."
-      />
-    );
+    return <Loading />;
   }
 
   return (

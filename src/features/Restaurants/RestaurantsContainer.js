@@ -4,11 +4,9 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import AddIcon from "@mui/icons-material/Add";
 
-// Image
-import Loading from "../../image/loading/loading.gif";
-
 // Components
 import RestaurantsCard from "./RestaurantsCard";
+import Loading from "../../shared/components/Loading";
 
 // Style
 import RestaurantsStyle from "./Restaurants.module.css";
@@ -74,13 +72,7 @@ const RestaurantsContainer = () => {
   };
 
   if (!restaurant) {
-    return (
-      <img
-        src={Loading}
-        className={RestaurantsStyle.Loading}
-        alt="loading...."
-      />
-    );
+    return <Loading />;
   }
 
   return (

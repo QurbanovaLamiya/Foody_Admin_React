@@ -8,18 +8,14 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-import CategoryTableStyle from "./CategoryTable.module.css";
-
 // Sweet Alert
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-// Image
-import Loading from "../../../image/loading/loading.gif";
-
 import { useState, useEffect } from "react";
 import { categoryAPI, categoryDeleteAPI } from "../../../api/category";
 import { useTranslation } from "react-i18next";
+import Loading from "../../../shared/components/Loading";
 
 const CategoryTable = () => {
   const { t } = useTranslation();
@@ -74,13 +70,7 @@ const CategoryTable = () => {
   };
 
   if (!category) {
-    return (
-      <img
-        src={Loading}
-        className={CategoryTableStyle.Loading}
-        alt="loading...."
-      />
-    );
+    return <Loading />;
   }
 
   return (

@@ -5,6 +5,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 // Components
 import ProductsCards from "./ProductsCards";
+import Loading from "../../shared/components/Loading";
 
 // Style
 import ProductsStyle from "./Products.module.css";
@@ -14,9 +15,6 @@ import { productAPI, productDeleteAPI } from "../../api/product";
 
 // React
 import { useEffect, useState } from "react";
-
-// Image
-import Loading from "../../image/loading/loading.gif";
 
 // Sweet Alert
 import { ToastContainer, toast } from "react-toastify";
@@ -75,9 +73,7 @@ const ProductsContainer = () => {
   };
 
   if (!product) {
-    return (
-      <img src={Loading} className={ProductsStyle.Loading} alt="loading...." />
-    );
+    return <Loading />;
   }
 
   return (

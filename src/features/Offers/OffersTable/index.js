@@ -9,20 +9,17 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-import OffersTableStyle from "./OffersTable.module.css";
-
 // Sweet Alert
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
-
-// Image
-import Loading from "../../../image/loading/loading.gif";
 
 import { useState, useEffect } from "react";
 
 import { offersAPI, offersDeleteAPI } from "../../../api/offers";
 
 import { useTranslation } from "react-i18next";
+
+import Loading from "../../../shared/components/Loading";
 
 const OffersTable = () => {
   const { t } = useTranslation();
@@ -75,13 +72,7 @@ const OffersTable = () => {
   };
 
   if (!offers) {
-    return (
-      <img
-        src={Loading}
-        className={OffersTableStyle.Loading}
-        alt="loading...."
-      />
-    );
+    return <Loading />;
   }
 
   return (
