@@ -46,7 +46,7 @@ const HeaderContainer = () => {
 
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      <Modal/>
+      <Modal caption="Add product" formTitle="Add your Product information" />
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}

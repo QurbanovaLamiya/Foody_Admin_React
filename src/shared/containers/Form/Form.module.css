@@ -40,6 +40,8 @@
   display: flex;
   flex-direction: column;
   width: 35vw;
+  height: 270px;
+  overflow: auto;
   background: #43445a;
   border-radius: 14px;
   padding: 22px 29px 36px 23px;
@@ -61,13 +63,19 @@
 }
 
 .DataFormSection input,
-select {
+select,
+textarea {
   background: #5a5b70;
   border-radius: 14px;
   border: none;
   height: 46px;
   color: #c7c7c7;
   padding-left: 21px;
+}
+
+.DataFormSection textarea {
+  padding-top: 21px;
+  height: 133px;
 }
 
 .DataFormSection input::placeholder {

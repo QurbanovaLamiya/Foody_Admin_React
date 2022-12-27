@@ -11,25 +11,25 @@ const FormData = {
     inputs: [
       {
         id: 1,
-        label: "name",
+        label: "Name",
         name: "name",
         type: "text",
       },
       {
         id: 2,
-        label: "description",
-        name: "desc",
+        label: "Description",
+        name: "description",
         type: "textarea",
       },
       {
         id: 3,
-        label: "price",
+        label: "Price",
         name: "price",
         type: "number",
       },
       {
         id: 4,
-        label: "restaurants",
+        label: "Restaurants",
         name: "restaurants",
         type: "select",
       },

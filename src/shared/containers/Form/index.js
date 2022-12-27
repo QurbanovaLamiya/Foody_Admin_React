@@ -4,7 +4,10 @@ import { useFormik } from "formik";
 
 import FormStyle from "./Form.module.css";
 
-const ModalForm = ({ restaurant }) => {
+import FormData from "../../../util/Form";
+
+const ModalForm = ({ formTitle, restaurant }) => {
+  console.log("FormData", FormData.PRODUCTS.inputs);
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -44,7 +47,7 @@ const ModalForm = ({ restaurant }) => {
     <Form onSubmit={formik.handleSubmit} className={FormStyle.FormSection}>
       <div className={FormStyle.ImageSection}>
         <div>
-          <p>Upload your product image</p>
+          <p>Upload image</p>
           {formik.values.image && (
             <img
               src={formik.values.image}
@@ -79,74 +82,99 @@ const ModalForm = ({ restaurant }) => {
         </label>
       </div>
       <div className={FormStyle.DataInfoSection}>
-        <p>Add your Product description and necessary information</p>
+        <p>{formTitle}</p>
         <div className={FormStyle.DataFormSection}>
-          <Form.Group
-            controlId="formBasicName"
-            className={FormStyle.FormGroup}
-          >
-            <label htmlFor="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              onChange={formik.handleChange}
-              value={formik.values.name}
-            />
-            {formik.errors.name && <span>{formik.errors.name}</span>}
-          </Form.Group>
-          <Form.Group
-            controlId="formBasicDescription"
-            className={FormStyle.FormGroup}
-          >
-            <label htmlFor="description">Description</label>
-            <input
-              id="description"
-              name="description"
-              type="text"
-              onChange={formik.handleChange}
-              value={formik.values.description}
-            />
-            {formik.errors.description && (
-              <span>{formik.errors.description}</span>
-            )}
-          </Form.Group>
-          <Form.Group
-            controlId="formBasicPrice"
-            className={FormStyle.FormGroup}
-          >
-            <label htmlFor="price">Price</label>
-            <input
-              id="price"
-              name="price"
-              type="number"
-              onChange={formik.handleChange}
-              value={formik.values.price}
-            />
-            {formik.errors.price && <span>{formik.errors.price}</span>}
-          </Form.Group>
-          <Form.Group
-            controlId="formBasicRestaurant"
-            className={FormStyle.FormGroup}
-          >
-            <label htmlFor="restaurant">Restaurants</label>
-            <select name="restaurant" id="restaurant">
-              {restaurant?.map((restaurant) => (
-                <option key={restaurant.id} value={restaurant.restaurant_name}>
-                  {restaurant.restaurant_name}
-                </option>
-              ))}
-            </select>
-            {formik.errors.restaurant && (
-              <span>{formik.errors.restaurant}</span>
-            )}
-          </Form.Group>
+          {FormData.PRODUCTS.inputs?.map((field) => {
+            switch (field.type) {
+              case "text":
+                return (
+                  <Form.Group
+                    controlId="formBasicName"
+                    className={FormStyle.FormGroup}
+                    key={field.id}
+                  >
+                    <label htmlFor="name">{field.label}</label>
+                    <input
+                      id="name"
+                      name={field.name}
+                      type="text"
+                      onChange={formik.handleChange}
+                      value={formik.values.name}
+                    />
+                    {formik.errors.name && <span>{formik.errors.name}</span>}
+                  </Form.Group>
+                );
+              case "textarea":
+                return (
+                  <Form.Group
+                    controlId="formBasicDescription"
+                    className={FormStyle.FormGroup}
+                    key={field.id}
+                  >
+                    <label htmlFor="description">{field.label}</label>
+                    <textarea
+                      id="description"
+                      name={field.name}
+                      onChange={formik.handleChange}
+                      value={formik.values.description}
+                    ></textarea>
+                    {formik.errors.description && (
+                      <span>{formik.errors.description}</span>
+                    )}
+                  </Form.Group>
+                );
+              case "number":
+                return (
+                  <Form.Group
+                    controlId="formBasicPrice"
+                    className={FormStyle.FormGroup}
+                    key={field.id}
+                  >
+                    <label htmlFor="price">{field.label}</label>
+                    <input
+                      id="price"
+                      name={field.name}
+                      type="number"
+                      onChange={formik.handleChange}
+                      value={formik.values.price}
+                    />
+                    {formik.errors.price && <span>{formik.errors.price}</span>}
+                  </Form.Group>
+                );
+
+              case "select":
+                return (
+                  <Form.Group
+                    controlId="formBasicRestaurant"
+                    className={FormStyle.FormGroup}
+                    key={field.id}
+                  >
+                    <label htmlFor="restaurant">{field.label}</label>
+                    <select name={field.name} id="restaurant">
+                      {restaurant?.map((restaurant) => (
+                        <option
+                          key={restaurant.id}
+                          value={restaurant.restaurant_name}
+                        >
+                          {restaurant.restaurant_name}
+                        </option>
+                      ))}
+                    </select>
+                    {formik.errors.restaurant && (
+                      <span>{formik.errors.restaurant}</span>
+                    )}
+                  </Form.Group>
+                );
+              default:
+                return null;
+            }
+          })}
         </div>
       </div>
       <div className={FormStyle.Buttons}>
         <Button style={{ background: "#43445A" }}>Cancel</Button>
         <Button type="submit" style={{ background: "#C035A2" }}>
-          Create Product
+          Create
         </Button>
       </div>
     </Form>

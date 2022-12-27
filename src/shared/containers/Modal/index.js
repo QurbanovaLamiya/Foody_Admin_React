@@ -10,7 +10,7 @@ import { restaurantsAPI } from "../../../api/restaurant";
 
 import Form from "../Form";
 
-const Modal = () => {
+const Modal = ({ caption, formTitle }) => {
   const [isDrawer, setIsDrawer] = useState(false);
   const [restaurant, setRestaurant] = useState(null);
 
@@ -51,9 +51,9 @@ const Modal = () => {
             >
               X
             </button>
-            <h4>Add product</h4>
+            <h4>{caption}</h4>
           </div>
-          <Form restaurant={restaurant}/>
+          <Form restaurant={restaurant} formTitle={formTitle} />
         </Box>
       </Drawer>
     </>
