@@ -1,0 +1,56 @@
+.Add_Product {
+  padding-top: 5px;
+  width: 120px;
+  height: 35px;
+  background: #c035a2;
+  color: #fff;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 21px;
+  margin-right: 22px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
+  border-radius: 14px;
+}
+
+.Add_Product:hover {
+  background: #9229a5;
+}
+.Box {
+  background: #38394e;
+  height: auto;
+  padding: 28px;
+}
+
+.Box p {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #c7c7c7;
+  margin-right: 90px;
+  width: 240px;
+}
+
+.Title {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.Title h4 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 24px;
+  color: #c7c7c7;
+  margin-left: 10px;
+}
+
+.X_button {
+  width: 27px;
+  height: 27px;
+  background: #c74feb;
+  border-radius: 50%;
+  border: none;
+  color: #f2f2f2;
+}

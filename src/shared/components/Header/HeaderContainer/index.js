@@ -17,7 +17,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-import AddModal from "../../../containers/AddModal";
+import Modal from "../../../containers/Modal";
 
 import { useTranslation } from "react-i18next";
 
@@ -46,7 +46,7 @@ const HeaderContainer = () => {
 
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      <AddModal />
+      <Modal/>
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
