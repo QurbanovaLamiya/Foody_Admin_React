@@ -41,6 +41,7 @@
   color: #f2f2f2;
   padding: 0 18px;
   appearance: none;
+  cursor: pointer;
 }
 
 .Icon {
@@ -48,27 +49,6 @@
   color: #c7c7c7;
   top: 5px;
   right: 10px;
-  font-size: 35px;
-}
-
-.Add_Button {
-  padding: 0 20px;
-  height: 35px;
-  background: #c035a2;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(39, 174, 96, 0.2);
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 21px;
-  color: #fff;
-  margin-right: 21px;
-  transition: all 0.2s ease-out;
-}
-
-.Add_Button:hover {
-  background: #9229a5;
-  transform: scale(0.98);
 }
 
 .Content {

@@ -1,16 +1,17 @@
 // Material Ui
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import AddIcon from "@mui/icons-material/Add";
+// import AddIcon from "@mui/icons-material/Add";
 
-import AddProduct from "./Modal.module.css";
+import ModalStyle from "./Modal.module.css";
 
 import { useEffect, useState } from "react";
 import { restaurantsAPI } from "../../../api/restaurant";
 
 import Form from "../Form";
+import Button from "../../components/Button";
 
-const Modal = ({ caption, formTitle }) => {
+const Modal = ({ caption, formContent,buttonName }) => {
   const [isDrawer, setIsDrawer] = useState(false);
   const [restaurant, setRestaurant] = useState(null);
 
@@ -30,8 +31,8 @@ const Modal = ({ caption, formTitle }) => {
 
   return (
     <>
-      <button
-        className={AddProduct.Add_Product}
+      {/* <button
+        className={ModalStyle.Add_Button}
         onClick={() => setIsDrawer(true)}
       >
         <AddIcon
@@ -41,19 +42,20 @@ const Modal = ({ caption, formTitle }) => {
           aria-label="logo"
         />
         ADD PRODUCT
-      </button>
+      </button> */}
+      <Button drawer={setIsDrawer} buttonName={buttonName} />
       <Drawer anchor="right" open={isDrawer} onClose={() => setIsDrawer(false)}>
-        <Box role="presentation" className={AddProduct.Box}>
-          <div className={AddProduct.Title}>
+        <Box role="presentation" className={ModalStyle.Box}>
+          <div className={ModalStyle.Title}>
             <button
-              className={AddProduct.X_button}
+              className={ModalStyle.X_button}
               onClick={() => setIsDrawer(false)}
             >
               X
             </button>
             <h4>{caption}</h4>
           </div>
-          <Form restaurant={restaurant} formTitle={formTitle} />
+          <Form restaurant={restaurant} formContent={formContent} />
         </Box>
       </Drawer>
     </>

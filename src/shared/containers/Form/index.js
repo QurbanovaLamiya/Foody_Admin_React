@@ -6,7 +6,7 @@ import FormStyle from "./Form.module.css";
 
 import FormData from "../../../util/Form";
 
-const ModalForm = ({ formTitle, restaurant }) => {
+const ModalForm = ({ formContent, restaurant }) => {
   console.log("FormData", FormData.PRODUCTS.inputs);
   const formik = useFormik({
     initialValues: {
@@ -82,7 +82,7 @@ const ModalForm = ({ formTitle, restaurant }) => {
         </label>
       </div>
       <div className={FormStyle.DataInfoSection}>
-        <p>{formTitle}</p>
+        <p>{formContent}</p>
         <div className={FormStyle.DataFormSection}>
           {FormData.PRODUCTS.inputs?.map((field) => {
             switch (field.type) {

@@ -1,7 +1,8 @@
 import CategoryStyle from "./Category.module.css";
-import CategoryTable from "./CategoryTable";
 
-import AddIcon from "@mui/icons-material/Add";
+import CategoryTable from "./CategoryTable";
+import Modal from "../../shared/containers/Modal";
+
 import { useTranslation } from "react-i18next";
 
 const CategoryContainer = () => {
@@ -10,10 +11,11 @@ const CategoryContainer = () => {
     <div className={CategoryStyle.Container}>
       <div className={CategoryStyle.Caption}>
         <h1>{t("menu.Category")}</h1>
-        <button>
-          <AddIcon />
-          {t("add category")}
-        </button>
+        <Modal
+          caption="Add Category"
+          formContent="Add your Category information"
+          buttonName="ADD CATEGORY"
+        />
       </div>
       <div>
         <CategoryTable />

@@ -1,0 +1,19 @@
+.Add_Button {
+  padding: 0 20px;
+  height: 36px;
+  background: #c035a2;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  margin-right: 22px;
+  border: none;
+  box-shadow: 0px 4px 4px #27ae6033;
+  border-radius: 14px;
+  transition: all 0.2s ease-out;
+}
+
+.Add_Button:hover {
+  background: #9229a5;
+  transform: scale(0.98);
+}

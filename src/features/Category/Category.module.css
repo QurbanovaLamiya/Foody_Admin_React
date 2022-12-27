@@ -1,7 +1,3 @@
-* {
-  line-height: 21px;
-}
-
 .Container {
   width: 100%;
   margin: 16px 32px 0 20%;
@@ -18,27 +14,9 @@
 }
 
 .Caption h1 {
+  line-height: 21px;
   font-weight: 500;
   font-size: 20px;
   color: #f2f2f2de;
   margin: 8px 33px;
-}
-
-.Caption button {
-  font-weight: 700;
-  font-size: 14px;
-  color: #fff;
-  padding: 0 20px;
-  height: 36px;
-  background: #c035a2;
-  border: none;
-  box-shadow: 0px 4px 4px #27ae6033;
-  border-radius: 14px;
-  margin-right: 21px;
-  transition: all 0.2s ease-out;
-}
-
-.Caption button:hover {
-  background: #9229a5;
-  transform: scale(0.98);
 }

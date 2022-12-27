@@ -2,7 +2,6 @@
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 // import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 // import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import AddIcon from "@mui/icons-material/Add";
 
 // Components
 import RestaurantsCard from "./RestaurantsCard";
@@ -18,6 +17,7 @@ import Swal from "sweetalert2";
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Modal from "../../shared/containers/Modal";
 
 const RestaurantsContainer = () => {
   const { t } = useTranslation();
@@ -89,10 +89,11 @@ const RestaurantsContainer = () => {
             </select>
             <KeyboardArrowDownIcon className={RestaurantsStyle.Icon} />
           </div>
-          <button className={RestaurantsStyle.Add_Button}>
-            <AddIcon />
-            {t("add restaurant")}
-          </button>
+          <Modal
+            caption="Add Restuarant "
+            formContent="Add your Restuarants information"
+            buttonName="ADD RESTAURANTS"
+          />
         </div>
       </div>
       <div className={RestaurantsStyle.Content}>

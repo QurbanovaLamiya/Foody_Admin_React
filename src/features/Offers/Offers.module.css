@@ -21,28 +21,6 @@
   margin: 20px 33px;
 }
 
-.Caption button {
-  font-weight: 700;
-  font-size: 14px;
-  color: #fff;
-  width: 168px;
-  height: 35px;
-  background: #c035a2;
-  border: none;
-  box-shadow: 0px 4px 4px #27ae6033;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-right: 21px;
-  transition: all 0.2s ease-out;
-}
-
-.Caption button:hover {
-  transform: scale(0.98);
-  background: #9229a5;
-}
-
 .Table {
   margin-top: 41px;
 }

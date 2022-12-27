@@ -43,9 +43,10 @@
     "success category": "Catégorie supprimée avec succès !",
     "success order": "Commande supprimée avec succès !",
     "success offer": "Offre supprimée avec succès !",
-    "add restaurant": "AJOUTER RESTAURANT",
-    "add category": "AJOUTER CATÉGORIE",
-    "add offer": "AJOUTER OFFRE",
+    "ADD PRODUCT": "AJOUTER PRODUIT",
+    "ADD RESTAURANTS": "AJOUTER RESTAURANT",
+    "ADD CATEGORY": "AJOUTER CATÉGORIE",
+    "ADD OFFER": "AJOUTER OFFRE",
     "table": {
       "image": "Image",
       "name": "Nom",

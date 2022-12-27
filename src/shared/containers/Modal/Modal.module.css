@@ -1,4 +1,4 @@
-.Add_Product {
+/* .Add_Button {
   padding-top: 5px;
   width: 120px;
   height: 35px;
@@ -13,9 +13,9 @@
   border-radius: 14px;
 }
 
-.Add_Product:hover {
+.Add_Button:hover {
   background: #9229a5;
-}
+} */
 .Box {
   background: #38394e;
   height: auto;

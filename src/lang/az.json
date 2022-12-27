@@ -43,9 +43,10 @@
     "success category": "Kateqoriya uğurla silindi!",
     "success order": "Sifariş uğurla silindi!",
     "success offer": "Təklif uğurla silindi!",
-    "add restaurant": "RESTORAN ƏLAVƏ ET",
-    "add category": "KATEQORİYA ƏLAVƏ ET",
-    "add offer": "TƏKLİF ƏLAVƏ ET",
+    "ADD PRODUCT": "MƏHSUL ƏLAVƏ ET",
+    "ADD RESTAURANTS": "RESTORAN ƏLAVƏ ET",
+    "ADD CATEGORY": "KATEQORİYA ƏLAVƏ ET",
+    "ADD OFFER": "TƏKLİF ƏLAVƏ ET",
     "table": {
       "image": "Şəkil",
       "name": "Ad",

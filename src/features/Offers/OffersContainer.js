@@ -1,8 +1,7 @@
-import AddIcon from "@mui/icons-material/Add";
-
 import OffersStyle from "./Offers.module.css";
 import OffersTable from "./OffersTable";
 import { useTranslation } from "react-i18next";
+import Modal from "../../shared/containers/Modal";
 
 const OffersContainer = () => {
   const { t } = useTranslation();
@@ -11,10 +10,11 @@ const OffersContainer = () => {
     <div className={OffersStyle.Container}>
       <div className={OffersStyle.Caption}>
         <h1>{t("menu.Offers")}</h1>
-        <button>
-          <AddIcon />
-          {t("add offer")}
-        </button>
+        <Modal
+          caption="Add Offer"
+          formContent="Add your Offer information"
+          buttonName="ADD OFFER"
+        />
       </div>
       <div className={OffersStyle.Table}>
         <OffersTable />
