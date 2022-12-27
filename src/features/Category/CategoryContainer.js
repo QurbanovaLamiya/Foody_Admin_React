@@ -12,12 +12,7 @@ const CategoryContainer = () => {
     <div className={CategoryStyle.Container}>
       <div className={CategoryStyle.Caption}>
         <h1>{t("menu.Category")}</h1>
-        <Modal
-          // caption="Add Category"
-          // formContent="Add your Category information"
-          // buttonName="ADD CATEGORY"
-          form={FormData.CATEGORY}
-        />
+        <Modal form={FormData.CATEGORY} />
       </div>
       <div>
         <CategoryTable />

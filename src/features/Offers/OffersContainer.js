@@ -11,12 +11,7 @@ const OffersContainer = () => {
     <div className={OffersStyle.Container}>
       <div className={OffersStyle.Caption}>
         <h1>{t("menu.Offers")}</h1>
-        <Modal
-          form={FormData.OFFER}
-          // caption="Add Offer"
-          // formContent="Add your Offer information"
-          // buttonName="ADD OFFER"
-        />
+        <Modal form={FormData.OFFER} />
       </div>
       <div className={OffersStyle.Table}>
         <OffersTable />

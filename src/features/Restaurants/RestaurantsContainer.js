@@ -90,12 +90,7 @@ const RestaurantsContainer = () => {
             </select>
             <KeyboardArrowDownIcon className={RestaurantsStyle.Icon} />
           </div>
-          <Modal
-            // caption="Add Restuarant "
-            // formContent="Add your Restuarants information"
-            buttonName="ADD RESTAURANTS"
-            form={FormData.RESTAURANT}
-          />
+          <Modal form={FormData.RESTAURANT} />
         </div>
       </div>
       <div className={RestaurantsStyle.Content}>
