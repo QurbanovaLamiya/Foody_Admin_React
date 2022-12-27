@@ -1,13 +1,12 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+
 import { Form, Button } from "react-bootstrap";
+
 import { useFormik } from "formik";
 
 import FormStyle from "./Form.module.css";
 
-import FormData from "../../../util/Form";
-
-const ModalForm = ({ formContent, restaurant }) => {
-  console.log("FormData", FormData.PRODUCTS.inputs);
+const ModalForm = () => {
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -38,8 +37,8 @@ const ModalForm = ({ formContent, restaurant }) => {
       return errors;
     },
     onSubmit: (values, action) => {
-      console.log("values", values);
-      console.log("action", action);
+      // console.log("values", values);
+      // console.log("action", action);
       action.resetForm();
     },
   });
@@ -81,10 +80,11 @@ const ModalForm = ({ formContent, restaurant }) => {
           )}
         </label>
       </div>
+
       <div className={FormStyle.DataInfoSection}>
-        <p>{formContent}</p>
+        <p></p>
         <div className={FormStyle.DataFormSection}>
-          {FormData.PRODUCTS.inputs?.map((field) => {
+          {/* {FormData.PRODUCTS.inputs?.map((field) => {
             switch (field.type) {
               case "text":
                 return (
@@ -168,9 +168,10 @@ const ModalForm = ({ formContent, restaurant }) => {
               default:
                 return null;
             }
-          })}
+          })} */}
         </div>
       </div>
+
       <div className={FormStyle.Buttons}>
         <Button style={{ background: "#43445A" }}>Cancel</Button>
         <Button type="submit" style={{ background: "#C035A2" }}>

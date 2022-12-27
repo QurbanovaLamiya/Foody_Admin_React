@@ -1,7 +1,6 @@
 // Material Ui
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-// import AddIcon from "@mui/icons-material/Add";
 
 import ModalStyle from "./Modal.module.css";
 
@@ -11,10 +10,12 @@ import { restaurantsAPI } from "../../../api/restaurant";
 import Form from "../Form";
 import Button from "../../components/Button";
 
-const Modal = ({ caption, formContent,buttonName }) => {
+const Modal = ({buttonName}) => {
   const [isDrawer, setIsDrawer] = useState(false);
   const [restaurant, setRestaurant] = useState(null);
-
+  
+  // console.log(props);
+  
   useEffect(() => {
     getRestaurant();
   }, []);
@@ -27,23 +28,11 @@ const Modal = ({ caption, formContent,buttonName }) => {
       .catch((err) => {
         // console.log("err", err);
       });
-  };
-
-  return (
+    };
+    
+    return (
     <>
-      {/* <button
-        className={ModalStyle.Add_Button}
-        onClick={() => setIsDrawer(true)}
-      >
-        <AddIcon
-          sx={{ fontSize: 20 }}
-          style={{ marginRight: "5px" }}
-          edge="start"
-          aria-label="logo"
-        />
-        ADD PRODUCT
-      </button> */}
-      <Button drawer={setIsDrawer} buttonName={buttonName} />
+      <Button drawer={setIsDrawer}  />
       <Drawer anchor="right" open={isDrawer} onClose={() => setIsDrawer(false)}>
         <Box role="presentation" className={ModalStyle.Box}>
           <div className={ModalStyle.Title}>
@@ -53,9 +42,9 @@ const Modal = ({ caption, formContent,buttonName }) => {
             >
               X
             </button>
-            <h4>{caption}</h4>
+            <h4></h4>
           </div>
-          <Form restaurant={restaurant} formContent={formContent} />
+          <Form restaurant={restaurant} buttonName={buttonName}/>
         </Box>
       </Drawer>
     </>
