@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 
 import FormStyle from "./Form.module.css";
 
-const ModalForm = () => {
+const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -82,9 +82,9 @@ const ModalForm = () => {
       </div>
 
       <div className={FormStyle.DataInfoSection}>
-        <p></p>
+        <p>{formTitle}</p>
         <div className={FormStyle.DataFormSection}>
-          {/* {FormData.PRODUCTS.inputs?.map((field) => {
+          {inputs?.map((field) => {
             switch (field.type) {
               case "text":
                 return (
@@ -168,7 +168,7 @@ const ModalForm = () => {
               default:
                 return null;
             }
-          })} */}
+          })}
         </div>
       </div>
 

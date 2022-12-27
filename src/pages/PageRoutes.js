@@ -21,10 +21,10 @@ const PageRoutes = () => {
         <Routes>
           <Route path="/panel/dashboard" element={<Dashboard />} />
           <Route path="/panel/products" element={<Products />} />
-          <Route path="/panel/restaurants" element={<Restaurants />} />
+          {/* <Route path="/panel/restaurants" element={<Restaurants />} />
           <Route path="/panel/category" element={<Category />} />
           <Route path="/panel/orders" element={<Orders />} />
-          <Route path="/panel/offer" element={<Offers />} />
+          <Route path="/panel/offer" element={<Offers />} /> */}
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/" element={<Navigate replace to="login" />} /> */}
         </Routes>

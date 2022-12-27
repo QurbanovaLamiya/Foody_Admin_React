@@ -18,9 +18,9 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 import Modal from "../../../containers/Modal";
-import FormData from "../../../../util/Form";
-
 import { useTranslation } from "react-i18next";
+
+import FormData from "../../../../util/Form";
 
 const lngs = {
   en: { nativeName: "En" },
@@ -47,7 +47,7 @@ const HeaderContainer = () => {
 
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      <Modal form={FormData.PRODUCTS}  buttonName="ADD PRODUCT" />
+      <Modal form={FormData.PRODUCTS} />
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}

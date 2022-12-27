@@ -10,12 +10,10 @@ import { restaurantsAPI } from "../../../api/restaurant";
 import Form from "../Form";
 import Button from "../../components/Button";
 
-const Modal = ({buttonName}) => {
+const Modal = ({ form: { button, title, formInfo } }) => {
   const [isDrawer, setIsDrawer] = useState(false);
   const [restaurant, setRestaurant] = useState(null);
-  
-  // console.log(props);
-  
+
   useEffect(() => {
     getRestaurant();
   }, []);
@@ -28,11 +26,11 @@ const Modal = ({buttonName}) => {
       .catch((err) => {
         // console.log("err", err);
       });
-    };
-    
-    return (
+  };
+
+  return (
     <>
-      <Button drawer={setIsDrawer}  />
+      <Button drawer={setIsDrawer} buttonName={button} />
       <Drawer anchor="right" open={isDrawer} onClose={() => setIsDrawer(false)}>
         <Box role="presentation" className={ModalStyle.Box}>
           <div className={ModalStyle.Title}>
@@ -42,9 +40,9 @@ const Modal = ({buttonName}) => {
             >
               X
             </button>
-            <h4></h4>
+            <h4>{title}</h4>
           </div>
-          <Form restaurant={restaurant} buttonName={buttonName}/>
+          <Form restaurant={restaurant} formInfo={formInfo} />
         </Box>
       </Drawer>
     </>

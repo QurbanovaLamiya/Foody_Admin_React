@@ -1,40 +1,42 @@
-const Form = {
+const FormData = {
   PRODUCTS: {
     title: "Add Product",
-    formTitle: "Add your Product information",
     button: "ADD PRODUCT",
-    labels: {
-      name: "",
-      description: "",
-      price: "",
-      restaurants: "",
+    formInfo: {
+      formTitle: "Add your Product information",
+      labels: {
+        name: "",
+        description: "",
+        price: "",
+        restaurants: "",
+      },
+      inputs: [
+        {
+          id: 1,
+          label: "Name",
+          name: "name",
+          type: "text",
+        },
+        {
+          id: 2,
+          label: "Description",
+          name: "description",
+          type: "textarea",
+        },
+        {
+          id: 3,
+          label: "Price",
+          name: "price",
+          type: "number",
+        },
+        {
+          id: 4,
+          label: "Restaurants",
+          name: "restaurants",
+          type: "select",
+        },
+      ],
     },
-    inputs: [
-      {
-        id: 1,
-        label: "Name",
-        name: "name",
-        type: "text",
-      },
-      {
-        id: 2,
-        label: "Description",
-        name: "description",
-        type: "textarea",
-      },
-      {
-        id: 3,
-        label: "Price",
-        name: "price",
-        type: "number",
-      },
-      {
-        id: 4,
-        label: "Restaurants",
-        name: "restaurants",
-        type: "select",
-      },
-    ],
   },
   RESTAURANT: {
     title: "Add Restaurant",
@@ -136,4 +138,4 @@ const Form = {
   },
 };
 
-export default Form;
+export default FormData;
