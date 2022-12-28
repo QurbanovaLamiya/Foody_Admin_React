@@ -12,25 +12,25 @@ const FormData = {
       },
       inputs: [
         {
-          id: 1,
+          id: "001",
           label: "Name",
           name: "name",
           type: "text",
         },
         {
-          id: 2,
+          id: "002",
           label: "Description",
           name: "description",
           type: "textarea",
         },
         {
-          id: 3,
+          id: "003",
           label: "Price",
           name: "price",
           type: "number",
         },
         {
-          id: 4,
+          id: "004",
           label: "Restaurants",
           name: "restaurants",
           type: "select",
@@ -54,37 +54,37 @@ const FormData = {
       },
       inputs: [
         {
-          id: 1,
+          id: "001",
           label: "Name",
           name: "name",
           type: "text",
         },
         {
-          id: 2,
+          id: "002",
           label: "Cuisine",
           name: "cuisine",
           type: "textarea",
         },
         {
-          id: 3,
+          id: "003",
           label: "Delivery Price",
           name: "delivery_price",
           type: "number",
         },
         {
-          id: 4,
+          id: "004",
           label: "Delivery Min",
           name: "delivery_minute",
           type: "number",
         },
         {
-          id: 5,
+          id: "005",
           label: "Address",
           name: "address",
           type: "text",
         },
         {
-          id: 6,
+          id: "006",
           label: "Category",
           name: "category",
           type: "select",
@@ -103,13 +103,13 @@ const FormData = {
       },
       inputs: [
         {
-          id: 1,
+          id: "001",
           label: "Name",
           name: "name",
           type: "text",
         },
         {
-          id: 2,
+          id: "002",
           label: "Slug",
           name: "slug",
           type: "text",
@@ -128,13 +128,13 @@ const FormData = {
       },
       inputs: [
         {
-          id: 1,
+          id: "001",
           label: "Title",
           name: "title",
           type: "text",
         },
         {
-          id: 2,
+          id: "002",
           label: "Description",
           name: "description",
           type: "textarea",

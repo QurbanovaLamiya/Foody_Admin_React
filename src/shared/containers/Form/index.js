@@ -10,19 +10,26 @@ const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
   const formik = useFormik({
     initialValues: {
       image: "",
-      name: "",
-      description: "",
-      price: "",
-      restaurant: "",
+      // labels,
+      // name: "",
+      // description: "",
+      // price: "",
+      // restaurant: "",
+      // cuisine:"",
+      // delivery_price:"",
+      // delivery_minute:"",
+      // address:"",
+      // category:""
     },
     validate: (values) => {
+      // console.log("values", values);
       const errors = {};
 
       if (!values.image) {
         errors.image = "Required";
       }
       if (!values.name) {
-        errors.name = "Required";
+        errors.labels = "Required";
       }
       if (!values.description) {
         errors.description = "Required";
@@ -39,9 +46,11 @@ const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
     onSubmit: (values, action) => {
       // console.log("values", values);
       // console.log("action", action);
-      action.resetForm();
+      // action.resetForm();
     },
   });
+
+  // console.log("labels",labels);
   return (
     <Form onSubmit={formik.handleSubmit} className={FormStyle.FormSection}>
       <div className={FormStyle.ImageSection}>
@@ -85,6 +94,7 @@ const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
         <p>{formTitle}</p>
         <div className={FormStyle.DataFormSection}>
           {inputs?.map((field) => {
+            // console.log("field", field);
             switch (field.type) {
               case "text":
                 return (
@@ -93,15 +103,14 @@ const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
                     className={FormStyle.FormGroup}
                     key={field.id}
                   >
-                    <label htmlFor="name">{field.label}</label>
+                    <label htmlFor={field.id}>{field.label}</label>
                     <input
-                      id="name"
+                      id={field.id}
                       name={field.name}
-                      type="text"
                       onChange={formik.handleChange}
-                      value={formik.values.name}
+                      // value={formik.values.field.name}
                     />
-                    {formik.errors.name && <span>{formik.errors.name}</span>}
+                    {/* {formik.errors.name && <span>{formik.errors.name}</span>} */}
                   </Form.Group>
                 );
               case "textarea":
@@ -111,16 +120,16 @@ const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
                     className={FormStyle.FormGroup}
                     key={field.id}
                   >
-                    <label htmlFor="description">{field.label}</label>
+                    <label htmlFor={field.id}>{field.label}</label>
                     <textarea
-                      id="description"
+                      id={field.id}
                       name={field.name}
                       onChange={formik.handleChange}
-                      value={formik.values.description}
+                      // value={formik.values.field.name}
                     ></textarea>
-                    {formik.errors.description && (
+                    {/* {formik.errors.description && (
                       <span>{formik.errors.description}</span>
-                    )}
+                    )} */}
                   </Form.Group>
                 );
               case "number":
@@ -130,15 +139,15 @@ const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
                     className={FormStyle.FormGroup}
                     key={field.id}
                   >
-                    <label htmlFor="price">{field.label}</label>
+                    <label htmlFor={field.id}>{field.label}</label>
                     <input
-                      id="price"
+                      id={field.id}
                       name={field.name}
                       type="number"
                       onChange={formik.handleChange}
-                      value={formik.values.price}
+                      // value={formik.values.field.name}
                     />
-                    {formik.errors.price && <span>{formik.errors.price}</span>}
+                    {/* {formik.errors.price && <span>{formik.errors.price}</span>} */}
                   </Form.Group>
                 );
 
@@ -149,8 +158,8 @@ const ModalForm = ({ restaurant, formInfo: { formTitle, labels, inputs } }) => {
                     className={FormStyle.FormGroup}
                     key={field.id}
                   >
-                    <label htmlFor="restaurant">{field.label}</label>
-                    <select name={field.name} id="restaurant">
+                    <label htmlFor={field.id}>{field.label}</label>
+                    <select name={field.name} id={field.id}>
                       {restaurant?.map((restaurant) => (
                         <option
                           key={restaurant.id}
