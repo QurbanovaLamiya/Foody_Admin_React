@@ -20,7 +20,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Modal from "../../../containers/Modal";
 import { useTranslation } from "react-i18next";
 
-// import FormData from "../../../../util/Form";
 import ProductForm from "../../../containers/Form/ProductForm";
 
 const lngs = {
@@ -48,11 +47,7 @@ const HeaderContainer = () => {
 
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      {/* <Modal form={FormData.PRODUCTS} /> */}
-      <Modal
-        button="ADD PRODUCT"
-        title="Add product"
-      >
+      <Modal button="ADD PRODUCT" title="Add product">
         <ProductForm />
       </Modal>
       <Button

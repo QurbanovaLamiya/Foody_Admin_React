@@ -7,7 +7,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import RestaurantsCard from "./RestaurantsCard";
 import Loading from "../../shared/components/Loading";
 import Modal from "../../shared/containers/Modal";
-import FormData from "../../util/Form";
+// import FormData from "../../util/Form";
 
 // Style
 import RestaurantsStyle from "./Restaurants.module.css";
@@ -19,6 +19,7 @@ import Swal from "sweetalert2";
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import RestaurantForm from "../../shared/containers/Form/RestaurantForm";
 
 const RestaurantsContainer = () => {
   const { t } = useTranslation();
@@ -90,7 +91,10 @@ const RestaurantsContainer = () => {
             </select>
             <KeyboardArrowDownIcon className={RestaurantsStyle.Icon} />
           </div>
-          <Modal form={FormData.RESTAURANT} />
+          {/* <Modal form={FormData.RESTAURANT} /> */}
+          <Modal button="ADD RESTAURANTS" title="Add Restuarant">
+            <RestaurantForm />
+          </Modal>
         </div>
       </div>
       <div className={RestaurantsStyle.Content}>
