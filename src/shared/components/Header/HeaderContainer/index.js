@@ -47,7 +47,7 @@ const HeaderContainer = () => {
 
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      <Modal button="ADD PRODUCT" title="Add product">
+      <Modal button="ADD PRODUCT" title="Add Product">
         <ProductForm />
       </Modal>
       <Button

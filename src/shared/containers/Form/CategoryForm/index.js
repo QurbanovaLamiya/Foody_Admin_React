@@ -3,8 +3,11 @@ import { Form, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 
 import FormStyle from "../Form.module.css";
+import { useTranslation } from "react-i18next";
 
 const CategoryForm = () => {
+  const { t } = useTranslation();
+
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -40,7 +43,7 @@ const CategoryForm = () => {
     <Form onSubmit={formik.handleSubmit} className={FormStyle.FormSection}>
       <div className={FormStyle.ImageSection}>
         <div>
-          <p>Upload image</p>
+          <p>{t("modal.upload_image")}</p>
           {formik.values.image && (
             <img
               src={formik.values.image}
@@ -54,7 +57,7 @@ const CategoryForm = () => {
           <CloudUploadIcon
             style={{ color: "#EC5CF8", width: "60px", height: "40px" }}
           />
-          upload
+          {t("modal.upload")}
           <input
             id="image"
             name="image"
@@ -76,10 +79,10 @@ const CategoryForm = () => {
       </div>
 
       <div className={FormStyle.DataInfoSection}>
-        <p>Add your Category information</p>
+        <p>{t("modal.category_information")}</p>
         <div className={FormStyle.DataFormSection}>
           <Form.Group controlId="formBasicName" className={FormStyle.FormGroup}>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">{t("modal.name")}</label>
             <input
               id="name"
               name="name"
@@ -90,7 +93,7 @@ const CategoryForm = () => {
           </Form.Group>
 
           <Form.Group controlId="formBasicName" className={FormStyle.FormGroup}>
-            <label htmlFor="slug">Slug</label>
+            <label htmlFor="slug">{t("modal.slug")}</label>
             <input
               id="slug"
               name="slug"
@@ -103,9 +106,9 @@ const CategoryForm = () => {
       </div>
 
       <div className={FormStyle.Buttons}>
-        <Button style={{ background: "#43445A" }}>Cancel</Button>
+        <Button style={{ background: "#43445A" }}>{t("modal.cancel")}</Button>
         <Button type="submit" style={{ background: "#C035A2" }}>
-          Create
+          {t("modal.create")}
         </Button>
       </div>
     </Form>

@@ -5,8 +5,10 @@ import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import { restaurantsAPI } from "../../../../api/restaurant";
 import FormStyle from "../Form.module.css";
+import { useTranslation } from "react-i18next";
 
 const ProductForm = () => {
+  const { t } = useTranslation();
   const [restaurant, setRestaurant] = useState(null);
 
   useEffect(() => {
@@ -49,9 +51,9 @@ const ProductForm = () => {
         errors.price = "Required";
       }
 
-    //   if (!values.restaurants) {
-    //     errors.restaurants = "Required";
-    //   }
+      //   if (!values.restaurants) {
+      //     errors.restaurants = "Required";
+      //   }
 
       return errors;
     },
@@ -67,7 +69,7 @@ const ProductForm = () => {
     <Form onSubmit={formik.handleSubmit} className={FormStyle.FormSection}>
       <div className={FormStyle.ImageSection}>
         <div>
-          <p>Upload image</p>
+          <p>{t("modal.upload_image")}</p>
           {formik.values.image && (
             <img
               src={formik.values.image}
@@ -81,7 +83,7 @@ const ProductForm = () => {
           <CloudUploadIcon
             style={{ color: "#EC5CF8", width: "60px", height: "40px" }}
           />
-          upload
+          {t("modal.upload")}
           <input
             id="image"
             name="image"
@@ -103,10 +105,10 @@ const ProductForm = () => {
       </div>
 
       <div className={FormStyle.DataInfoSection}>
-        <p>Add your Product information</p>
+        <p>{t("modal.product_information")}</p>
         <div className={FormStyle.DataFormSection}>
           <Form.Group controlId="formBasicName" className={FormStyle.FormGroup}>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">{t("modal.name")}</label>
             <input
               id="name"
               name="name"
@@ -120,7 +122,7 @@ const ProductForm = () => {
             controlId="formBasicDescription"
             className={FormStyle.FormGroup}
           >
-            <label htmlFor="description">Description</label>
+            <label htmlFor="description">{t("modal.description")}</label>
             <textarea
               id="description"
               name="description"
@@ -136,7 +138,7 @@ const ProductForm = () => {
             controlId="formBasicPrice"
             className={FormStyle.FormGroup}
           >
-            <label htmlFor="">Price</label>
+            <label htmlFor="">{t("modal.price")}</label>
             <input
               id=""
               name="price"
@@ -151,7 +153,7 @@ const ProductForm = () => {
             controlId="formBasicRestaurant"
             className={FormStyle.FormGroup}
           >
-            <label htmlFor="restaurants">Restaurants</label>
+            <label htmlFor="restaurants">{t("modal.restaurants")}</label>
             <select name="restaurants" id="restaurants">
               {restaurant?.map((restaurant) => (
                 <option key={restaurant.id} value={restaurant.restaurant_name}>
@@ -167,9 +169,9 @@ const ProductForm = () => {
       </div>
 
       <div className={FormStyle.Buttons}>
-        <Button style={{ background: "#43445A" }}>Cancel</Button>
+        <Button style={{ background: "#43445A" }}>{t("modal.cancel")}</Button>
         <Button type="submit" style={{ background: "#C035A2" }}>
-          Create
+          {t("modal.create")}
         </Button>
       </div>
     </Form>

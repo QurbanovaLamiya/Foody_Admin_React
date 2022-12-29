@@ -1,34 +1,15 @@
 // Material Ui
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-
-import ModalStyle from "./Modal.module.css";
-
-// import { useEffect, useState } from "react";
 import { useState } from "react";
-// import { restaurantsAPI } from "../../../api/restaurant";
-
-// import Form from "../Form";
+import ModalStyle from "./Modal.module.css";
 import Button from "../../components/Button";
+import { useTranslation } from "react-i18next";
 
-// const Modal = ({ form: { button, title, formInfo } }) => {
-const Modal = ({button,title, children }) => {
+const Modal = ({ button, title, children }) => {
   const [isDrawer, setIsDrawer] = useState(false);
-  // const [restaurant, setRestaurant] = useState(null);
 
-  // useEffect(() => {
-  //   getRestaurant();
-  // }, []);
-
-  // const getRestaurant = () => {
-  //   restaurantsAPI
-  //     .then((res) => {
-  //       setRestaurant(res.data.restaurant.restaurants);
-  //     })
-  //     .catch((err) => {
-  //       // console.log("err", err);
-  //     });
-  // };
+  const { t } = useTranslation();
 
   return (
     <>
@@ -42,10 +23,9 @@ const Modal = ({button,title, children }) => {
             >
               X
             </button>
-            <h4>{title}</h4>
+            <h4>{t(`modal.${title}`)}</h4>
           </div>
           {children}
-          {/* <Form restaurant={restaurant} formInfo={formInfo} /> */}
         </Box>
       </Drawer>
     </>
