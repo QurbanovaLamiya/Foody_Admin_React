@@ -2,33 +2,14 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Form, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 
-import { useEffect, useState } from "react";
-import { restaurantsAPI } from "../../../../api/restaurant";
 import FormStyle from "../Form.module.css";
 
-const ProductForm = () => {
-  const [restaurant, setRestaurant] = useState(null);
-
-  useEffect(() => {
-    getRestaurant();
-  }, []);
-
-  const getRestaurant = () => {
-    restaurantsAPI
-      .then((res) => {
-        setRestaurant(res.data.restaurant.restaurants);
-      })
-      .catch((err) => {
-        // console.log("err", err);
-      });
-  };
+const CategoryForm = () => {
   const formik = useFormik({
     initialValues: {
       image: "",
       name: "",
-      description: "",
-      price: "",
-      restaurants: "",
+      slug: "",
     },
     validate: (values) => {
       const errors = {};
@@ -41,17 +22,9 @@ const ProductForm = () => {
         errors.name = "Required";
       }
 
-      if (!values.description) {
-        errors.description = "Required";
+      if (!values.slug) {
+        errors.slug = "Required";
       }
-
-      if (!values.price) {
-        errors.price = "Required";
-      }
-
-    //   if (!values.restaurants) {
-    //     errors.restaurants = "Required";
-    //   }
 
       return errors;
     },
@@ -103,7 +76,7 @@ const ProductForm = () => {
       </div>
 
       <div className={FormStyle.DataInfoSection}>
-        <p>Add your Product information</p>
+        <p>Add your Category information</p>
         <div className={FormStyle.DataFormSection}>
           <Form.Group controlId="formBasicName" className={FormStyle.FormGroup}>
             <label htmlFor="name">Name</label>
@@ -116,53 +89,16 @@ const ProductForm = () => {
             {formik.errors.name && <span>{formik.errors.name}</span>}
           </Form.Group>
 
-          <Form.Group
-            controlId="formBasicDescription"
-            className={FormStyle.FormGroup}
-          >
-            <label htmlFor="description">Description</label>
-            <textarea
-              id="description"
-              name="description"
-              onChange={formik.handleChange}
-              value={formik.values.description}
-            ></textarea>
-            {formik.errors.description && (
-              <span>{formik.errors.description}</span>
-            )}
-          </Form.Group>
-
-          <Form.Group
-            controlId="formBasicPrice"
-            className={FormStyle.FormGroup}
-          >
-            <label htmlFor="">Price</label>
+          <Form.Group controlId="formBasicName" className={FormStyle.FormGroup}>
+            <label htmlFor="slug">Slug</label>
             <input
-              id=""
-              name="price"
-              type="number"
+              id="slug"
+              name="slug"
               onChange={formik.handleChange}
-              value={formik.values.price}
+              value={formik.values.slug}
             />
-            {formik.errors.price && <span>{formik.errors.price}</span>}
+            {formik.errors.slug && <span>{formik.errors.slug}</span>}
           </Form.Group>
-
-          {/* <Form.Group
-            controlId="formBasicRestaurant"
-            className={FormStyle.FormGroup}
-          >
-            <label htmlFor="restaurants">Restaurants</label>
-            <select name="restaurants" id="restaurants">
-              {restaurant?.map((restaurant) => (
-                <option key={restaurant.id} value={restaurant.restaurant_name}>
-                  {restaurant.restaurant_name}
-                </option>
-              ))}
-            </select>
-            {formik.errors.restaurants && (
-              <span>{formik.errors.restaurants}</span>
-            )}
-          </Form.Group> */}
         </div>
       </div>
 
@@ -176,4 +112,4 @@ const ProductForm = () => {
   );
 };
 
-export default ProductForm;
+export default CategoryForm;
