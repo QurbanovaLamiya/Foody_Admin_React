@@ -4,29 +4,31 @@ import Box from "@mui/material/Box";
 
 import ModalStyle from "./Modal.module.css";
 
-import { useEffect, useState } from "react";
-import { restaurantsAPI } from "../../../api/restaurant";
+// import { useEffect, useState } from "react";
+import { useState } from "react";
+// import { restaurantsAPI } from "../../../api/restaurant";
 
-import Form from "../Form";
+// import Form from "../Form";
 import Button from "../../components/Button";
 
-const Modal = ({ form: { button, title, formInfo } }) => {
+// const Modal = ({ form: { button, title, formInfo } }) => {
+const Modal = ({button,title, children }) => {
   const [isDrawer, setIsDrawer] = useState(false);
-  const [restaurant, setRestaurant] = useState(null);
+  // const [restaurant, setRestaurant] = useState(null);
 
-  useEffect(() => {
-    getRestaurant();
-  }, []);
+  // useEffect(() => {
+  //   getRestaurant();
+  // }, []);
 
-  const getRestaurant = () => {
-    restaurantsAPI
-      .then((res) => {
-        setRestaurant(res.data.restaurant.restaurants);
-      })
-      .catch((err) => {
-        // console.log("err", err);
-      });
-  };
+  // const getRestaurant = () => {
+  //   restaurantsAPI
+  //     .then((res) => {
+  //       setRestaurant(res.data.restaurant.restaurants);
+  //     })
+  //     .catch((err) => {
+  //       // console.log("err", err);
+  //     });
+  // };
 
   return (
     <>
@@ -42,7 +44,8 @@ const Modal = ({ form: { button, title, formInfo } }) => {
             </button>
             <h4>{title}</h4>
           </div>
-          <Form restaurant={restaurant} formInfo={formInfo} />
+          {children}
+          {/* <Form restaurant={restaurant} formInfo={formInfo} /> */}
         </Box>
       </Drawer>
     </>

@@ -4,7 +4,8 @@ const FormData = {
     button: "ADD PRODUCT",
     formInfo: {
       formTitle: "Add your Product information",
-      labels: {
+      initialValues: {
+        image: "",
         name: "",
         description: "",
         price: "",
@@ -43,7 +44,8 @@ const FormData = {
     button: "ADD RESTAURANTS",
     formInfo: {
       formTitle: "Add your Restaurants information",
-      labels: {
+      initialValues: {
+        image: "",
         name: "",
         cuisine: "",
         delivery_price: "",
@@ -97,7 +99,8 @@ const FormData = {
     button: "ADD CATEGORY",
     formInfo: {
       formTitle: "Add your Category information",
-      labels: {
+      initialValues: {
+        image: "",
         name: "",
         slug: "",
       },
@@ -122,7 +125,8 @@ const FormData = {
     button: "ADD OFFER",
     formInfo: {
       formTitle: "Add your Offer information",
-      labels: {
+      initialValues: {
+        image: "",
         title: "",
         description: "",
       },
