@@ -59,6 +59,31 @@
       "contact": "Əlaqə",
       "title": "Başlıq",
       "description": "Təsvir"
+    },
+    "modal": {
+      "cancel": "Ləğv et",
+      "create": "Yarat",
+      "add_product": "Məhsul əlavə et",
+      "add_restuarant": "Restoran əlavə et",
+      "add_category": "Kateqoriya əlavə et",
+      "add_offer": "Təklif əlavə et",
+      "upload_image": "Şəkil yüklə",
+      "upload": "Yüklə",
+      "product_information": "Məhsul məlumatınızı əlavə edin",
+      "restaurant_information": "Restoran məlumatlarınızı əlavə edin",
+      "category_information": "Kateqoriya məlumatlarınızı əlavə edin",
+      "offer_information": "Təklif məlumatınızı əlavə edin",
+      "name": "Ad",
+      "description": "Təsvir",
+      "price": "Qiymət",
+      "restaurants": "Restoranlar",
+      "cuisine": "Mətbəx",
+      "delivery_price": "Çatdırılma Qiyməti",
+      "delivery_min": "Çatdırılma Dəqiqəsi",
+      "address": "Ünvan",
+      "category": "Kateqoriya",
+      "slug": "Link başlığı",
+      "title": "Başlıq"
     }
   }
 }
