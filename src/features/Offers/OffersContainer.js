@@ -2,7 +2,7 @@ import OffersStyle from "./Offers.module.css";
 import OffersTable from "./OffersTable";
 import { useTranslation } from "react-i18next";
 import Modal from "../../shared/containers/Modal";
-import FormData from "../../util/Form";
+import OfferForm from "../../shared/containers/Form/OfferForm";
 
 const OffersContainer = () => {
   const { t } = useTranslation();
@@ -11,7 +11,9 @@ const OffersContainer = () => {
     <div className={OffersStyle.Container}>
       <div className={OffersStyle.Caption}>
         <h1>{t("menu.Offers")}</h1>
-        <Modal form={FormData.OFFER} />
+        <Modal button="ADD OFFER" title="Add Offer">
+          <OfferForm />
+        </Modal>
       </div>
       <div className={OffersStyle.Table}>
         <OffersTable />
