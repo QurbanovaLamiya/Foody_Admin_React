@@ -59,9 +59,9 @@ const RestaurantForm = () => {
         errors.address = "Required";
       }
 
-      if (!values.category) {
-        errors.category = "Required";
-      }
+      // if (!values.category) {
+      //   errors.category = "Required";
+      // }
 
       return errors;
     },
