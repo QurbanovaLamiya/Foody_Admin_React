@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 const Modal = ({ button, title, children }) => {
   const [isDrawer, setIsDrawer] = useState(false);
 
+  // console.log("(title-in icinde olan)",title);
+
   const { t } = useTranslation();
 
   return (
