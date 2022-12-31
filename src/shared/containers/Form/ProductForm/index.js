@@ -1,11 +1,16 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import { Form, Button } from "react-bootstrap";
-import { useFormik } from "formik";
 
 import { useEffect, useState } from "react";
-import { restaurantsAPI } from "../../../../api/restaurant";
-import FormStyle from "../Form.module.css";
+
+import { Form, Button } from "react-bootstrap";
+
 import { useTranslation } from "react-i18next";
+
+import { useFormik } from "formik";
+
+import { restaurantsAPI } from "../../../../api/restaurant";
+
+import FormStyle from "../Form.module.css";
 
 const ProductForm = () => {
   const { t } = useTranslation();
@@ -36,31 +41,29 @@ const ProductForm = () => {
       const errors = {};
 
       if (!values.image) {
-        errors.image = "Required";
+        errors.image = t("required");
       }
 
       if (!values.name) {
-        errors.name = "Required";
+        errors.name = t("required");
       }
 
       if (!values.description) {
-        errors.description = "Required";
+        errors.description = t("required");
       }
 
       if (!values.price) {
-        errors.price = "Required";
+        errors.price = t("required");
       }
 
-      //   if (!values.restaurants) {
-      //     errors.restaurants = "Required";
-      //   }
+      if (!values.restaurants) {
+        errors.restaurants = t("required");
+      }
 
       return errors;
     },
     onSubmit: (values, action) => {
       console.log("values", values);
-      console.log("action", action);
-
       action.resetForm();
     },
   });
@@ -149,12 +152,17 @@ const ProductForm = () => {
             {formik.errors.price && <span>{formik.errors.price}</span>}
           </Form.Group>
 
-          {/* <Form.Group
+          <Form.Group
             controlId="formBasicRestaurant"
             className={FormStyle.FormGroup}
           >
             <label htmlFor="restaurants">{t("modal.restaurants")}</label>
-            <select name="restaurants" id="restaurants">
+            <select
+              name="restaurants"
+              id="restaurants"
+              onChange={formik.handleChange}
+              value={formik.values.restaurants}
+            >
               {restaurant?.map((restaurant) => (
                 <option key={restaurant.id} value={restaurant.restaurant_name}>
                   {restaurant.restaurant_name}
@@ -164,7 +172,7 @@ const ProductForm = () => {
             {formik.errors.restaurants && (
               <span>{formik.errors.restaurants}</span>
             )}
-          </Form.Group> */}
+          </Form.Group>
         </div>
       </div>
 

@@ -1,9 +1,12 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+
 import { Form, Button } from "react-bootstrap";
+
+import { useTranslation } from "react-i18next";
+
 import { useFormik } from "formik";
 
 import FormStyle from "../Form.module.css";
-import { useTranslation } from "react-i18next";
 
 const OfferForm = () => {
   const { t } = useTranslation();
@@ -18,15 +21,15 @@ const OfferForm = () => {
       const errors = {};
 
       if (!values.image) {
-        errors.image = "Required";
+        errors.image = t("required");
       }
 
       if (!values.title) {
-        errors.title = "Required";
+        errors.title = t("required");
       }
 
       if (!values.description) {
-        errors.description = "Required";
+        errors.description = t("required");
       }
 
       return errors;

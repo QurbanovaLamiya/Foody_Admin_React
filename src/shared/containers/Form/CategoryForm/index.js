@@ -1,9 +1,12 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+
 import { Form, Button } from "react-bootstrap";
+
+import { useTranslation } from "react-i18next";
+
 import { useFormik } from "formik";
 
 import FormStyle from "../Form.module.css";
-import { useTranslation } from "react-i18next";
 
 const CategoryForm = () => {
   const { t } = useTranslation();
@@ -18,15 +21,15 @@ const CategoryForm = () => {
       const errors = {};
 
       if (!values.image) {
-        errors.image = "Required";
+        errors.image = t("required");
       }
 
       if (!values.name) {
-        errors.name = "Required";
+        errors.name = t("required");
       }
 
       if (!values.slug) {
-        errors.slug = "Required";
+        errors.slug = t("required");
       }
 
       return errors;

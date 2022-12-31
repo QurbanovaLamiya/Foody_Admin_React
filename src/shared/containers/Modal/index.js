@@ -1,16 +1,16 @@
-// Material Ui
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
+
 import { useState } from "react";
-import ModalStyle from "./Modal.module.css";
-import Button from "../../components/Button";
+
 import { useTranslation } from "react-i18next";
+
+import Button from "../../components/Button";
+
+import ModalStyle from "./Modal.module.css";
 
 const Modal = ({ button, title, children }) => {
   const [isDrawer, setIsDrawer] = useState(false);
-
-  // console.log("(title-in icinde olan)",title);
-
   const { t } = useTranslation();
 
   return (

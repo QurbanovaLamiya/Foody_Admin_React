@@ -1,11 +1,14 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+
 import { Form, Button } from "react-bootstrap";
+
+import { useTranslation } from "react-i18next";
+
 import { useFormik } from "formik";
 
+import FormStyle from "../Form.module.css";
 // import { useEffect, useState } from "react";
 // import { restaurantsAPI } from "../../../../api/restaurant";
-import FormStyle from "../Form.module.css";
-import { useTranslation } from "react-i18next";
 
 const RestaurantForm = () => {
   const { t } = useTranslation();
@@ -38,31 +41,31 @@ const RestaurantForm = () => {
       const errors = {};
 
       if (!values.image) {
-        errors.image = "Required";
+        errors.image = t("required");
       }
 
       if (!values.name) {
-        errors.name = "Required";
+        errors.name = t("required");
       }
 
       if (!values.cuisine) {
-        errors.cuisine = "Required";
+        errors.cuisine = t("required");
       }
 
       if (!values.delivery_price) {
-        errors.delivery_price = "Required";
+        errors.delivery_price = t("required");
       }
 
       if (!values.delivery_minute) {
-        errors.delivery_minute = "Required";
+        errors.delivery_minute = t("required");
       }
 
       if (!values.address) {
-        errors.address = "Required";
+        errors.address = t("required");
       }
 
       // if (!values.category) {
-      //   errors.category = "Required";
+      //   errors.category = t("required");
       // }
 
       return errors;

@@ -18,9 +18,9 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 import Modal from "../../../containers/Modal";
-import { useTranslation } from "react-i18next";
-
 import ProductForm from "../../../containers/Form/ProductForm";
+
+import { useTranslation } from "react-i18next";
 
 const lngs = {
   en: { nativeName: "En" },
