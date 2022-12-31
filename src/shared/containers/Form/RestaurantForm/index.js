@@ -7,26 +7,30 @@ import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 
 import FormStyle from "../Form.module.css";
-// import { useEffect, useState } from "react";
-// import { restaurantsAPI } from "../../../../api/restaurant";
+
+import { categoryAPI } from "../../../../api/category";
+
+import { useEffect, useState } from "react";
 
 const RestaurantForm = () => {
   const { t } = useTranslation();
-  // const [restaurant, setRestaurant] = useState(null);
+  const [category, setCategory] = useState(null);
 
-  // useEffect(() => {
-  //   getRestaurant();
-  // }, []);
+  console.log("category",category);
 
-  // const getRestaurant = () => {
-  //   restaurantsAPI
-  //     .then((res) => {
-  //       setRestaurant(res.data.restaurant.restaurants);
-  //     })
-  //     .catch((err) => {
-  //       // console.log("err", err);
-  //     });
-  // };
+  useEffect(() => {
+    getCategory();
+  }, []);
+
+  const getCategory = () => {
+    categoryAPI
+      .then((res) => {
+        setCategory(res.data.category.categories);
+      })
+      .catch((err) => {
+        // console.log("err", err);
+      });
+  };
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -72,8 +76,6 @@ const RestaurantForm = () => {
     },
     onSubmit: (values, action) => {
       console.log("values", values);
-      console.log("action", action);
-
       action.resetForm();
     },
   });
@@ -193,22 +195,22 @@ const RestaurantForm = () => {
             {formik.errors.address && <span>{formik.errors.address}</span>}
           </Form.Group>
 
-          {/* <Form.Group
-            controlId="formBasicRestaurant"
+          <Form.Group
+            controlId="formBasicCategory"
             className={FormStyle.FormGroup}
           >
-            <label htmlFor="restaurants">{t("modal.restaurants")}</label>
-            <select name="restaurants" id="restaurants">
-              {restaurant?.map((restaurant) => (
-                <option key={restaurant.id} value={restaurant.restaurant_name}>
-                  {restaurant.restaurant_name}
+            <label htmlFor="category">{t("modal.category")}</label>
+            <select name="category" id="category">
+              {category?.map((category) => (
+                <option key={category.id} value={category.category_slug}>
+                  {category.category_slug}
                 </option>
               ))}
             </select>
             {formik.errors.category && (
               <span>{formik.errors.category}</span>
             )}
-          </Form.Group> */}
+          </Form.Group>
         </div>
       </div>
 
