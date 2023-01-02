@@ -7,7 +7,6 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import RestaurantsCard from "./RestaurantsCard";
 import Loading from "../../shared/components/Loading";
 import Modal from "../../shared/containers/Modal";
-// import FormData from "../../util/Form";
 
 // Style
 import RestaurantsStyle from "./Restaurants.module.css";
@@ -17,23 +16,31 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
-import { useEffect, useReducer, useState } from "react";
+
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import RestaurantForm from "../../shared/containers/Form/RestaurantForm";
+import { useRestaurantProvider } from "../../provider/Restaurant/RestaurantProvider";
+import { RESTAURANT_DATA } from "../../provider/types";
 
 const RestaurantsContainer = () => {
   const { t } = useTranslation();
-  // const [state,dispatch] = useReducer
-  const [restaurant, setRestaurant] = useState(null);
+  const { state, dispatch } = useRestaurantProvider();
+  const { restaurant } = state;
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
-    getRestaurant();
-  }, []);
+    !restaurant.length && getRestaurant();
+  }, [restaurant]);
 
   const getRestaurant = () => {
     restaurantsAPI
       .then((res) => {
-        setRestaurant(res.data.restaurant.restaurants);
+        dispatch({
+          type: RESTAURANT_DATA,
+          payload: res.data.restaurant.restaurants,
+        });
       })
       .catch((err) => {
         // console.log("err", err);
@@ -57,7 +64,7 @@ const RestaurantsContainer = () => {
             let newArray = [...restaurant].filter(
               (restaurant) => restaurant.id !== id
             );
-            setRestaurant(newArray);
+            dispatch({ type: RESTAURANT_DATA, payload: newArray });
           })
           .catch(() => {});
         toast.success(t("success restaurant"), {
@@ -92,7 +99,6 @@ const RestaurantsContainer = () => {
             </select>
             <KeyboardArrowDownIcon className={RestaurantsStyle.Icon} />
           </div>
-          {/* <Modal form={FormData.RESTAURANT} /> */}
           <Modal button="ADD RESTAURANTS" title="Add Restuarant">
             <RestaurantForm />
           </Modal>

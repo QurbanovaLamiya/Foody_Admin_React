@@ -31,8 +31,6 @@ const ProductsContainer = () => {
 
   const { product } = state;
 
-  console.log(product);
-
   useEffect(() => {
     !product.length && getProducts();
   }, [product]);

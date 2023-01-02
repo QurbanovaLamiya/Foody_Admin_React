@@ -1,1 +1,2 @@
 export const PRODUCT_DATA = "PRODUCT_DATA";
+export const RESTAURANT_DATA = "RESTAURANT_DATA";
