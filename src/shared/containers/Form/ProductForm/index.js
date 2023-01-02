@@ -12,6 +12,8 @@ import { restaurantsAPI } from "../../../../api/restaurant";
 
 import FormStyle from "../Form.module.css";
 
+import {productCreateAPI} from "../../../../api/product"
+
 const ProductForm = () => {
   const { t } = useTranslation();
   const [restaurant, setRestaurant] = useState(null);
@@ -29,6 +31,7 @@ const ProductForm = () => {
         // console.log("err", err);
       });
   };
+
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -63,8 +66,21 @@ const ProductForm = () => {
       return errors;
     },
     onSubmit: (values, action) => {
-      console.log("values", values);
+      const addProduct = (item) => {
+        productCreateAPI(item)
+          .then((res) => {
+            // console.log("res", res);
+
+            // let newArray = [...products, item];
+
+            // console.log("newArray",newArray);
+
+            // setActors(newArray);
+          })
+          .catch(() => {});
+      };
       action.resetForm();
+      console.log("values", values);
     },
   });
 

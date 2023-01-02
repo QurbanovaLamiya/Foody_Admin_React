@@ -17,12 +17,13 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
 import RestaurantForm from "../../shared/containers/Form/RestaurantForm";
 
 const RestaurantsContainer = () => {
   const { t } = useTranslation();
+  // const [state,dispatch] = useReducer
   const [restaurant, setRestaurant] = useState(null);
 
   useEffect(() => {

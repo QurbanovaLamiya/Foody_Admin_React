@@ -14,26 +14,36 @@ import ProductsStyle from "./Products.module.css";
 import { productAPI, productDeleteAPI } from "../../api/product";
 
 // React
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // Sweet Alert
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 import { useTranslation } from "react-i18next";
+import { useProductProvider } from "../../provider/Product/ProductProvider";
+import { PRODUCT_DATA } from "../../provider/types";
 
 const ProductsContainer = () => {
   const { t } = useTranslation();
-  const [product, setProduct] = useState(null);
+
+  const { state, dispatch } = useProductProvider();
+
+  const { product } = state;
+
+  console.log(product);
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    !product.length && getProducts();
+  }, [product]);
 
   const getProducts = () => {
     productAPI
       .then((res) => {
-        setProduct(res.data.products.products);
+        dispatch({
+          type: PRODUCT_DATA,
+          payload: res.data.products.products,
+        });
       })
       .catch((err) => {
         // console.log("err", err);
@@ -55,7 +65,7 @@ const ProductsContainer = () => {
         productDeleteAPI(id)
           .then((res) => {
             let newArray = [...product].filter((product) => product.id !== id);
-            setProduct(newArray);
+            dispatch({ type: PRODUCT_DATA, payload: newArray });
           })
           .catch(() => {});
         toast.success(t("success product"), {
@@ -107,7 +117,7 @@ const ProductsContainer = () => {
         <li>2</li>
         <li>3</li>
         <li>
-          <KeyboardArrowRightIcon />
+        <KeyboardArrowRightIcon />
         </li>
       </ul> */}
       <ToastContainer />
