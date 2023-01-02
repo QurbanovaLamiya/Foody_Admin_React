@@ -20,10 +20,22 @@ import { offersAPI, offersDeleteAPI } from "../../../api/offers";
 import { useTranslation } from "react-i18next";
 
 import Loading from "../../../shared/components/Loading";
+import { useOfferProvider } from "../../../provider/Offer/OfferProvider";
+import { OFFER_DATA } from "../../../provider/types";
 
 const OffersTable = () => {
   const { t } = useTranslation();
-  const [offers, setOffers] = useState(null);
+
+  const { state, dispatch } = useOfferProvider();
+  const { offer } = state;
+
+  console.log("offer", offer);
+
+  // useEffect(() => {
+  //   !category.length && getCategory();
+  // }, [category]);
+
+  // const [offers, setOffers] = useState(null);
 
   useEffect(() => {
     getOffers();
@@ -32,7 +44,11 @@ const OffersTable = () => {
   const getOffers = () => {
     offersAPI
       .then((res) => {
-        setOffers(res.data.offers.Offers);
+        // setOffers(res.data.offers.Offers);
+        dispatch({
+          type: OFFER_DATA,
+          payload: res.data.offers.Offers,
+        });
       })
       .catch((err) => {
         // console.log("err", err);
@@ -53,8 +69,9 @@ const OffersTable = () => {
       if (result.isConfirmed) {
         offersDeleteAPI(id)
           .then((res) => {
-            let newArray = [...offers].filter((offer) => offer.id !== id);
-            setOffers(newArray);
+            // let newArray = [...offers].filter((offer) => offer.id !== id);
+            // setOffers(newArray);
+            // dispatch({ type: OFFER_DATA, payload: newArray });
           })
           .catch(() => {});
         toast.success(t("success offer"), {
@@ -71,9 +88,9 @@ const OffersTable = () => {
     });
   };
 
-  if (!offers) {
-    return <Loading />;
-  }
+  // if (!offers) {
+  //   return <Loading />;
+  // }
 
   return (
     <TableContainer component={Paper}>
@@ -88,7 +105,7 @@ const OffersTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {offers?.map((offer) => (
+          {/* {offers?.map((offer) => (
             <TableRow key={offer.id}>
               <TableCell align="center">{offer.id}</TableCell>
               <TableCell align="center">
@@ -113,7 +130,7 @@ const OffersTable = () => {
                 />
               </TableCell>
             </TableRow>
-          ))}
+          ))} */}
         </TableBody>
       </Table>
       <ToastContainer />

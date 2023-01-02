@@ -13,16 +13,20 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { ordersAPI, ordersDeleteAPI } from "../../../api/orders";
 import Loading from "../../../shared/components/Loading";
 
 import { useTranslation } from "react-i18next";
+import { ORDER_DATA } from "../../../provider/types";
+import { useOrderProvider } from "../../../provider/Order/OrderProvider";
 
 const OrdersTable = () => {
   const { t } = useTranslation();
-  const [orders, setOrders] = useState(null);
+
+  const { state, dispatch } = useOrderProvider();
+  const { orders } = state;
 
   useEffect(() => {
     getOrders();
@@ -31,7 +35,10 @@ const OrdersTable = () => {
   const getOrders = () => {
     ordersAPI
       .then((res) => {
-        setOrders(res.data.orders.orders);
+        dispatch({
+          type: ORDER_DATA,
+          payload: res.data.orders.orders,
+        });
       })
       .catch((err) => {
         // console.log("err", err);
@@ -53,7 +60,7 @@ const OrdersTable = () => {
         ordersDeleteAPI(id)
           .then((res) => {
             let newArray = [...orders].filter((order) => order.id !== id);
-            setOrders(newArray);
+            dispatch({ type: ORDER_DATA, payload: newArray });
           })
           .catch(() => {});
         toast.success(t("success order"), {
