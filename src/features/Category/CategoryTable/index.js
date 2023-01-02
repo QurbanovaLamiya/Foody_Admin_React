@@ -12,23 +12,30 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { categoryAPI, categoryDeleteAPI } from "../../../api/category";
 import { useTranslation } from "react-i18next";
 import Loading from "../../../shared/components/Loading";
 
+import { CATEGORY_DATA } from "../../../provider/types";
+import { useCategoryProvider } from "../../../provider/Category/CategoryProvider";
+
 const CategoryTable = () => {
   const { t } = useTranslation();
-  const [category, setCategory] = useState(null);
+  const { state, dispatch } = useCategoryProvider();
+  const { category } = state;
 
   useEffect(() => {
-    getCategory();
-  }, []);
+    !category.length && getCategory();
+  }, [category]);
 
   const getCategory = () => {
     categoryAPI
       .then((res) => {
-        setCategory(res.data.category.categories);
+        dispatch({
+          type: CATEGORY_DATA,
+          payload: res.data.category.categories,
+        });
       })
       .catch((err) => {
         // console.log("err", err);
@@ -52,7 +59,7 @@ const CategoryTable = () => {
             let newArray = [...category].filter(
               (category) => category.id !== id
             );
-            setCategory(newArray);
+            dispatch({ type: CATEGORY_DATA, payload: newArray });
           })
           .catch(() => {});
         toast.success(t("success category"), {

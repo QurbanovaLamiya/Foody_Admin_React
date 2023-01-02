@@ -28,8 +28,6 @@ const RestaurantsContainer = () => {
   const { state, dispatch } = useRestaurantProvider();
   const { restaurant } = state;
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     !restaurant.length && getRestaurant();
   }, [restaurant]);
