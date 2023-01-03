@@ -76,7 +76,7 @@ const CategoryTable = () => {
     });
   };
 
-  if (!category) {
+  if (!category.length) {
     return <Loading />;
   }
 

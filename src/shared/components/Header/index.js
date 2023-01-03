@@ -9,15 +9,18 @@ import FoodyIcon from "../../../image/logo/foodyIcon.svg";
 
 // Component
 import HeaderContainer from "./HeaderContainer";
+import { ProductProvider } from "../../../provider/Product/ProductProvider";
 
 const Header = () => {
   return (
-    <Navbar className={HeaderStyle.Navbar}>
-      <Navbar.Brand className={HeaderStyle.Brand}>
-        <img src={FoodyIcon} alt="FoodyIcon" />
-      </Navbar.Brand>
-      <HeaderContainer />
-    </Navbar>
+    <ProductProvider>
+      <Navbar className={HeaderStyle.Navbar}>
+        <Navbar.Brand className={HeaderStyle.Brand}>
+          <img src={FoodyIcon} alt="FoodyIcon" />
+        </Navbar.Brand>
+        <HeaderContainer />
+      </Navbar>
+    </ProductProvider>
   );
 };
 

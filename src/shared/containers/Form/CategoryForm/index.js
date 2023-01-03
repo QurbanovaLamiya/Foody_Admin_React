@@ -7,9 +7,16 @@ import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 
 import FormStyle from "../Form.module.css";
+import { useCategoryProvider } from "../../../../provider/Category/CategoryProvider";
+import { useId } from "react";
+import { CATEGORY_DATA } from "../../../../provider/types";
+import { categoryCreateAPI } from "../../../../api/category";
 
 const CategoryForm = () => {
   const { t } = useTranslation();
+  const id = useId();
+  const { state, dispatch } = useCategoryProvider();
+  const { category } = state;
 
   const formik = useFormik({
     initialValues: {
@@ -35,8 +42,19 @@ const CategoryForm = () => {
       return errors;
     },
     onSubmit: (values, action) => {
-      console.log("values", values);
-      console.log("action", action);
+      let item = {
+        id,
+        image_url: values.image,
+        category_name: values.name,
+        category_slug: values.slug,
+      };
+
+      categoryCreateAPI(item)
+        .then((res) => {
+          let newArray = [...category, item];
+          dispatch({ type: CATEGORY_DATA, payload: newArray });
+        })
+        .catch(() => {});
 
       action.resetForm();
     },

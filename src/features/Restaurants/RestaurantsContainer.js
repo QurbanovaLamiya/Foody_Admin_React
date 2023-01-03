@@ -1,7 +1,5 @@
 // Material-UI
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-// import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-// import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 // Components
 import RestaurantsCard from "./RestaurantsCard";
@@ -79,7 +77,7 @@ const RestaurantsContainer = () => {
     });
   };
 
-  if (!restaurant) {
+  if (!restaurant.length) {
     return <Loading />;
   }
 
@@ -111,17 +109,6 @@ const RestaurantsContainer = () => {
           />
         ))}
       </div>
-      {/* <ul className={RestaurantsStyle.Pagination}>
-        <li>
-          <KeyboardArrowLeftIcon />
-        </li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>
-          <KeyboardArrowRightIcon />
-        </li>
-      </ul> */}
       <ToastContainer />
     </div>
   );

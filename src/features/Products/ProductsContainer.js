@@ -1,7 +1,5 @@
 // Material-UI
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-// import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-// import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 // Components
 import ProductsCards from "./ProductsCards";
@@ -21,6 +19,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 import { useTranslation } from "react-i18next";
+
 import { useProductProvider } from "../../provider/Product/ProductProvider";
 import { PRODUCT_DATA } from "../../provider/types";
 
@@ -28,7 +27,6 @@ const ProductsContainer = () => {
   const { t } = useTranslation();
 
   const { state, dispatch } = useProductProvider();
-
   const { product } = state;
 
   useEffect(() => {
@@ -80,7 +78,7 @@ const ProductsContainer = () => {
     });
   };
 
-  if (!product) {
+  if (!product.length) {
     return <Loading />;
   }
 
@@ -107,17 +105,6 @@ const ProductsContainer = () => {
           />
         ))}
       </div>
-      {/* <ul className={ProductsStyle.Pagination}>
-        <li>
-          <KeyboardArrowLeftIcon />
-        </li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>
-        <KeyboardArrowRightIcon />
-        </li>
-      </ul> */}
       <ToastContainer />
     </div>
   );

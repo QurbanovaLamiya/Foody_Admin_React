@@ -1,6 +1,6 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 import { Form, Button } from "react-bootstrap";
 
@@ -12,11 +12,19 @@ import { restaurantsAPI } from "../../../../api/restaurant";
 
 import FormStyle from "../Form.module.css";
 
-import {productCreateAPI} from "../../../../api/product"
+import { productCreateAPI } from "../../../../api/product";
+import { useProductProvider } from "../../../../provider/Product/ProductProvider";
+import { PRODUCT_DATA } from "../../../../provider/types";
 
 const ProductForm = () => {
   const { t } = useTranslation();
   const [restaurant, setRestaurant] = useState(null);
+  let id = useId();
+
+  const { state, dispatch } = useProductProvider();
+  const { product } = state;
+
+  console.log(product);
 
   useEffect(() => {
     getRestaurant();
@@ -66,21 +74,23 @@ const ProductForm = () => {
       return errors;
     },
     onSubmit: (values, action) => {
-      const addProduct = (item) => {
-        productCreateAPI(item)
-          .then((res) => {
-            // console.log("res", res);
-
-            // let newArray = [...products, item];
-
-            // console.log("newArray",newArray);
-
-            // setActors(newArray);
-          })
-          .catch(() => {});
+      let item = {
+        id,
+        image_url: values.image,
+        product_name: values.name,
+        product_price: values.price,
+        restaurant_name: values.restaurants,
+        description: values.description,
       };
+
+      productCreateAPI(item)
+        .then((res) => {
+          let newArray = [...product, item];
+          dispatch({ type: PRODUCT_DATA, payload: newArray });
+        })
+        .catch(() => {});
+
       action.resetForm();
-      console.log("values", values);
     },
   });
 
