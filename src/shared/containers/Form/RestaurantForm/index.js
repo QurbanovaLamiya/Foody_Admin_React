@@ -9,14 +9,25 @@ import { useFormik } from "formik";
 import FormStyle from "../Form.module.css";
 
 import { categoryAPI } from "../../../../api/category";
+import { restaurantCreateAPI } from "../../../../api/restaurant";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId } from "react";
 
-const RestaurantForm = () => {
+import { useRestaurantProvider } from "../../../../provider/Restaurant/RestaurantProvider";
+import { useCategoryProvider } from "../../../../provider/Category/CategoryProvider";
+import { CATEGORY_DATA, RESTAURANT_DATA } from "../../../../provider/types";
+
+const RestaurantForm = ({ setDrawer }) => {
   const { t } = useTranslation();
-  const [category, setCategory] = useState(null);
 
-  console.log("category",category);
+  const { state, dispatch } = useCategoryProvider();
+  const { category } = state;
+
+  const { resState, resDispatch } = useRestaurantProvider();
+  const { restaurant } = resState;
+
+  const id = useId();
+  let newId = id.slice(1, -1);
 
   useEffect(() => {
     getCategory();
@@ -25,7 +36,10 @@ const RestaurantForm = () => {
   const getCategory = () => {
     categoryAPI
       .then((res) => {
-        setCategory(res.data.category.categories);
+        dispatch({
+          type: CATEGORY_DATA,
+          payload: res.data.category.categories,
+        });
       })
       .catch((err) => {
         // console.log("err", err);
@@ -68,14 +82,30 @@ const RestaurantForm = () => {
         errors.address = t("required");
       }
 
-      // if (!values.category) {
-      //   errors.category = t("required");
-      // }
+      if (!values.category) {
+        errors.category = t("required");
+      }
 
       return errors;
     },
     onSubmit: (values, action) => {
-      console.log("values", values);
+      let item = {
+        id: newId,
+        image_url: values.image,
+        restaurant_name: values.name,
+        cuisine: values.cuisine,
+        delivery_price: values.delivery_price,
+        delivery_minute: values.delivery_minute,
+        address: values.address,
+        category_name: values.category,
+      };
+
+      restaurantCreateAPI(item)
+        .then((res) => {
+          let newArray = [...restaurant, item];
+          resDispatch({ type: RESTAURANT_DATA, payload: newArray });
+        })
+        .catch(() => {});
       action.resetForm();
     },
   });
@@ -200,22 +230,27 @@ const RestaurantForm = () => {
             className={FormStyle.FormGroup}
           >
             <label htmlFor="category">{t("modal.category")}</label>
-            <select name="category" id="category">
+            <select name="category" id="category"
+            onChange={formik.handleChange}
+            value={formik.values.category}>
               {category?.map((category) => (
                 <option key={category.id} value={category.category_slug}>
                   {category.category_slug}
                 </option>
               ))}
             </select>
-            {formik.errors.category && (
-              <span>{formik.errors.category}</span>
-            )}
+            {formik.errors.category && <span>{formik.errors.category}</span>}
           </Form.Group>
         </div>
       </div>
 
       <div className={FormStyle.Buttons}>
-        <Button style={{ background: "#43445A" }}>{t("modal.cancel")}</Button>
+        <Button
+          style={{ background: "#43445A" }}
+          onClick={() => setDrawer(false)}
+        >
+          {t("modal.cancel")}
+        </Button>
         <Button type="submit" style={{ background: "#C035A2" }}>
           {t("modal.create")}
         </Button>

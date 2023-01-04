@@ -18,10 +18,10 @@ const reducer = (state, action) => {
 };
 
 export const RestaurantProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [resState, resDispatch] = useReducer(reducer, initialState);
 
   return (
-    <restaurantContext.Provider value={{ state, dispatch }}>
+    <restaurantContext.Provider value={{ resState, resDispatch }}>
       {children}
     </restaurantContext.Provider>
   );

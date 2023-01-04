@@ -15,7 +15,7 @@ import Swal from "sweetalert2";
 
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import RestaurantForm from "../../shared/containers/Form/RestaurantForm";
 import { useRestaurantProvider } from "../../provider/Restaurant/RestaurantProvider";
@@ -23,8 +23,10 @@ import { RESTAURANT_DATA } from "../../provider/types";
 
 const RestaurantsContainer = () => {
   const { t } = useTranslation();
-  const { state, dispatch } = useRestaurantProvider();
-  const { restaurant } = state;
+  const { resState, resDispatch } = useRestaurantProvider();
+  const { restaurant } = resState;
+
+  const [isDrawer, setIsDrawer] = useState(false);
 
   useEffect(() => {
     !restaurant.length && getRestaurant();
@@ -33,7 +35,7 @@ const RestaurantsContainer = () => {
   const getRestaurant = () => {
     restaurantsAPI
       .then((res) => {
-        dispatch({
+        resDispatch({
           type: RESTAURANT_DATA,
           payload: res.data.restaurant.restaurants,
         });
@@ -60,7 +62,7 @@ const RestaurantsContainer = () => {
             let newArray = [...restaurant].filter(
               (restaurant) => restaurant.id !== id
             );
-            dispatch({ type: RESTAURANT_DATA, payload: newArray });
+            resDispatch({ type: RESTAURANT_DATA, payload: newArray });
           })
           .catch(() => {});
         toast.success(t("success restaurant"), {
@@ -95,8 +97,13 @@ const RestaurantsContainer = () => {
             </select>
             <KeyboardArrowDownIcon className={RestaurantsStyle.Icon} />
           </div>
-          <Modal button="ADD RESTAURANTS" title="Add Restuarant">
-            <RestaurantForm />
+          <Modal
+            button="ADD RESTAURANTS"
+            title="Add Restuarant"
+            drawer={isDrawer}
+            setDrawer={setIsDrawer}
+          >
+            <RestaurantForm setDrawer={setIsDrawer} />
           </Modal>
         </div>
       </div>
