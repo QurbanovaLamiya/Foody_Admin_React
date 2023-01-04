@@ -1,22 +1,22 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-
 import { Form, Button } from "react-bootstrap";
-
 import { useTranslation } from "react-i18next";
-
 import { useFormik } from "formik";
+import { useId } from "react";
+
+import { categoryCreateAPI } from "../../../../api/category";
+import { useCategoryProvider } from "../../../../provider/Category/CategoryProvider";
+import { CATEGORY_DATA } from "../../../../provider/types";
 
 import FormStyle from "../Form.module.css";
-import { useCategoryProvider } from "../../../../provider/Category/CategoryProvider";
-import { useId } from "react";
-import { CATEGORY_DATA } from "../../../../provider/types";
-import { categoryCreateAPI } from "../../../../api/category";
 
-const CategoryForm = () => {
+const CategoryForm = ({ setDrawer }) => {
   const { t } = useTranslation();
-  const id = useId();
   const { state, dispatch } = useCategoryProvider();
   const { category } = state;
+
+  const id = useId();
+  let newId = id.slice(1, -1);
 
   const formik = useFormik({
     initialValues: {
@@ -43,7 +43,7 @@ const CategoryForm = () => {
     },
     onSubmit: (values, action) => {
       let item = {
-        id,
+        id: newId,
         image_url: values.image,
         category_name: values.name,
         category_slug: values.slug,
@@ -127,7 +127,12 @@ const CategoryForm = () => {
       </div>
 
       <div className={FormStyle.Buttons}>
-        <Button style={{ background: "#43445A" }}>{t("modal.cancel")}</Button>
+        <Button
+          style={{ background: "#43445A" }}
+          onClick={() => setDrawer(false)}
+        >
+          {t("modal.cancel")}
+        </Button>
         <Button type="submit" style={{ background: "#C035A2" }}>
           {t("modal.create")}
         </Button>
