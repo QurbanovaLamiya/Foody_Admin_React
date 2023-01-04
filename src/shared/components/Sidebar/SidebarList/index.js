@@ -7,6 +7,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import SidebarListStyle from "./SidebarList.module.css";
 import { useTranslation } from "react-i18next";
 import { useLoginProvider } from "../../../../provider/Login/LoginProvider";
+import { LOGIN } from "../../../../provider/types";
 
 let activeStyle = {
   background: "#cd61ed",
@@ -20,7 +21,7 @@ const SidebarList = () => {
 
   const onBack = () => {
     localStorage.removeItem("isLogin");
-    dispatch({ type: "LOGIN", payload: false });
+    dispatch({ type: LOGIN, payload: false });
     navigate("/login");
   };
   return (

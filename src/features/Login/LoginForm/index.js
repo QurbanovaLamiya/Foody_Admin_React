@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { useLoginProvider } from "../../../provider/Login/LoginProvider";
+import { LOGIN } from "../../../provider/types";
 
 let inlineStyle = {
   width: "100%",
@@ -25,6 +26,7 @@ let inlineStyle = {
 const LoginForm = () => {
   const { state, dispatch } = useLoginProvider();
   const { user_name, password } = state.user;
+  
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -60,7 +62,7 @@ const LoginForm = () => {
         action.resetForm();
       } else {
         localStorage.setItem("isLogin", true);
-        dispatch({ type: "LOGIN", payload: true });
+        dispatch({ type: LOGIN, payload: true });
         navigate("/panel/dashboard");
       }
     },

@@ -1,4 +1,5 @@
 import { useContext, useReducer, createContext } from "react";
+import { LOGIN } from "../types";
 
 const loginContext = createContext({});
 
@@ -12,7 +13,8 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "LOGIN":
+    // case "LOGIN":
+    case LOGIN:
       return { ...state, isLogin: action.payload };
 
     default:
