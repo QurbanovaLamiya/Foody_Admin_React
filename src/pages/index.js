@@ -11,8 +11,6 @@ const RootPage = () => {
 
   const { state } = useLoginProvider();
 
-  console.log(state);
-
   useEffect(() => {
     setauthenticated(localStorage.getItem("isLogin"));
   }, []);

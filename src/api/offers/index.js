@@ -9,6 +9,14 @@ AxiosMockCreate.onGet("/offers").reply((config) => {
   });
 });
 
+AxiosMockCreate.onPost("/offers").reply((config) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([201, { message: "Created", result: JSON.parse(config.data) }]);
+    }, 1500);
+  });
+});
+
 AxiosMockCreate.onDelete(/\/offers\/\d+/).reply((config) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -18,4 +26,5 @@ AxiosMockCreate.onDelete(/\/offers\/\d+/).reply((config) => {
 });
 
 export const offersAPI = Axios.get("/offers");
+export const offersCreateAPI = (item) => Axios.post(`/offers`, item);
 export const offersDeleteAPI = (id) => Axios.delete(`/offers/${id}`);

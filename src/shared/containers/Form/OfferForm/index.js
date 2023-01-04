@@ -6,10 +6,21 @@ import { useTranslation } from "react-i18next";
 
 import { useFormik } from "formik";
 
-import FormStyle from "../Form.module.css";
+import { offersCreateAPI } from "../../../../api/offers";
 
-const OfferForm = () => {
+import FormStyle from "../Form.module.css";
+import { useOfferProvider } from "../../../../provider/Offer/OfferProvider";
+import { OFFER_DATA } from "../../../../provider/types";
+import { useId } from "react";
+
+const OfferForm = ({ setDrawer }) => {
   const { t } = useTranslation();
+
+  const { state, dispatch } = useOfferProvider();
+  const { offer } = state;
+
+  const id = useId();
+  let newId = id.slice(1, -1);
 
   const formik = useFormik({
     initialValues: {
@@ -35,8 +46,19 @@ const OfferForm = () => {
       return errors;
     },
     onSubmit: (values, action) => {
-      console.log("values", values);
-      console.log("action", action);
+      let item = {
+        id: newId,
+        image_url: values.image,
+        title: values.title,
+        desc: values.description,
+      };
+
+      offersCreateAPI(item)
+        .then((res) => {
+          let newArray = [...offer, item];
+          dispatch({ type: OFFER_DATA, payload: newArray });
+        })
+        .catch(() => {});
 
       action.resetForm();
     },
@@ -114,7 +136,12 @@ const OfferForm = () => {
       </div>
 
       <div className={FormStyle.Buttons}>
-        <Button style={{ background: "#43445A" }}>{t("modal.cancel")}</Button>
+        <Button
+          style={{ background: "#43445A" }}
+          onClick={() => setDrawer(false)}
+        >
+          {t("modal.cancel")}
+        </Button>
         <Button type="submit" style={{ background: "#C035A2" }}>
           {t("modal.create")}
         </Button>
