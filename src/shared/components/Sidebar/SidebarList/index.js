@@ -1,13 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Nav } from "react-bootstrap";
-import { useDispatch } from "react-redux";
 import Data from "../../../../util/Sidebar";
-import { setLogin } from "../../../../store/slices/loginSlice";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 // Style
 import SidebarListStyle from "./SidebarList.module.css";
 import { useTranslation } from "react-i18next";
+import { useLoginProvider } from "../../../../provider/Login/LoginProvider";
 
 let activeStyle = {
   background: "#cd61ed",
@@ -16,12 +15,12 @@ let activeStyle = {
 
 const SidebarList = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const { dispatch } = useLoginProvider();
   const navigate = useNavigate();
 
   const onBack = () => {
     localStorage.removeItem("isLogin");
-    dispatch(setLogin(false));
+    dispatch({ type: "LOGIN", payload: false });
     navigate("/login");
   };
   return (

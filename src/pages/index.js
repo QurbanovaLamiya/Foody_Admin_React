@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useLoginProvider } from "../provider/Login/LoginProvider";
 
 // Components
 import Login from "./Login";
@@ -8,7 +8,10 @@ import PageRoutes from "./PageRoutes";
 
 const RootPage = () => {
   const [authenticated, setauthenticated] = useState([]);
-  const state = useSelector((state) => state);
+
+  const { state } = useLoginProvider();
+
+  console.log(state);
 
   useEffect(() => {
     setauthenticated(localStorage.getItem("isLogin"));
@@ -16,7 +19,7 @@ const RootPage = () => {
 
   return (
     <Fragment>
-      {state.loginSlice.isLogin || authenticated === "true" ? (
+      {state.isLogin || authenticated === "true" ? (
         <PageRoutes />
       ) : (
         <Routes>

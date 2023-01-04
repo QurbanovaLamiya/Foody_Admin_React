@@ -1,13 +1,12 @@
 import { Form, Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { setLogin } from "../../../store/slices/loginSlice";
 import FormStyle from "./LoginForm.module.css";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import { useLoginProvider } from "../../../provider/Login/LoginProvider";
 
 let inlineStyle = {
   width: "100%",
@@ -24,9 +23,10 @@ let inlineStyle = {
 };
 
 const LoginForm = () => {
+  const { state, dispatch } = useLoginProvider();
+  const { user_name, password } = state.user;
   const { t } = useTranslation();
-  const state = useSelector((state) => state);
-  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -46,10 +46,7 @@ const LoginForm = () => {
       return errors;
     },
     onSubmit: (values, action) => {
-      if (
-        values.user_name !== state.loginSlice.user.user_name ||
-        values.password !== state.loginSlice.user.password
-      ) {
+      if (values.user_name !== user_name || values.password !== password) {
         toast.error(t("incorrect message"), {
           position: "top-right",
           autoClose: 5000,
@@ -63,7 +60,7 @@ const LoginForm = () => {
         action.resetForm();
       } else {
         localStorage.setItem("isLogin", true);
-        dispatch(setLogin(true));
+        dispatch({ type: "LOGIN", payload: true });
         navigate("/panel/dashboard");
       }
     },

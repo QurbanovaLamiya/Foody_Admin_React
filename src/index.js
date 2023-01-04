@@ -3,20 +3,19 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "react-redux";
-import { store } from "./store";
 import "./i18n";
 import Loading from "./shared/components/Loading";
+import { LoginProvider } from "./provider/Login/LoginProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
-      <Provider store={store}>
+      <LoginProvider>
         <Router>
           <App />
         </Router>
-      </Provider>
+      </LoginProvider>
     </Suspense>
   </React.StrictMode>
 );
