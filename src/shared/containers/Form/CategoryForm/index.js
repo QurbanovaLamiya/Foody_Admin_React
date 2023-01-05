@@ -10,6 +10,8 @@ import { CATEGORY_DATA } from "../../../../provider/types";
 
 import FormStyle from "../Form.module.css";
 
+import PropTypes from "prop-types";
+
 const CategoryForm = ({ setDrawer }) => {
   const { t } = useTranslation();
   const { state, dispatch } = useCategoryProvider();
@@ -139,6 +141,10 @@ const CategoryForm = ({ setDrawer }) => {
       </div>
     </Form>
   );
+};
+
+CategoryForm.propTypes = {
+  setDrawer: PropTypes.func,
 };
 
 export default CategoryForm;

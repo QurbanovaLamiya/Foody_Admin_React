@@ -1,11 +1,11 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import CategoryStyle from "./Category.module.css";
 
 import CategoryTable from "./CategoryTable";
 import Modal from "../../shared/containers/Modal";
-
-import { useTranslation } from "react-i18next";
 import CategoryForm from "../../shared/containers/Form/CategoryForm";
-import { useState } from "react";
 
 const CategoryContainer = () => {
   const { t } = useTranslation();

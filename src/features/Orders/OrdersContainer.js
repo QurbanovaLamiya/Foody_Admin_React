@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import OrderStyle from "./Order.module.css";
 import OrdersTable from "./OrdersTable";
+import OrderStyle from "./Order.module.css";
 
 const OrdersContainer = () => {
   const { t } = useTranslation();

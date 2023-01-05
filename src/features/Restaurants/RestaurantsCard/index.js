@@ -1,6 +1,10 @@
 import { Card } from "react-bootstrap";
+
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+
 import RestaurantCardStyle from "./RestaurantsCard.module.css";
+
+import PropTypes from "prop-types";
 
 const RestaurantsCard = ({
   id,
@@ -30,6 +34,14 @@ const RestaurantsCard = ({
       </Card.Body>
     </Card>
   );
+};
+
+RestaurantsCard.propTypes = {
+  id: PropTypes.number,
+  restaurant_name: PropTypes.string,
+  category_name: PropTypes.string,
+  deleteRestaurant: PropTypes.func,
+  image_url: PropTypes.string,
 };
 
 export default RestaurantsCard;

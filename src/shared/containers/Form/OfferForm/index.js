@@ -1,7 +1,7 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
+import { useId } from "react";
 import { Form, Button } from "react-bootstrap";
-
 import { useTranslation } from "react-i18next";
 
 import { useFormik } from "formik";
@@ -9,9 +9,11 @@ import { useFormik } from "formik";
 import { offersCreateAPI } from "../../../../api/offers";
 
 import FormStyle from "../Form.module.css";
+
 import { useOfferProvider } from "../../../../provider/Offer/OfferProvider";
 import { OFFER_DATA } from "../../../../provider/types";
-import { useId } from "react";
+
+import PropTypes from "prop-types";
 
 const OfferForm = ({ setDrawer }) => {
   const { t } = useTranslation();
@@ -148,6 +150,10 @@ const OfferForm = ({ setDrawer }) => {
       </div>
     </Form>
   );
+};
+
+OfferForm.propTypes = {
+  setDrawer: PropTypes.func,
 };
 
 export default OfferForm;

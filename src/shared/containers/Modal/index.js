@@ -7,6 +7,8 @@ import Button from "../../components/Button";
 
 import ModalStyle from "./Modal.module.css";
 
+import PropTypes from "prop-types";
+
 const Modal = ({ button, title, children, drawer, setDrawer }) => {
   const { t } = useTranslation();
 
@@ -29,6 +31,14 @@ const Modal = ({ button, title, children, drawer, setDrawer }) => {
       </Drawer>
     </>
   );
+};
+
+Modal.propTypes = {
+  button: PropTypes.string,
+  title: PropTypes.string,
+  children: PropTypes.object,
+  drawer: PropTypes.bool,
+  setDrawer: PropTypes.func,
 };
 
 export default Modal;

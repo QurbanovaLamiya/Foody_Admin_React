@@ -1,6 +1,6 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId } from "react";
 
 import { Form, Button } from "react-bootstrap";
 
@@ -17,15 +17,17 @@ import { useProductProvider } from "../../../../provider/Product/ProductProvider
 import { PRODUCT_DATA, RESTAURANT_DATA } from "../../../../provider/types";
 import { useRestaurantProvider } from "../../../../provider/Restaurant/RestaurantProvider";
 
+import PropTypes from "prop-types";
+
 const ProductForm = ({ setDrawer }) => {
+  let id = useId();
   const { t } = useTranslation();
+
   const { resState, resDispatch } = useRestaurantProvider();
   const { restaurant } = resState;
-  let id = useId();
 
   const { state, dispatch } = useProductProvider();
   const { product } = state;
-
 
   useEffect(() => {
     getRestaurant();
@@ -219,6 +221,10 @@ const ProductForm = ({ setDrawer }) => {
       </div>
     </Form>
   );
+};
+
+ProductForm.propTypes = {
+  setDrawer: PropTypes.func,
 };
 
 export default ProductForm;

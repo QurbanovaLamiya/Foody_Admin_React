@@ -1,8 +1,8 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 import { Form, Button } from "react-bootstrap";
-
 import { useTranslation } from "react-i18next";
+import { useEffect, useId } from "react";
 
 import { useFormik } from "formik";
 
@@ -11,11 +11,11 @@ import FormStyle from "../Form.module.css";
 import { categoryAPI } from "../../../../api/category";
 import { restaurantCreateAPI } from "../../../../api/restaurant";
 
-import { useEffect, useId } from "react";
-
 import { useRestaurantProvider } from "../../../../provider/Restaurant/RestaurantProvider";
 import { useCategoryProvider } from "../../../../provider/Category/CategoryProvider";
 import { CATEGORY_DATA, RESTAURANT_DATA } from "../../../../provider/types";
+
+import PropTypes from "prop-types";
 
 const RestaurantForm = ({ setDrawer }) => {
   const { t } = useTranslation();
@@ -260,6 +260,10 @@ const RestaurantForm = ({ setDrawer }) => {
       </div>
     </Form>
   );
+};
+
+RestaurantForm.propTypes = {
+  setDrawer: PropTypes.func,
 };
 
 export default RestaurantForm;

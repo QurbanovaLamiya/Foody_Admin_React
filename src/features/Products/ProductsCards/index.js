@@ -2,6 +2,8 @@ import { Card } from "react-bootstrap";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ProductsCardsStyle from "./ProductsCard.module.css";
 
+import PropTypes from "prop-types";
+
 const ProductsCards = ({
   deleteProducts,
   id,
@@ -35,6 +37,15 @@ const ProductsCards = ({
       </Card.Body>
     </Card>
   );
+};
+
+ProductsCards.propTypes = {
+  deleteProducts: PropTypes.func,
+  id: PropTypes.number,
+  product_name: PropTypes.string,
+  restaurant_name: PropTypes.string,
+  product_price: PropTypes.string,
+  image_url: PropTypes.string,
 };
 
 export default ProductsCards;

@@ -19,7 +19,7 @@ import LoginForm from "../LoginForm";
 // Style
 import LoginStyle from "./LoginContainer.module.css";
 
-import * as React from 'react';
+import * as React from "react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 

@@ -5,6 +5,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import RestaurantsCard from "./RestaurantsCard";
 import Loading from "../../shared/components/Loading";
 import Modal from "../../shared/containers/Modal";
+import RestaurantForm from "../../shared/containers/Form/RestaurantForm";
 
 // Style
 import RestaurantsStyle from "./Restaurants.module.css";
@@ -13,11 +14,10 @@ import RestaurantsStyle from "./Restaurants.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
-
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import RestaurantForm from "../../shared/containers/Form/RestaurantForm";
+
+import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 import { useRestaurantProvider } from "../../provider/Restaurant/RestaurantProvider";
 import { RESTAURANT_DATA } from "../../provider/types";
 

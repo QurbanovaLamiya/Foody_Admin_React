@@ -13,10 +13,11 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 import { useEffect } from "react";
-import { categoryAPI, categoryDeleteAPI } from "../../../api/category";
 import { useTranslation } from "react-i18next";
+
 import Loading from "../../../shared/components/Loading";
 
+import { categoryAPI, categoryDeleteAPI } from "../../../api/category";
 import { CATEGORY_DATA } from "../../../provider/types";
 import { useCategoryProvider } from "../../../provider/Category/CategoryProvider";
 

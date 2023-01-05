@@ -13,12 +13,11 @@ import { productAPI, productDeleteAPI } from "../../api/product";
 
 // React
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 // Sweet Alert
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
-
-import { useTranslation } from "react-i18next";
 
 import { useProductProvider } from "../../provider/Product/ProductProvider";
 import { PRODUCT_DATA } from "../../provider/types";

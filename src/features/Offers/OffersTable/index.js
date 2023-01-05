@@ -1,5 +1,8 @@
-// Material UI
 import * as React from "react";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
+// Material UI
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -13,15 +16,12 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-import { useState, useEffect } from "react";
-
 import { offersAPI, offersDeleteAPI } from "../../../api/offers";
 
-import { useTranslation } from "react-i18next";
-
-import Loading from "../../../shared/components/Loading";
 import { useOfferProvider } from "../../../provider/Offer/OfferProvider";
 import { OFFER_DATA } from "../../../provider/types";
+
+import Loading from "../../../shared/components/Loading";
 
 const OffersTable = () => {
   const { t } = useTranslation();

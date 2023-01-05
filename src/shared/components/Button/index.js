@@ -4,6 +4,8 @@ import ButtonStyle from "./Button.module.css";
 
 import { useTranslation } from "react-i18next";
 
+import PropTypes from "prop-types";
+
 const Button = ({ setDrawer, buttonName }) => {
   const { t } = useTranslation();
   return (
@@ -17,6 +19,11 @@ const Button = ({ setDrawer, buttonName }) => {
       {t(`${buttonName}`)}
     </button>
   );
+};
+
+Button.propTypes = {
+  setDrawer: PropTypes.func,
+  buttonName: PropTypes.string,
 };
 
 export default Button;
