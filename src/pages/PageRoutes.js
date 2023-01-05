@@ -1,16 +1,16 @@
 // React-Router-Dom
 import { Routes, Route, Navigate } from "react-router-dom";
+import { lazy } from "react";
 
 // Components
-import Header from "../shared/components/Header";
-import Sidebar from "../shared/components/Sidebar";
-import Dashboard from "./Dashboard";
-import Products from "./Products";
-import Restaurants from "./Restaurants";
-import Category from "./Category";
-import Orders from "./Orders";
-import Offers from "./Offers";
-import Login from "./Login";
+const Header = lazy(() => import("../shared/components/Header"));
+const Sidebar = lazy(() => import("../shared/components/Sidebar"));
+const Dashboard = lazy(() => import("./Dashboard"));
+const Products = lazy(() => import("./Products"));
+const Restaurants = lazy(() => import("./Restaurants"));
+const Category = lazy(() => import("./Category"));
+const Orders = lazy(() => import("./Orders"));
+const Offers = lazy(() => import("./Offers"));
 
 const PageRoutes = () => {
   return (
@@ -25,7 +25,7 @@ const PageRoutes = () => {
           <Route path="/panel/category" element={<Category />} />
           <Route path="/panel/orders" element={<Orders />} />
           <Route path="/panel/offer" element={<Offers />} />
-           {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/" element={<Navigate replace to="login" />} /> */}
         </Routes>
       </div>

@@ -1,10 +1,5 @@
 import ProductsContainer from "../../features/Products/ProductsContainer";
-// import { RestaurantProvider } from "../../provider/Restaurant/RestaurantProvider";
 
-const Products = () => (
-//   <RestaurantProvider>
-    <ProductsContainer />
-//   </RestaurantProvider>
-);
+const Products = () => <ProductsContainer />;
 
 export default Products;

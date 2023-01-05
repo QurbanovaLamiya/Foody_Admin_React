@@ -77,7 +77,7 @@ const OrdersTable = () => {
     });
   };
 
-  if (!orders) {
+  if (!orders.length) {
     return <Loading />;
   }
 
