@@ -13,7 +13,6 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    // case "LOGIN":
     case LOGIN:
       return { ...state, isLogin: action.payload };
 

@@ -26,7 +26,7 @@ let inlineStyle = {
 const LoginForm = () => {
   const { state, dispatch } = useLoginProvider();
   const { user_name, password } = state.user;
-  
+
   const { t } = useTranslation();
 
   const navigate = useNavigate();

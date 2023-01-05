@@ -1,10 +1,11 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, lazy, useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useLoginProvider } from "../provider/Login/LoginProvider";
 
 // Components
-import Login from "./Login";
-import PageRoutes from "./PageRoutes";
+const Login = lazy(() => import("./Login"));
+const PageRoutes = lazy(() => import("./PageRoutes"));
+const AuthError = lazy(() => import("./AuthError"));
 
 const RootPage = () => {
   const [authenticated, setauthenticated] = useState([]);
@@ -22,7 +23,8 @@ const RootPage = () => {
       ) : (
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Navigate replace to="login" />} />
+          <Route path="/" element={<Navigate replace to="/login" />} />
+          <Route path="*" element={<AuthError />} />
         </Routes>
       )}
     </Fragment>
