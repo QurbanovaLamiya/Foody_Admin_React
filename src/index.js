@@ -7,18 +7,21 @@ import "./i18n";
 import Loading from "./shared/components/Loading";
 import { LoginProvider } from "./provider/Login/LoginProvider";
 import { ProductProvider } from "./provider/Product/ProductProvider";
+import { RestaurantProvider } from "./provider/Restaurant/RestaurantProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
-      <ProductProvider>
-        <LoginProvider>
-          <Router>
-            <App />
-          </Router>
-        </LoginProvider>
-      </ProductProvider>
+      <RestaurantProvider>
+        <ProductProvider>
+          <LoginProvider>
+            <Router>
+              <App />
+            </Router>
+          </LoginProvider>
+        </ProductProvider>
+      </RestaurantProvider>
     </Suspense>
   </React.StrictMode>
 );

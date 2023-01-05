@@ -14,15 +14,18 @@ import FormStyle from "../Form.module.css";
 
 import { productCreateAPI } from "../../../../api/product";
 import { useProductProvider } from "../../../../provider/Product/ProductProvider";
-import { PRODUCT_DATA } from "../../../../provider/types";
+import { PRODUCT_DATA, RESTAURANT_DATA } from "../../../../provider/types";
+import { useRestaurantProvider } from "../../../../provider/Restaurant/RestaurantProvider";
 
 const ProductForm = ({ setDrawer }) => {
   const { t } = useTranslation();
-  const [restaurant, setRestaurant] = useState(null);
+  const { resState, resDispatch } = useRestaurantProvider();
+  const { restaurant } = resState;
   let id = useId();
 
   const { state, dispatch } = useProductProvider();
   const { product } = state;
+
 
   useEffect(() => {
     getRestaurant();
@@ -31,7 +34,10 @@ const ProductForm = ({ setDrawer }) => {
   const getRestaurant = () => {
     restaurantsAPI
       .then((res) => {
-        setRestaurant(res.data.restaurant.restaurants);
+        resDispatch({
+          type: RESTAURANT_DATA,
+          payload: res.data.restaurant.restaurants,
+        });
       })
       .catch((err) => {
         // console.log("err", err);
