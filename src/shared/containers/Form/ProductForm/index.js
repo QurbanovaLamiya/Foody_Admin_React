@@ -16,15 +16,13 @@ import { productCreateAPI } from "../../../../api/product";
 import { useProductProvider } from "../../../../provider/Product/ProductProvider";
 import { PRODUCT_DATA } from "../../../../provider/types";
 
-const ProductForm = () => {
+const ProductForm = ({ setDrawer }) => {
   const { t } = useTranslation();
   const [restaurant, setRestaurant] = useState(null);
   let id = useId();
 
   const { state, dispatch } = useProductProvider();
   const { product } = state;
-
-  console.log(product);
 
   useEffect(() => {
     getRestaurant();
@@ -203,7 +201,12 @@ const ProductForm = () => {
       </div>
 
       <div className={FormStyle.Buttons}>
-        <Button style={{ background: "#43445A" }}>{t("modal.cancel")}</Button>
+        <Button
+          style={{ background: "#43445A" }}
+          onClick={() => setDrawer(false)}
+        >
+          {t("modal.cancel")}
+        </Button>
         <Button type="submit" style={{ background: "#C035A2" }}>
           {t("modal.create")}
         </Button>

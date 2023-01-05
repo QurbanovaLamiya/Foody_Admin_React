@@ -26,7 +26,7 @@ const ProductsCards = ({
           {restaurant_name}
         </Card.Text>
         <Card.Text className={ProductsCardsStyle.Price_Text}>
-          <span className={ProductsCardsStyle.Price}>{product_price}</span>
+          <span className={ProductsCardsStyle.Price}>${product_price}</span>
           <DeleteForeverIcon
             className={ProductsCardsStyle.Delete}
             onClick={() => deleteProducts(id)}

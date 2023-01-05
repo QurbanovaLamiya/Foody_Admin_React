@@ -37,6 +37,8 @@ const flags = {
 const HeaderContainer = () => {
   const { i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isDrawer, setIsDrawer] = React.useState(false);
+
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -47,8 +49,13 @@ const HeaderContainer = () => {
 
   return (
     <Nav className={HeaderContainerStyle.Keeper}>
-      <Modal button="ADD PRODUCT" title="Add Product">
-        <ProductForm />
+      <Modal
+        button="ADD PRODUCT"
+        title="Add Product"
+        drawer={isDrawer}
+        setDrawer={setIsDrawer}
+      >
+        <ProductForm setDrawer={setIsDrawer} />
       </Modal>
       <Button
         id="basic-button"

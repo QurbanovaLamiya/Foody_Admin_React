@@ -230,9 +230,12 @@ const RestaurantForm = ({ setDrawer }) => {
             className={FormStyle.FormGroup}
           >
             <label htmlFor="category">{t("modal.category")}</label>
-            <select name="category" id="category"
-            onChange={formik.handleChange}
-            value={formik.values.category}>
+            <select
+              name="category"
+              id="category"
+              onChange={formik.handleChange}
+              value={formik.values.category}
+            >
               {category?.map((category) => (
                 <option key={category.id} value={category.category_slug}>
                   {category.category_slug}

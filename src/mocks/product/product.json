@@ -3,70 +3,70 @@
     {
       "id": 1,
       "product_name": "Soppressata",
-      "product_price": "$25",
+      "product_price": "25",
       "restaurant_name": "Papa John’s",
       "image_url": "https://i.pinimg.com/564x/f9/6b/d8/f96bd8d65e30ea005ae52bf06e32cfe8.jpg"
     },
     {
       "id": 2,
       "product_name": "Sandwich",
-      "product_price": "$8",
+      "product_price": "8",
       "restaurant_name": "Pizza Hut",
       "image_url": "https://i.pinimg.com/236x/b5/ed/fb/b5edfbdf1dda4d473f681ea00ac67cc0.jpg"
     },
     {
       "id": 3,
       "product_name": "Onion Rings",
-      "product_price": "$5",
+      "product_price": "5",
       "restaurant_name": "Burger King",
       "image_url": "https://i.pinimg.com/236x/ef/17/df/ef17dfd8dea00cc13c1edfa16cf33379.jpg"
     },
     {
       "id": 4,
       "product_name": "Beef Burger",
-      "product_price": "$19",
+      "product_price": "19",
       "restaurant_name": "McDonald’s",
       "image_url": "https://i.pinimg.com/236x/50/fe/a6/50fea6f969893541e2237fd311b721c4.jpg"
     },
     {
       "id": 5,
       "product_name": "Chicken Roll",
-      "product_price": "$8",
+      "product_price": "8",
       "restaurant_name": "Burger King",
       "image_url": "https://i.pinimg.com/564x/f9/e8/8a/f9e88a2d6f03129ba7505c34b1f50edf.jpg"
     },
     {
       "id": 6,
       "product_name": "Chicken Bucket",
-      "product_price": "$10",
+      "product_price": "10",
       "restaurant_name": "KFC",
       "image_url": "https://i.pinimg.com/564x/b1/17/71/b11771d251efe326b40279d40f41157d.jpg"
     },
     {
       "id": 7,
       "product_name": "Cheese Peaks",
-      "product_price": "$4",
+      "product_price": "4",
       "restaurant_name": "Pizza Hut",
       "image_url": "https://i.pinimg.com/236x/de/6e/00/de6e002dc47ac39c25af2c1c5a637eff.jpg"
     },
     {
       "id": 8,
       "product_name": "Burger",
-      "product_price": "$7",
+      "product_price": "7",
       "restaurant_name": "KFC",
       "image_url": "https://i.pinimg.com/236x/c6/4f/8e/c64f8ef7840a1926058fe505de198780.jpg"
     },
     {
       "id": 9,
       "product_name": "French Fries",
-      "product_price": "$2.35",
+      "product_price": "2.35",
       "restaurant_name": "McDonald’s",
       "image_url": "https://i.pinimg.com/236x/34/6d/d2/346dd2f843fe4ea915cc1c9ced32fcb4.jpg"
     },
     {
       "id": 10,
       "product_name": "Margherita",
-      "product_price": "$16",
+      "product_price": "16",
       "restaurant_name": "Papa John’s",
       "image_url": "https://i.pinimg.com/564x/99/1b/70/991b70d70d65f7b271bc2fe7441b7da8.jpg"
     }
