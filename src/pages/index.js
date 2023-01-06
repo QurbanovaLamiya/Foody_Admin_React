@@ -23,7 +23,7 @@ const RootPage = () => {
       ) : (
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Navigate replace to="/login" />} />
+          <Route path="/" element={<Navigate replace to="login" />} />
           <Route path="*" element={<AuthError />} />
         </Routes>
       )}
