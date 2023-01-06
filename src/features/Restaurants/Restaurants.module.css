@@ -24,33 +24,6 @@
   display: flex;
 }
 
-.Select_Section {
-  position: relative !important;
-  margin-right: 27px;
-}
-
-.Select {
-  background: #5a5b70;
-  border-radius: 14px;
-  border: none;
-  width: 199px !important;
-  height: 35px !important;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  color: #f2f2f2;
-  padding: 0 18px;
-  appearance: none;
-  cursor: pointer;
-}
-
-.Icon {
-  position: absolute;
-  color: #c7c7c7;
-  top: 5px;
-  right: 10px;
-}
-
 .Content {
   display: flex;
   flex-wrap: wrap;

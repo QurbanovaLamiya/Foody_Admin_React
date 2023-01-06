@@ -1,6 +1,3 @@
-// Material-UI
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
 // Components
 import RestaurantsCard from "./RestaurantsCard";
 import Loading from "../../shared/components/Loading";
@@ -20,6 +17,7 @@ import { useTranslation } from "react-i18next";
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
 import { useRestaurantProvider } from "../../provider/Restaurant/RestaurantProvider";
 import { RESTAURANT_DATA } from "../../provider/types";
+import CategoryType from "../../shared/components/CategoryType";
 
 const RestaurantsContainer = () => {
   const { t } = useTranslation();
@@ -88,15 +86,7 @@ const RestaurantsContainer = () => {
       <div className={RestaurantsStyle.Caption}>
         <h1>{t("menu.Restaurants")}</h1>
         <div className={RestaurantsStyle.Button_Section}>
-          <div className={RestaurantsStyle.Select_Section}>
-            <select className={RestaurantsStyle.Select}>
-              <option>Catagory type</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <KeyboardArrowDownIcon className={RestaurantsStyle.Icon} />
-          </div>
+          <CategoryType />
           <Modal
             button="ADD RESTAURANTS"
             title="Add Restuarant"

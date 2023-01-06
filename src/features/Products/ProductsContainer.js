@@ -1,6 +1,3 @@
-// Material-UI
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
 // Components
 import ProductsCards from "./ProductsCards";
 import Loading from "../../shared/components/Loading";
@@ -21,12 +18,15 @@ import Swal from "sweetalert2";
 
 import { useProductProvider } from "../../provider/Product/ProductProvider";
 import { PRODUCT_DATA } from "../../provider/types";
+import CategoryType from "../../shared/components/CategoryType";
 
 const ProductsContainer = () => {
   const { t } = useTranslation();
 
   const { state, dispatch } = useProductProvider();
   const { product } = state;
+
+  console.log(product);
 
   useEffect(() => {
     !product.length && getProducts();
@@ -85,15 +85,7 @@ const ProductsContainer = () => {
     <div className={ProductsStyle.Container}>
       <div className={ProductsStyle.Caption}>
         <h1>{t("menu.Products")}</h1>
-        <div className={ProductsStyle.Select_Section}>
-          <select className={ProductsStyle.Select}>
-            <option>Catagory type</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <KeyboardArrowDownIcon className={ProductsStyle.Icon} />
-        </div>
+        <CategoryType />
       </div>
       <div className={ProductsStyle.Content}>
         {product?.map((product) => (
