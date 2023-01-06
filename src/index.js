@@ -8,19 +8,22 @@ import { RestaurantProvider } from "./provider/Restaurant/RestaurantProvider";
 import App from "./App";
 import Loading from "./shared/components/Loading";
 import "./i18n";
+import { CategoryProvider } from "./provider/Category/CategoryProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
       <RestaurantProvider>
-        <ProductProvider>
-          <LoginProvider>
-            <Router>
-              <App />
-            </Router>
-          </LoginProvider>
-        </ProductProvider>
+        <CategoryProvider>
+          <ProductProvider>
+            <LoginProvider>
+              <Router>
+                <App />
+              </Router>
+            </LoginProvider>
+          </ProductProvider>
+        </CategoryProvider>
       </RestaurantProvider>
     </Suspense>
   </React.StrictMode>

@@ -26,8 +26,6 @@ const ProductsContainer = () => {
   const { state, dispatch } = useProductProvider();
   const { product } = state;
 
-  console.log(product);
-
   useEffect(() => {
     !product.length && getProducts();
   }, [product]);
