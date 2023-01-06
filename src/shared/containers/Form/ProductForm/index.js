@@ -26,8 +26,8 @@ const ProductForm = ({ setDrawer }) => {
   const { resState, resDispatch } = useRestaurantProvider();
   const { restaurant } = resState;
 
-  const { state, dispatch } = useProductProvider();
-  const { product } = state;
+  const { proState, proDispatch } = useProductProvider();
+  const { product } = proState;
 
   useEffect(() => {
     getRestaurant();
@@ -92,7 +92,7 @@ const ProductForm = ({ setDrawer }) => {
       productCreateAPI(item)
         .then((res) => {
           let newArray = [...product, item];
-          dispatch({ type: PRODUCT_DATA, payload: newArray });
+          proDispatch({ type: PRODUCT_DATA, payload: newArray });
         })
         .catch(() => {});
 

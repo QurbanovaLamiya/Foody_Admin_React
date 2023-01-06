@@ -33,8 +33,6 @@ const RestaurantsContainer = () => {
   const { state, dispatch } = useCategoryProvider();
   const { category } = state;
 
-  console.log(category);
-
   const [isDrawer, setIsDrawer] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -53,11 +51,6 @@ const RestaurantsContainer = () => {
   const getCategory = () => {
     categoryAPI
       .then((res) => {
-        console.log("salma", [
-          ...new Set(
-            res.data.category.categories.map((item) => item.category_slug)
-          ),
-        ]);
         dispatch({
           type: CATEGORY_DATA,
           payload: [

@@ -23,6 +23,32 @@
 .Content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 52px 0 78px;
+}
+
+.Select_Section {
+  position: relative;
+  margin-right: 52px;
+}
+
+.Select {
+  background: #5a5b70;
+  border-radius: 14px;
+  border: none;
+  width: 200px !important;
+  height: 35px !important;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #f2f2f2;
+  padding: 0 18px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.Icon {
+  position: absolute;
+  color: #c7c7c7;
+  top: 5px;
+  right: 10px;
 }
