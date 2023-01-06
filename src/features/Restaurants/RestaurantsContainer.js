@@ -14,21 +14,63 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 import { restaurantDeleteAPI, restaurantsAPI } from "../../api/restaurant";
+import { categoryAPI } from "../../api/category";
+
 import { useRestaurantProvider } from "../../provider/Restaurant/RestaurantProvider";
-import { RESTAURANT_DATA } from "../../provider/types";
-import CategoryType from "../../shared/components/CategoryType";
+import { useCategoryProvider } from "../../provider/Category/CategoryProvider";
+
+import { CATEGORY_DATA, RESTAURANT_DATA } from "../../provider/types";
 
 const RestaurantsContainer = () => {
   const { t } = useTranslation();
+
   const { resState, resDispatch } = useRestaurantProvider();
   const { restaurant } = resState;
 
+  const { state, dispatch } = useCategoryProvider();
+  const { category } = state;
+
+  console.log(category);
+
   const [isDrawer, setIsDrawer] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  function handleCategoryChange(e) {
+    setSelectedCategory(e.target.value);
+  }
 
   useEffect(() => {
     !restaurant.length && getRestaurant();
   }, [restaurant]);
+
+  useEffect(() => {
+    !category.length && getCategory();
+  }, [category]);
+
+  const getCategory = () => {
+    categoryAPI
+      .then((res) => {
+        console.log("salma", [
+          ...new Set(
+            res.data.category.categories.map((item) => item.category_slug)
+          ),
+        ]);
+        dispatch({
+          type: CATEGORY_DATA,
+          payload: [
+            ...new Set(
+              res.data.category.categories.map((item) => item.category_slug)
+            ),
+          ],
+        });
+      })
+      .catch((err) => {
+        // console.log("err", err);
+      });
+  };
 
   const getRestaurant = () => {
     restaurantsAPI
@@ -86,7 +128,20 @@ const RestaurantsContainer = () => {
       <div className={RestaurantsStyle.Caption}>
         <h1>{t("menu.Restaurants")}</h1>
         <div className={RestaurantsStyle.Button_Section}>
-          <CategoryType />
+          <div className={RestaurantsStyle.Select_Section}>
+            <select
+              className={RestaurantsStyle.Select}
+              onChange={handleCategoryChange}
+            >
+              <option value="All">Category type</option>
+              {category?.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+            <KeyboardArrowDownIcon className={RestaurantsStyle.Icon} />
+          </div>
           <Modal
             button="ADD RESTAURANTS"
             title="Add Restuarant"
@@ -98,13 +153,19 @@ const RestaurantsContainer = () => {
         </div>
       </div>
       <div className={RestaurantsStyle.Content}>
-        {restaurant?.map((restaurant) => (
-          <RestaurantsCard
-            key={restaurant.id}
-            {...restaurant}
-            deleteRestaurant={deleteRestaurant}
-          />
-        ))}
+        {restaurant
+          .filter(
+            selectedCategory !== "All"
+              ? (item) => item.category_name === selectedCategory
+              : (item) => item
+          )
+          ?.map((restaurant) => (
+            <RestaurantsCard
+              key={restaurant.id}
+              {...restaurant}
+              deleteRestaurant={deleteRestaurant}
+            />
+          ))}
       </div>
       <ToastContainer />
     </div>

@@ -5,6 +5,7 @@
   border-radius: 5px;
   margin-bottom: 37px;
   transition: all 0.2s ease-out;
+  margin: 0 23px 37px;
 }
 
 .Card:hover {

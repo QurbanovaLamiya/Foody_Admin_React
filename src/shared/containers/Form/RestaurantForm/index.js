@@ -38,7 +38,11 @@ const RestaurantForm = ({ setDrawer }) => {
       .then((res) => {
         dispatch({
           type: CATEGORY_DATA,
-          payload: res.data.category.categories,
+          payload: [
+            ...new Set(
+              res.data.category.categories.map((item) => item.category_slug)
+            ),
+          ],
         });
       })
       .catch((err) => {
@@ -237,8 +241,8 @@ const RestaurantForm = ({ setDrawer }) => {
               value={formik.values.category}
             >
               {category?.map((category) => (
-                <option key={category.id} value={category.category_slug}>
-                  {category.category_slug}
+                <option key={category} value={category}>
+                  {category}
                 </option>
               ))}
             </select>

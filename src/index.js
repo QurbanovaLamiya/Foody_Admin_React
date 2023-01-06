@@ -15,15 +15,15 @@ root.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
       <RestaurantProvider>
-        <CategoryProvider>
-          <ProductProvider>
+        <ProductProvider>
+          <CategoryProvider>
             <LoginProvider>
               <Router>
                 <App />
               </Router>
             </LoginProvider>
-          </ProductProvider>
-        </CategoryProvider>
+          </CategoryProvider>
+        </ProductProvider>
       </RestaurantProvider>
     </Suspense>
   </React.StrictMode>

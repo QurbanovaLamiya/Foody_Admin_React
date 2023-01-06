@@ -27,30 +27,32 @@
 .Content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 52px 0 78px;
 }
 
-.Pagination {
-  display: flex;
-  justify-content: center;
+.Select_Section {
+  position: relative;
+  margin-right: 52px;
 }
 
-.Pagination li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style-type: none;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1px solid #ec5cf8;
-  color: #ec5cf8;
-  margin: 0 10px;
-}
-
-.Pagination li:hover {
-  background: #ec5cf8;
-  color: #fff;
+.Select {
+  background: #5a5b70;
+  border-radius: 14px;
+  border: none;
+  width: 200px !important;
+  height: 35px !important;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #f2f2f2;
+  padding: 0 18px;
+  appearance: none;
   cursor: pointer;
+}
+
+.Icon {
+  position: absolute;
+  color: #c7c7c7;
+  top: 5px;
+  right: 10px;
 }

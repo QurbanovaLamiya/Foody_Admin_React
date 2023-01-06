@@ -18,7 +18,6 @@ import Swal from "sweetalert2";
 
 import { useProductProvider } from "../../provider/Product/ProductProvider";
 import { PRODUCT_DATA } from "../../provider/types";
-import CategoryType from "../../shared/components/CategoryType";
 
 const ProductsContainer = () => {
   const { t } = useTranslation();
@@ -83,7 +82,6 @@ const ProductsContainer = () => {
     <div className={ProductsStyle.Container}>
       <div className={ProductsStyle.Caption}>
         <h1>{t("menu.Products")}</h1>
-        <CategoryType />
       </div>
       <div className={ProductsStyle.Content}>
         {product?.map((product) => (
