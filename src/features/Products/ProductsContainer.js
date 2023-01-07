@@ -34,7 +34,6 @@ const ProductsContainer = () => {
   const { proState, proDispatch } = useProductProvider();
   const { product } = proState;
 
-  console.log(product);
 
   function handleCategoryChange(e) {
     setSelectedCategory(e.target.value);
